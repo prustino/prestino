@@ -30,7 +30,7 @@ node scripts/progetti.mjs aggiorna
 ## Struttura
 
 - `scripts/templates/`: sorgenti della raccolta, di “Chi sono” e del reindirizzamento iniziale, con blocchi condizionati dalla presenza dei progetti. Modifica qui queste pagine: le copie HTML nella cartella principale e in `dist/` vengono rigenerate.
-- `index.html`: reindirizzamento alla pagina Progetti. Il sito ha tre sezioni: Progetti, Chi sono e Contatti.
+- `index.html`: reindirizzamento alla pagina Chi sono. Il sito ha tre sezioni: Progetti, Chi sono e Contatti.
 - `progetti.html`: ricerca per parole chiave e filtri per modellazione, stampa 3D e prototipi.
 - `chi-sono.html`: interessi, approccio ed esperienza documentata di Silve sul plastico ITACA presso WASP nel 2022.
 - `contatti.html`: telefono, WhatsApp e modulo dimostrativi.

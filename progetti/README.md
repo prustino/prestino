@@ -29,7 +29,7 @@ L’anteprima dinamica ricarica la pagina conservando ricerca e filtri. Per una 
 4. I percorsi `image.src` e gli eventuali `image.srcset` sono relativi alla cartella del progetto. Aggiorna anche testo alternativo, larghezza e altezza.
 5. Attiva il progetto dal comando di gestione. La scheda nella raccolta viene generata automaticamente, senza modificare `progetti.html`.
 
-I nuovi progetti entrano nella raccolta, che è anche la pagina iniziale del sito. Il menu contiene Progetti, Chi sono e Contatti.
+I nuovi progetti entrano nella raccolta. La pagina iniziale del sito reindirizza a Chi sono; il menu contiene Progetti, Chi sono e Contatti.
 
 ## Modificare le pagine
 

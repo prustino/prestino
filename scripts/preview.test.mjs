@@ -27,7 +27,7 @@ test('preview follows manual folder moves, reloads clients and serves only curre
     for (const path of ['/', '/index.html']) {
       const entry = await request(`${path}?q=stampa&categoria=modellazione`, { redirect: 'manual' });
       assert.equal(entry.status, 302);
-      assert.equal(entry.headers.get('location'), '/progetti.html?q=stampa&categoria=modellazione');
+      assert.equal(entry.headers.get('location'), '/chi-sono.html?q=stampa&categoria=modellazione');
     }
     const initialPage = await request('/progetti.html');
     assert.equal(initialPage.headers.get('cache-control'), 'no-store');

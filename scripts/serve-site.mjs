@@ -84,7 +84,7 @@ export async function startPreview({ root = siteRoot, port = 4173, pollMs = 500,
     try { url = new URL(request.url, 'http://localhost'); pathname = decodeURIComponent(url.pathname); }
     catch { send(400, 'Indirizzo non valido.'); return; }
     if (pathname === '/' || pathname === '/index.html') {
-      response.writeHead(302, { Location: `/progetti.html${url.search}` }); response.end(); return;
+      response.writeHead(302, { Location: `/chi-sono.html${url.search}` }); response.end(); return;
     }
     if (pathname === '/__preview/client.js') { send(200, client, types['.js']); return; }
     try {
