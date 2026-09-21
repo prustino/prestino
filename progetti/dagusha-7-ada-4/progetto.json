@@ -1,0 +1,35 @@
+{
+  "title": "Dagusha 7 / ADA 4",
+  "label": "MODELLISMO NAUTICO",
+  "description": "Un modello nautico raccontato attraverso i componenti, le fasi di assemblaggio e le viste finali. Ponti sovrapposti e dettagli di coperta definiscono il carattere dello yacht in scala.",
+  "categories": [
+    "modellazione",
+    "stampa",
+    "prototipi"
+  ],
+  "tags": [
+    "Modello in scala",
+    "Nautica",
+    "Assemblaggio"
+  ],
+  "keywords": "dagusha ada 4 7 yacht nautica barca modello modellismo scala ponti scafo assemblaggio dettagli stampa 3d",
+  "order": 3,
+  "kind": "real",
+  "status": "Descrizione in aggiornamento",
+  "image": {
+    "src": "immagini/01-720.webp",
+    "alt": "Modello dello yacht Dagusha 7 / ADA 4 visto dalla prua",
+    "width": 720,
+    "height": 540,
+    "srcset": [
+      {
+        "src": "immagini/01-720.webp",
+        "width": 720
+      },
+      {
+        "src": "immagini/01.webp",
+        "width": 1600
+      }
+    ]
+  }
+}

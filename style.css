@@ -2733,6 +2733,11 @@ textarea:focus {
   height: auto;
 }
 
+.project-gallery .photo-visual img {
+  height: 100%;
+  object-fit: contain;
+}
+
 .hero-project-image { display: block; }
 .hero-scene figcaption a { min-height: 32px; display: inline-flex; align-items: center; gap: 8px; }
 .hero-scene figcaption a:hover { color: var(--purple); }
@@ -2768,7 +2773,7 @@ textarea:focus {
   .home-featured-project h3 { font-size: 1.7rem; }
 }
 
-.project-gallery .project-card-real {
+.project-gallery .project-card-featured {
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
@@ -2779,11 +2784,11 @@ textarea:focus {
   background: #eee7dc;
 }
 
-.project-gallery .project-card-real .project-content {
+.project-gallery .project-card-featured .project-content {
   padding: 0 12px 0 0;
 }
 
-.project-gallery .project-card-real h2 {
+.project-gallery .project-card-featured h2 {
   font-size: clamp(1.6rem, 3vw, 2.3rem);
 }
 
@@ -2900,16 +2905,16 @@ textarea:focus-visible {
 }
 
 @media (max-width: 760px) {
-  .project-gallery .project-card-real {
+  .project-gallery .project-card-featured {
     display: block;
     padding: 0;
     background: transparent;
     grid-column: auto;
   }
-  .project-gallery .project-card-real .project-content {
+  .project-gallery .project-card-featured .project-content {
     padding: 20px 0 0;
   }
-  .project-gallery .project-card-real h2 {
+  .project-gallery .project-card-featured h2 {
     font-size: 21px;
   }
 }

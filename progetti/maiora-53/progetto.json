@@ -1,0 +1,33 @@
+{
+  "title": "Maiora 53",
+  "label": "MODELLISMO NAVALE",
+  "description": "Un modello di yacht raccontato attraverso il profilo dello scafo, i ponti sovrapposti e i dettagli degli spazi di bordo.",
+  "categories": [
+    "prototipi"
+  ],
+  "tags": [
+    "Modello in scala",
+    "Nautica",
+    "Dettagli"
+  ],
+  "keywords": "maiora 53 yacht nautica barca nave modello modellismo navale scafo ponti prua poppa dettagli miniatura",
+  "order": 5,
+  "kind": "real",
+  "status": "Descrizione in aggiornamento",
+  "image": {
+    "src": "immagini/01-720.webp",
+    "alt": "Modello Maiora 53 di profilo su una base con supporti trasparenti",
+    "width": 720,
+    "height": 540,
+    "srcset": [
+      {
+        "src": "immagini/01-720.webp",
+        "width": 720
+      },
+      {
+        "src": "immagini/01.webp",
+        "width": 1600
+      }
+    ]
+  }
+}

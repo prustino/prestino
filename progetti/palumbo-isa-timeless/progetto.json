@@ -1,0 +1,33 @@
+{
+  "title": "Palumbo ISA Timeless",
+  "label": "MODELLISMO NAVALE",
+  "description": "Un modello nautico su base riflettente, con ponti arredati, superfici vetrate e piccoli dettagli che rendono leggibili gli spazi dello yacht.",
+  "categories": [
+    "prototipi"
+  ],
+  "tags": [
+    "Modello in scala",
+    "Nautica",
+    "Allestimento"
+  ],
+  "keywords": "palumbo isa timeless yacht nautica barca nave modello modellismo navale scafo ponti prua poppa arredamento miniatura teca",
+  "order": 4,
+  "kind": "real",
+  "status": "Descrizione in aggiornamento",
+  "image": {
+    "src": "immagini/01-720.webp",
+    "alt": "Prua e fiancata del modello Palumbo ISA Timeless riflesse nella base",
+    "width": 720,
+    "height": 540,
+    "srcset": [
+      {
+        "src": "immagini/01-720.webp",
+        "width": 720
+      },
+      {
+        "src": "immagini/01.webp",
+        "width": 1600
+      }
+    ]
+  }
+}

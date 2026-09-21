@@ -1,0 +1,33 @@
+{
+  "title": "GoYoke",
+  "label": "MODELLAZIONE DI PRODOTTO",
+  "description": "Studio tridimensionale di un accessorio che avvolge un gamepad. Viste del modello digitale mostrano l’ingombro, le superfici e le connessioni fra i componenti.",
+  "categories": [
+    "modellazione"
+  ],
+  "tags": [
+    "Modellazione 3D",
+    "CAD",
+    "Accessori"
+  ],
+  "keywords": "goyoke go yoke gamepad controller joystick gaming accessorio modellazione 3d cad superfici geometria",
+  "order": 10,
+  "kind": "real",
+  "status": "Descrizione in aggiornamento",
+  "image": {
+    "src": "immagini/01-720.webp",
+    "alt": "Vista posteriore del modello CAD di un gamepad con un accessorio curvo attorno alla scocca.",
+    "width": 540,
+    "height": 720,
+    "srcset": [
+      {
+        "src": "immagini/01-720.webp",
+        "width": 540
+      },
+      {
+        "src": "immagini/01.webp",
+        "width": 1200
+      }
+    ]
+  }
+}

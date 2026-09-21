@@ -1,0 +1,35 @@
+{
+  "title": "Durres Towers",
+  "label": "ARCHITETTURA IN SCALA",
+  "description": "Un plastico architettonico a due torri, sviluppato tra modello digitale, stampa dei volumi e assemblaggio. Le immagini mettono a fuoco i piani sfalsati, le facciate e il rapporto tra le due altezze.",
+  "categories": [
+    "modellazione",
+    "stampa",
+    "prototipi"
+  ],
+  "tags": [
+    "Plastico",
+    "Architettura",
+    "Stampa 3D"
+  ],
+  "keywords": "durres towers torri architettura plastico modellismo scala facciate terrazze stampa 3d assemblaggio modello digitale",
+  "order": 2,
+  "kind": "real",
+  "status": "Descrizione in aggiornamento",
+  "image": {
+    "src": "immagini/01-720.webp",
+    "alt": "Plastico di Durres Towers con due torri e facciate dettagliate",
+    "width": 405,
+    "height": 720,
+    "srcset": [
+      {
+        "src": "immagini/01-720.webp",
+        "width": 405
+      },
+      {
+        "src": "immagini/01.webp",
+        "width": 900
+      }
+    ]
+  }
+}

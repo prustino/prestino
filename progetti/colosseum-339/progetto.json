@@ -1,0 +1,34 @@
+{
+  "title": "colosseum 339",
+  "label": "ARCHITETTURA IN SCALA",
+  "description": "Un modello architettonico verticale scandito da archi, terrazze e vegetazione. Le immagini seguono i componenti separati, l’assemblaggio e il modello completo.",
+  "categories": [
+    "modellazione",
+    "prototipi"
+  ],
+  "tags": [
+    "Architettura",
+    "Modello in scala",
+    "Assemblaggio"
+  ],
+  "keywords": "colosseum 339 architettura torre modello plastico archi arcate facciata rosso terracotta vegetazione terrazze assemblaggio modellazione 3d miniature",
+  "order": 6,
+  "kind": "real",
+  "status": "Descrizione in aggiornamento",
+  "image": {
+    "src": "immagini/01-720.webp",
+    "alt": "Modello completo di colosseum 339 con arcate rosse, vegetazione e figure in scala",
+    "width": 540,
+    "height": 720,
+    "srcset": [
+      {
+        "src": "immagini/01-720.webp",
+        "width": 540
+      },
+      {
+        "src": "immagini/01.webp",
+        "width": 1200
+      }
+    ]
+  }
+}

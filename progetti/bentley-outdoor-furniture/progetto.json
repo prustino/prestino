@@ -1,0 +1,34 @@
+{
+  "title": "Bentley Outdoor Furniture",
+  "label": "MODELLI DI ARREDO",
+  "description": "Modelli di sedute e tavoli per esterni: una raccolta di forme, finiture e dettagli, dalle visualizzazioni digitali agli oggetti in scala.",
+  "categories": [
+    "stampa",
+    "prototipi"
+  ],
+  "tags": [
+    "Arredo",
+    "Modelli in scala",
+    "Stampa 3D"
+  ],
+  "keywords": "bentley outdoor furniture arredi arredamento esterni sedute poltrone tavoli tavolini mobili miniature modelli scala prototipi stampa 3d",
+  "order": 7,
+  "kind": "real",
+  "status": "Descrizione in aggiornamento",
+  "image": {
+    "src": "immagini/01-720.webp",
+    "alt": "Modello di poltrona con struttura color ottone, seduta bianca e intreccio laterale.",
+    "width": 720,
+    "height": 540,
+    "srcset": [
+      {
+        "src": "immagini/01-720.webp",
+        "width": 720
+      },
+      {
+        "src": "immagini/01.webp",
+        "width": 1600
+      }
+    ]
+  }
+}

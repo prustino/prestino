@@ -84,7 +84,8 @@
 
       if (url.href !== window.location.href) {
         try {
-          window.history.replaceState(window.history.state, '', url.href);
+          const currentPage = url.pathname.slice(url.pathname.lastIndexOf('/') + 1) || './';
+          window.history.replaceState(window.history.state, '', `${currentPage}${url.search}${url.hash}`);
         } catch {
           // Search still works when a local-file preview restricts history updates.
         }
@@ -102,13 +103,14 @@
         project.element.hidden = !visible;
         if (visible) visibleCount += 1;
         project.element.querySelectorAll('a[href]').forEach((link) => {
-          const url = new URL(link.getAttribute('href'), window.location.href);
+          const href = link.getAttribute('href');
+          const url = new URL(href, window.location.href);
           const rawQuery = projectSearch?.value.trim() || '';
           if (rawQuery) url.searchParams.set('q', rawQuery);
           else url.searchParams.delete('q');
           if (activeFilter !== 'all') url.searchParams.set('categoria', activeFilter);
           else url.searchParams.delete('categoria');
-          link.href = url.href;
+          link.setAttribute('href', `${href.split(/[?#]/)[0]}${url.search}${url.hash}`);
         });
       });
 
@@ -177,11 +179,12 @@
   const contextLinks = document.querySelectorAll('.project-breadcrumb a, .project-pagination a');
   contextLinks.forEach((link) => {
     const context = new URL(window.location.href).searchParams;
-    const url = new URL(link.getAttribute('href'), window.location.href);
+    const href = link.getAttribute('href');
+    const url = new URL(href, window.location.href);
     ['q', 'categoria'].forEach((key) => {
       if (context.has(key)) url.searchParams.set(key, context.get(key));
     });
-    link.href = url.href;
+    link.setAttribute('href', `${href.split(/[?#]/)[0]}${url.search}${url.hash}`);
   });
 
   const contactForm = document.querySelector('[data-contact-form]');

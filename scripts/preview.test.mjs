@@ -13,9 +13,10 @@ test('preview follows manual folder moves, reloads clients and serves only curre
   const root = await mkdtemp(join(tmpdir(), 'silve-preview-test-'));
   let preview;
   try {
-    for (const name of ['index.html', 'progetti.html', 'chi-sono.html', 'contatti.html', 'style.css', 'script.js', 'img', 'progetti', 'scripts/templates']) await cp(join(siteRoot, name), join(root, name), { recursive: true });
+    for (const name of ['index.html', 'progetti.html', 'chi-sono.html', 'contatti.html', 'style.css', 'script.js', 'img', 'progetti/progetti-dettaglio.css', 'scripts/templates']) await cp(join(siteRoot, name), join(root, name), { recursive: true });
     for (const slug of ['itaca-wasp', 'vaso-onda', 'supporto-modulare', 'guscio-nodo']) {
-      if (!await exists(join(root, 'progetti', slug))) await cp(join(siteRoot, 'progetti-nascosti', slug), join(root, 'progetti', slug), { recursive: true });
+      const state = await exists(join(siteRoot, 'progetti', slug)) ? 'progetti' : 'progetti-nascosti';
+      await cp(join(siteRoot, state, slug), join(root, 'progetti', slug), { recursive: true });
     }
     await mkdir(join(root, 'progetti-nascosti/bozza'), { recursive: true });
     let updates = 0;

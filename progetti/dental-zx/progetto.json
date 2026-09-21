@@ -1,0 +1,35 @@
+{
+  "title": "Dental ZX",
+  "label": "PROTOTIPAZIONE DI PRODOTTO",
+  "description": "Dai disegni tecnici al prototipo assemblato: una sequenza di immagini documenta meccanica, elettronica, prove di ingombro e realizzazione della scocca di Dental ZX.",
+  "categories": [
+    "modellazione",
+    "stampa",
+    "prototipi"
+  ],
+  "tags": [
+    "Prototipo",
+    "Stampa 3D",
+    "Sviluppo di prodotto"
+  ],
+  "keywords": "dental zx stampante 3d resina prototipo prodotto meccanica elettronica scocca involucro disegno cad assemblaggio",
+  "order": 9,
+  "kind": "real",
+  "status": "Descrizione in aggiornamento",
+  "image": {
+    "src": "immagini/01-720.webp",
+    "alt": "Dental ZX con scocca chiusa, sportello trasparente e pannello di controllo",
+    "width": 540,
+    "height": 720,
+    "srcset": [
+      {
+        "src": "immagini/01-720.webp",
+        "width": 540
+      },
+      {
+        "src": "immagini/01.webp",
+        "width": 1200
+      }
+    ]
+  }
+}

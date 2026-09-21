@@ -65,10 +65,10 @@
     error.hidden = true;
     image.hidden = false;
     image.alt = thumbnail.alt;
-    image.src = link.href;
+    image.setAttribute('src', link.getAttribute('href'));
     caption.textContent = description?.innerText.replace(/\s+/g, ' ').trim() || thumbnail.alt;
     count.textContent = `${position + 1} / ${group.length}`;
-    original.href = link.href;
+    original.setAttribute('href', link.getAttribute('href'));
     previous.disabled = next.disabled = group.length < 2;
   };
   const step = (direction) => {
