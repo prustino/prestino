@@ -1,0 +1,227 @@
+.itaca-hero {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.25fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+  padding-block: 40px 48px;
+}
+
+.itaca-hero h1 {
+  font-size: clamp(3.5rem, 6.6vw, 5.7rem);
+  line-height: 1.03;
+  font-weight: 650;
+  margin-top: 20px;
+}
+
+.itaca-hero .detail-lead {
+  margin-top: 24px;
+  max-width: 38ch;
+}
+
+.itaca-hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 24px; margin-top: 28px; }
+.itaca-role { margin-top: 16px; font-size: .9375rem; color: var(--muted); line-height: 1.7; }
+.itaca-page figure { margin: 0; min-width: 0; }
+.itaca-page figure img { width: 100%; height: auto; }
+.itaca-page a[data-gallery] { display: block; position: relative; cursor: zoom-in; }
+.itaca-page a[data-gallery]::after { content: '↗'; position: absolute; right: 12px; bottom: 12px; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--paper); color: var(--ink); box-shadow: 0 2px 8px #0002; font-size: 18px; pointer-events: none; }
+.itaca-page a[data-gallery]:hover::after { background: var(--purple); color: white; }
+.itaca-page .detail-index { position: sticky; top: var(--project-header-height, 88px); z-index: 15; background: var(--paper); border-bottom: 1px solid var(--line); gap: 6px 20px; padding-block: 8px; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: thin; }
+.itaca-page .detail-index > span { white-space: nowrap; color: var(--purple); font-weight: 600; margin-right: auto; }
+.itaca-page .detail-index a { white-space: nowrap; flex-shrink: 0; border-bottom: 2px solid transparent; }
+.itaca-page .detail-index a[aria-current="location"] { color: var(--purple); border-bottom-color: var(--purple); }
+
+.itaca-cover {
+  overflow: hidden;
+  border-radius: 14px;
+  background: #ebe6dc;
+  border: 1px solid var(--line);
+}
+
+.itaca-cover figcaption {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding: 15px 20px;
+  color: var(--muted);
+  font-size: .75rem;
+}
+
+.itaca-cover figcaption > span:first-child { letter-spacing: .05em; }
+
+.itaca-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  border-top: 1px solid var(--line);
+  padding-block: 25px;
+  margin-block: 0;
+}
+
+.itaca-facts dt { font-size: .75rem; color: var(--muted); }
+.itaca-facts dd { margin: 6px 0 0; font-size: .9375rem; font-weight: 600; }
+
+.itaca-intro {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.25fr);
+  gap: clamp(28px, 5vw, 64px);
+  padding-block: 64px;
+}
+
+.itaca-page h2 {
+  font-size: clamp(1.9rem, 3vw, 2.65rem);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 15px;
+}
+
+.itaca-prose > p,
+.itaca-steps p,
+.itaca-material-copy > p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--muted);
+}
+
+.itaca-prose > p + p { margin-top: 18px; }
+.itaca-context { padding: 24px; border-left: 2px solid var(--purple); background: var(--lavender); margin-top: 32px; }
+.itaca-context h3 { font-size: 1.1rem; font-weight: 600; }
+.itaca-context p { font-size: .9375rem; color: var(--muted); line-height: 1.8; margin-top: 10px; }
+.itaca-context a { margin-top: 12px; }
+
+.itaca-systems { padding-block: 48px 64px; border-top: 1px solid var(--line); }
+.itaca-system-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.itaca-system { display: flex; flex-direction: column; gap: 24px; padding: 20px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+.itaca-system a { display: block; border-radius: 6px; }
+.itaca-system figcaption { width: 100%; }
+.itaca-system h3 { margin-block: 14px 12px; font-size: 1.25rem; font-weight: 600; }
+.itaca-system p { font-size: .9375rem; line-height: 1.8; color: var(--muted); }
+.itaca-diagram-credit { display: block; margin-top: 20px; font-size: .75rem; color: var(--muted); }
+
+.itaca-process { border-top: 1px solid var(--line); padding-block: 48px 64px; }
+.itaca-section-heading { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 30px; }
+.itaca-section-heading > p { max-width: 34ch; font-size: 1rem; color: var(--muted); line-height: 1.8; }
+
+.itaca-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 36px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.itaca-steps li { border-top: 1px solid var(--line); padding-top: 18px; }
+.itaca-step-number { font: .875rem/1.5 monospace; color: var(--purple); }
+.itaca-steps h3 { font-size: 1.25rem; font-weight: 600; margin-block: 14px 12px; }
+.itaca-digital-sequence { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.itaca-digital-sequence img { border: 1px solid var(--line); border-radius: 8px; background: white; }
+.itaca-digital-sequence figcaption { font-size: .8125rem; color: var(--muted); margin-top: 12px; }
+.itaca-workshop, .itaca-videos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.itaca-workshop { margin-top: 36px; }
+.itaca-workshop a { display: block; border-radius: 8px; }
+.itaca-workshop img { aspect-ratio: 4 / 5; object-fit: contain; background: #eae7e0; border-radius: 8px; }
+.itaca-workshop figcaption, .itaca-videos figcaption { font-size: .875rem; line-height: 1.7; color: var(--muted); margin-top: 14px; }
+.itaca-workshop figcaption h3, .itaca-gallery-wide figcaption h3 { font-size: 1rem; line-height: 1.5; font-weight: 600; color: var(--ink); margin: 0 0 8px; }
+.itaca-workshop figcaption p, .itaca-gallery-wide figcaption p { margin: 0; }
+.itaca-video-section { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--line); }
+.itaca-video-section > h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 24px; }
+.itaca-videos video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; max-height: 490px; object-fit: contain; background: #1e211d; border-radius: 10px; }
+.itaca-videos figcaption .text-link { display: flex; width: fit-content; margin-top: 10px; font-size: .8125rem; }
+.itaca-videos figcaption > span { display: block; font-size: .75rem; letter-spacing: .06em; color: var(--ink); margin-bottom: 7px; }
+
+.itaca-material-section { background: var(--ink); color: var(--paper); }
+.itaca-material-inner { padding-block: 58px; display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.25fr); gap: 54px; align-items: center; }
+.itaca-material-copy .eyebrow { color: #d8b39b; }
+.itaca-material-copy h2 { font-size: clamp(1.8rem, 2.8vw, 2.4rem); }
+.itaca-material-copy h2 em { font-family: Georgia, serif; font-weight: 400; color: #e4b695; }
+.itaca-material-copy > p { color: #dbd9d0; margin-top: 20px; }
+.itaca-material-notes { display: grid; gap: 18px; padding-top: 22px; margin: 26px 0 0; border-top: 1px solid #626259; }
+.itaca-material-notes dt { color: #c5c5ba; font-size: .8125rem; }
+.itaca-material-notes dd { font-size: .9375rem; margin: 5px 0 0; }
+.itaca-wall-images { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.itaca-wall-images img { border-radius: 8px; }
+.itaca-wall-images figcaption { color: #d7d6cc; font-size: .8125rem; margin-top: 12px; line-height: 1.6; }
+
+.itaca-gallery { padding-block: 64px 46px; }
+.itaca-gallery a { display: block; border-radius: 12px; }
+.itaca-gallery img { border-radius: 12px; }
+.itaca-gallery figcaption { font-size: .875rem; color: var(--muted); line-height: 1.6; margin-top: 14px; }
+.itaca-gallery-wide figcaption { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px 32px; }
+.itaca-gallery-wide figcaption > div { flex: 1 1 320px; max-width: 70ch; }
+.itaca-gallery-wide figcaption > span:last-child { font-size: .75rem; text-transform: uppercase; letter-spacing: .07em; }
+.itaca-gallery-details { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 36px; }
+.itaca-credits { display: flex; align-items: center; justify-content: space-between; gap: 24px; border-block: 1px solid var(--line); padding-block: 25px; }
+.itaca-credits p { font-size: .875rem; line-height: 1.9; color: var(--muted); }
+.itaca-credits strong { color: var(--ink); font-weight: 600; }
+
+.image-viewer-open { overflow: hidden; }
+.image-viewer { width: min(1120px, calc(100% - 32px)); max-width: none; height: min(900px, calc(100dvh - 32px)); max-height: none; margin: auto; padding: 0; background: #22261f; color: #f6f4ef; border: 1px solid #ffffff30; border-radius: 14px; box-shadow: 0 20px 80px #0006; }
+.image-viewer[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
+.image-viewer::backdrop { background: #11150fea; }
+.image-viewer-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 20px; }
+.itaca-page .image-viewer-toolbar h2 { margin: 0; font-size: 1rem; letter-spacing: 0; }
+.image-viewer button { min-width: 44px; min-height: 44px; border: 1px solid #ffffff40; border-radius: 6px; color: inherit; background: transparent; }
+.image-viewer button:hover { background: #ffffff20; }
+.image-viewer-toolbar button { display: flex; align-items: center; gap: 14px; padding-inline: 14px; }
+.image-viewer-toolbar button span { font-size: 24px; }
+.image-viewer-stage { min-height: 0; padding: 0 20px; display: grid; place-items: center; }
+.image-viewer-stage img { width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+.image-viewer-stage p { text-align: center; max-width: 45ch; }
+.image-viewer-footer { padding: 16px 20px 20px; }
+.image-viewer-footer > p { font-size: .875rem; line-height: 1.6; max-width: 90ch; }
+.image-viewer-controls { display: flex; align-items: center; gap: 16px; margin-top: 14px; font-size: .875rem; }
+.image-viewer-controls > span { min-width: 5ch; text-align: center; font-variant-numeric: tabular-nums; }
+.image-viewer-controls a { margin-left: auto; min-height: 44px; display: inline-flex; align-items: center; gap: 8px; text-decoration: underline; text-underline-offset: 4px; }
+.image-viewer :focus-visible { outline-color: #e4b695; }
+
+@media (max-width: 900px) {
+  .itaca-hero, .itaca-intro { gap: 28px; }
+  .itaca-hero h1 { font-size: 3.6rem; }
+  .itaca-material-inner { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .itaca-material-copy > p { max-width: 65ch; }
+  .itaca-material-notes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .itaca-wall-images { max-width: 680px; }
+  .itaca-steps { gap: 22px; }
+  .itaca-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .itaca-system-list { grid-template-columns: minmax(0, 1fr); }
+  .itaca-system { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: center; }
+}
+
+@media (max-width: 650px) {
+  .itaca-hero, .itaca-intro { grid-template-columns: minmax(0, 1fr); }
+  .itaca-hero { padding-block: 26px 32px; gap: 20px; }
+  .itaca-hero-copy { display: contents; }
+  .itaca-hero-heading { order: 0; }
+  .itaca-cover { order: 1; margin-block: 4px 8px; }
+  .itaca-hero .detail-lead { order: 2; margin: 0; }
+  .itaca-role { order: 3; margin: 0; }
+  .itaca-hero .tags { order: 4; margin: 0; }
+  .itaca-hero-actions { order: 5; margin: 0; }
+  .itaca-page .detail-index { top: var(--project-header-height, 77px); gap: 20px; }
+  .itaca-page .detail-index > span { display: none; }
+  .itaca-hero h1 { font-size: clamp(3.4rem, 13vw, 4.4rem); }
+  .itaca-cover figcaption { padding: 12px 16px; }
+  .itaca-facts { gap: 20px 16px; }
+  .itaca-facts dd { font-size: .875rem; }
+  .itaca-intro { padding-block: 40px; }
+  .itaca-context { padding: 20px; }
+  .itaca-section-heading, .itaca-credits { flex-direction: column; align-items: start; gap: 18px; }
+  .itaca-section-heading > p { max-width: 100%; }
+  .itaca-process, .itaca-gallery, .itaca-systems { padding-block: 40px; }
+  .itaca-system { grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 18px; }
+  .itaca-workshop, .itaca-videos { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .itaca-workshop figure, .itaca-videos figure { max-width: 420px; margin-inline: auto; width: 100%; }
+  .itaca-video-section { margin-top: 32px; }
+  .itaca-steps, .itaca-digital-sequence { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .itaca-material-inner { padding-block: 40px; }
+  .itaca-wall-images { gap: 28px; grid-template-columns: minmax(0, 1fr); max-width: 420px; margin-inline: auto; }
+  .itaca-gallery-details { grid-template-columns: minmax(0, 1fr); gap: 28px; margin-top: 28px; }
+  .itaca-gallery-details figure { max-width: 420px; margin-inline: auto; width: 100%; }
+  .itaca-material-notes { grid-template-columns: minmax(0, 1fr); }
+  .image-viewer { width: calc(100% - 16px); height: calc(100dvh - 16px); border-radius: 10px; }
+  .image-viewer-toolbar, .image-viewer-footer { padding: 12px; }
+  .image-viewer-stage { padding-inline: 8px; }
+  .image-viewer-controls { gap: 8px; flex-wrap: wrap; }
+  .image-viewer-footer > p { max-height: 7.5rem; overflow-y: auto; }
+}

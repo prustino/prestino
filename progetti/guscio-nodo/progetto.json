@@ -1,0 +1,23 @@
+{
+  "title": "Guscio Nodo",
+  "order": 4,
+  "kind": "concept",
+  "label": "DETTAGLIO & FUNZIONE",
+  "description": "Volumi, aperture e parti da assemblare: uno studio su un piccolo involucro.",
+  "categories": [
+    "modellazione",
+    "prototipi"
+  ],
+  "keywords": "guscio nodo involucro contenitore coperchio assemblaggio raccordi cad prototipo prototipi tecnico",
+  "tags": [
+    "CAD",
+    "Prototipazione"
+  ],
+  "status": "Concept dimostrativo",
+  "image": {
+    "src": "anteprima.svg",
+    "alt": "Vista esplosa di un involucro con coperchio separato",
+    "width": 900,
+    "height": 650
+  }
+}

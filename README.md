@@ -1,38 +1,65 @@
 # Silve — Progettazione e stampa 3D
 
-Portfolio statico in italiano dedicato a Silve, alla modellazione, alla prototipazione e alla stampa 3D. Non richiede compilazione o dipendenze da installare.
+Portfolio statico in italiano dedicato a Silve, alla modellazione, alla prototipazione e alla stampa 3D. Non richiede dipendenze da installare. Node.js genera la raccolta dei progetti e la copia pubblica del sito.
 
 ## Anteprima locale
 
 ```sh
-python3 -m http.server 4173 --bind 127.0.0.1
+node scripts/serve-site.mjs
 ```
 
-Aprire [http://127.0.0.1:4173](http://127.0.0.1:4173).
+Oppure apri con doppio clic **Anteprima sito.command** e lascia aperta la sua finestra. Apri [http://127.0.0.1:4173](http://127.0.0.1:4173).
+
+Con questa anteprima, spostare le cartelle nel Finder aggiorna automaticamente il sito e la pagina aperta, normalmente entro 1–2 secondi. Si aggiornano anche testi, immagini e metadati modificati. Ricerca e filtro restano nell’URL. Se nascondi il progetto attualmente aperto, il browser torna alla raccolta. Non avviare il vecchio server `python3 -m http.server`: serve soltanto file statici e non rileva gli spostamenti.
+
+## Gestire progetti attivi e nascosti
+
+Apri con doppio clic **Gestisci progetti.command**: scegli **1** per nascondere un progetto, **2** per riattivarlo o **3** per aggiornare manualmente quando l’anteprima dinamica è spenta. I progetti attivi sono in `progetti/`, quelli nascosti in `progetti-nascosti/`. Sposta sempre la cartella completa. Con l’anteprima dinamica accesa il browser si aggiorna da solo.
+
+La raccolta, la ricerca, i contatori e i collegamenti mostrano solo i progetti attivi. Se nascondi ITACA, anche foto e riferimenti dedicati in “Chi sono” scompaiono; riattivandolo tornano. La copia `dist/` non contiene cartelle nascoste, metadati o strumenti di gestione. Per aggiornare una versione online occorre ripubblicare `dist/`.
+
+Comandi equivalenti da terminale:
+
+```sh
+node scripts/progetti.mjs elenco
+node scripts/progetti.mjs nascondi vaso-onda
+node scripts/progetti.mjs attiva vaso-onda
+node scripts/progetti.mjs aggiorna
+```
 
 ## Struttura
 
-- `index.html`: presentazione, concept e percorso dall’idea all’oggetto.
+- `scripts/templates/`: sorgenti della raccolta, di “Chi sono” e del reindirizzamento iniziale, con blocchi condizionati dalla presenza dei progetti. Modifica qui queste pagine: le copie HTML nella cartella principale e in `dist/` vengono rigenerate.
+- `index.html`: reindirizzamento alla pagina Progetti. Il sito ha tre sezioni: Progetti, Chi sono e Contatti.
 - `progetti.html`: ricerca per parole chiave e filtri per modellazione, stampa 3D e prototipi.
-- `chi-sono.html`: interessi e approccio di Silve, senza qualifiche o esperienze non fornite.
+- `chi-sono.html`: interessi, approccio ed esperienza documentata di Silve sul plastico ITACA presso WASP nel 2022.
 - `contatti.html`: telefono, WhatsApp e modulo dimostrativi.
-- `progetti/`: tutti i concept, ciascuno nella propria cartella (`vaso-onda`, `supporto-modulare`, `guscio-nodo`) con pagina `index.html` e immagine `anteprima.svg`. Vedi `progetti/README.md` per aggiungere nuovi lavori.
+- `progetti/`: un progetto reale (`itaca-wasp`) e tre concept dimostrativi (`vaso-onda`, `supporto-modulare`, `guscio-nodo`), ciascuno nella propria cartella. Vedi `progetti/README.md` per aggiungere nuovi lavori.
+- `progetti-nascosti/`: archivio locale escluso dalla copia pubblica; ammette anche bozze incomplete.
+- `progetti/*/progetto.json`: informazioni per generare ogni scheda nella raccolta.
+- `scripts/serve-site.mjs` e `scripts/preview-client.js`: anteprima locale con aggiornamento automatico delle cartelle e del browser, supporto ai video ed esclusione dei file nascosti.
+- `scripts/projects.mjs` e `scripts/progetti.mjs`: generazione, convalida e spostamento dei progetti con ripristino in caso di errore.
 - `style.css` e `progetti/progetti-dettaglio.css`: stili responsive, palette panna e terracotta.
 - `script.js`: menu mobile, ricerca, conteggi, filtri e preparazione dei messaggi email.
-- `scripts/prepare-site.mjs`: prepara in `dist/` una copia delle sole pagine e risorse pubbliche, per l’hosting; le modifiche si fanno nelle cartelle originali.
-- `img/hero-forma.svg`: illustrazione della homepage. Le anteprime dei singoli concept sono nelle rispettive cartelle sotto `progetti/`.
+- `progetti/itaca-wasp/itaca.js`: indice delle sezioni e galleria per ingrandire foto, modelli digitali e schemi con navigazione da tastiera.
+- `scripts/prepare-site.mjs`: rigenera le pagine in base alle cartelle attive e prepara in `dist/` solo pagine e risorse pubbliche. Usa questa cartella per il server locale e l’hosting.
+- `progetti/itaca-wasp/immagini/`: selezione ottimizzata delle foto, delle viste digitali e dei tre schemi di autosufficienza forniti dall’utente. I video delle lavorazioni sono in `progetti/itaca-wasp/video/`, con controlli nativi e caricamento su richiesta. `README.md` nella cartella ITACA documenta le fonti e la corrispondenza con gli originali.
 
-Ogni progetto si trova nella propria cartella sotto `progetti/`. Le pagine duplicate, i documenti del precedente portfolio e le immagini non utilizzate sono stati rimossi.
+Ogni progetto si conserva nella propria cartella completa, in `progetti/` o in `progetti-nascosti/`. Non modificare i file in `dist/`, perché vengono rigenerati.
 
 ## Ricerca
 
-La ricerca legge titolo, descrizione, tag e `data-keywords` delle schede di `progetti.html`. Ignora maiuscole e accenti e cerca tutte le parole inserite. I conteggi dei filtri si aggiornano con la ricerca. Il pulsante “Azzera ricerca e filtri” ripristina la raccolta. I parametri URL `q` e `categoria` conservano il contesto anche usando “Tutti i progetti” dalla pagina di un concept.
+La ricerca legge titolo, descrizione, tag e parole chiave delle schede generate dai file `progetto.json` dei soli progetti attivi. Ignora maiuscole e accenti e cerca tutte le parole inserite. I conteggi dei filtri si aggiornano con la ricerca. Il pulsante “Azzera ricerca e filtri” ripristina la raccolta. I parametri URL `q` e `categoria` conservano il contesto anche usando “Tutti i progetti” dalla pagina di un concept.
 
 ## Contenuti da personalizzare
 
-- **Progetti reali:** le tre schede attuali e le immagini sono concept dimostrativi, non lavori attribuiti a Silve. Sostituire immagini, testi, tag e parole chiave con i suoi lavori. Non sono presenti modelli STL, quote validate o risultati di stampa.
+- **Progetti:** ITACA WASP documenta il plastico realizzato da Silve durante il tirocinio in azienda. L’architettura è attribuita a WASP. Vaso Onda, Supporto Modulare e Guscio Nodo restano esempi dimostrativi, segnalati nelle schede. ITACA è stato realizzato a Imola nel 2022. Non sono stati forniti rapporto di scala o modelli scaricabili.
 - **Biografia:** aggiungere una descrizione personale, competenze e strumenti realmente utilizzati quando saranno forniti.
 - **Telefono e WhatsApp:** le schede mostrano `+39 000 000 0000` e sono informative. Con il numero reale, convertirle in link `tel:` e `https://wa.me/` e rimuovere lo stato “Esempio” e il relativo avviso.
 - **Email:** `esempio@email.com` è un segnaposto. Per attivare il modulo, impostare un indirizzo reale in `data-email` e aggiornare il recapito visibile e il testo per chi non usa JavaScript. Il codice abilita i campi, aggiorna il pulsante e prepara una bozza nel programma email dell’utente; non c’è un servizio di invio sul server. Senza JavaScript il modulo resta disabilitato.
 
 I caratteri vengono caricati da Google Fonts, con alternativa di sistema. Il sito rispetta la preferenza di riduzione del movimento. Senza JavaScript, navigazione e progetti restano visibili.
+
+## Controlli
+
+`node --test scripts/projects.test.mjs scripts/preview.test.mjs` verifica spostamenti, ripristino, aggiornamento automatico, esclusione dei nascosti, aggiornamenti concorrenti e intervalli dei video su copie temporanee.

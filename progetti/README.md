@@ -1,34 +1,43 @@
-# Progetti di Silve
+# Progetti attivi di Silve
 
-Questa cartella raccoglie le pagine e i file dei singoli progetti.
+Ogni sottocartella è un progetto visibile nel sito. I progetti nascosti sono nella cartella parallela `../progetti-nascosti/`.
 
 ```text
-progetti/
-├── progetti-dettaglio.css
-├── vaso-onda/
-│   ├── index.html
-│   └── anteprima.svg
-├── supporto-modulare/
-│   ├── index.html
-│   └── anteprima.svg
-└── guscio-nodo/
-    ├── index.html
-    └── anteprima.svg
+progetti/                      ← progetti attivi
+├── progetti-dettaglio.css      ← stile condiviso, resta qui
+└── nome-progetto/
+    ├── index.html             ← pagina dedicata
+    ├── progetto.json          ← scheda, ordine, ricerca e anteprima
+    ├── immagini/              ← foto e immagini, se necessarie
+    └── video/                 ← video, se necessari
+progetti-nascosti/              ← cartelle complete dei lavori nascosti
 ```
 
-## Dove mettere i file
+## Nascondere o riattivare
 
-Dentro la cartella del progetto puoi aggiungere immagini e, quando servono, una sottocartella `materiali/` per modelli STL, 3MF e STEP o schede PDF. Collega i file dalla pagina del progetto con percorsi relativi, per esempio `materiali/modello.stl` o `immagini/dettaglio.jpg`.
+Apri **Gestisci progetti.command** nella cartella principale e scegli l’operazione e il numero del progetto. Lo spostamento e l’aggiornamento del sito avvengono insieme. Nessun progetto viene cancellato.
 
-I concept attuali contengono un’illustrazione; modelli 3D e schede non sono ancora disponibili. Aggiorna testi e stato della pagina quando aggiungi materiali reali.
+Puoi anche trascinare l’intera cartella tra `progetti/` e `progetti-nascosti/` nel Finder; con **Anteprima sito.command** aperto, sito e browser si aggiornano automaticamente. Se l’anteprima è spenta, scegli **3 — Aggiorna** nel comando di gestione. Sposta la cartella, senza duplicarla o rinominarla. Se lo stesso nome è presente in entrambe le cartelle, l’aggiornamento si ferma per evitare ambiguità.
+
+L’anteprima dinamica ricarica la pagina conservando ricerca e filtri. Per una versione già online occorre pubblicare nuovamente `dist/`.
 
 ## Aggiungere un progetto
 
-1. Duplica la struttura di uno dei progetti in una nuova cartella, con un nome breve senza spazi, per esempio `portaoggetti/`.
-2. Personalizza `index.html` e sostituisci l’anteprima. Aggiorna titolo, descrizione, immagini, stato del progetto e collegamenti agli altri progetti.
-3. Aggiungi una scheda nella raccolta `progetti.html`, nella cartella principale del sito, con il link `progetti/portaoggetti/`. Imposta anche categorie e parole chiave per filtri e ricerca.
-4. Se desideri mostrarlo anche in homepage, aggiungi la relativa scheda nell’`index.html` principale.
+1. Prepara una cartella con nome breve, in minuscolo e senza spazi (esempio `portaoggetti/`), inizialmente in `progetti-nascosti/`.
+2. Aggiungi la pagina `index.html` e tutti i suoi file. Puoi partire dalla struttura di un progetto esistente.
+3. Copia e personalizza `progetto.json`: titolo, descrizione, `order` (ordine crescente), `kind` (`real` o `concept`), etichetta, stato, tag, parole chiave e anteprima. Le categorie ammesse sono `modellazione`, `stampa`, `prototipi`; se ne possono indicare più di una.
+4. I percorsi `image.src` e gli eventuali `image.srcset` sono relativi alla cartella del progetto. Aggiorna anche testo alternativo, larghezza e altezza.
+5. Attiva il progetto dal comando di gestione. La scheda nella raccolta viene generata automaticamente, senza modificare `progetti.html`.
 
-Dalle pagine dei singoli progetti, le risorse comuni si raggiungono con `../../`: per esempio `../../style.css`, `../../script.js` e `../../contatti.html`. Il CSS dedicato ai progetti si trova invece in `../progetti-dettaglio.css`.
+I nuovi progetti entrano nella raccolta, che è anche la pagina iniziale del sito. Il menu contiene Progetti, Chi sono e Contatti.
 
-**Aggiungere file o cartelle non li rende automaticamente visibili nella raccolta progetti:** occorre aggiornare le pagine HTML e i relativi collegamenti.
+## Modificare le pagine
+
+- Modifica la pagina dedicata direttamente in `progetti/nome-progetto/index.html` (o nella sua posizione nascosta).
+- Modifica i dati della scheda in `progetto.json`.
+- Lascia `<!-- PROJECT-NAVIGATION -->` nel punto in cui vuoi i link agli altri progetti: il sito genera collegamenti ai soli lavori attivi, senza collegare un progetto a se stesso.
+- Le risorse generali usano `../../style.css`, `../../script.js` e `../../contatti.html`. Il foglio di stile condiviso usa `../../progetti/progetti-dettaglio.css`: il percorso resta valido anche spostando la cartella.
+- Foto, video e modelli usano percorsi interni al progetto, per esempio `immagini/dettaglio.webp` o `materiali/modello.stl`.
+- L’anteprima dinamica rileva le modifiche. Se è spenta, scegli **3 — Aggiorna** o esegui `node scripts/prepare-site.mjs`.
+
+ITACA WASP documenta il plastico realizzato a Imola nel 2022; le sue fonti sono nel README dedicato. Gli altri tre lavori sono concept dimostrativi.

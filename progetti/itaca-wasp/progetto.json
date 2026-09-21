@@ -1,0 +1,35 @@
+{
+  "title": "ITACA · WASP",
+  "order": 1,
+  "kind": "real",
+  "label": "ARCHITETTURA IN SCALA",
+  "description": "Il plastico di ITACA realizzato in WASP a Imola, nel 2022. Modellazione 3D, stampa FDM e DLP, taglio laser e fresatura CNC, fino all’assemblaggio.",
+  "categories": [
+    "modellazione",
+    "stampa",
+    "prototipi"
+  ],
+  "keywords": "itaca wasp architettura casa autosufficiente sostenibilita sostenibilità plastico modellismo modello scala tirocinio fdm dlp resina pellet cellulosa crane stampa3d stampa 3d render assemblaggio verniciatura prototipo imola 2022 pla resine fotopolimeriche plexiglass mdf compensato laser incisione taglio cnc fresatura additive manufacturing edilizia sostenibile acqua geotermico fotovoltaico",
+  "tags": [
+    "Modellazione 3D",
+    "Stampa 3D",
+    "Plastico"
+  ],
+  "status": "Progetto realizzato · WASP, 2022",
+  "image": {
+    "src": "immagini/anteprima.webp",
+    "alt": "Il plastico architettonico ITACA realizzato durante il tirocinio presso WASP",
+    "width": 1600,
+    "height": 1200,
+    "srcset": [
+      {
+        "src": "immagini/anteprima.webp",
+        "width": 720
+      },
+      {
+        "src": "immagini/plastico-completo.webp",
+        "width": 1600
+      }
+    ]
+  }
+}

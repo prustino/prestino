@@ -1,0 +1,25 @@
+{
+  "title": "Supporto Modulare",
+  "order": 3,
+  "kind": "concept",
+  "label": "OGGETTI QUOTIDIANI",
+  "description": "Un concept da scrivania che esplora appoggio, incastri e semplicità d’uso.",
+  "categories": [
+    "modellazione",
+    "stampa",
+    "prototipi"
+  ],
+  "keywords": "supporto telefono smartphone scrivania modulare incastro cad funzionale stampa3d prototipo prototipi",
+  "tags": [
+    "CAD",
+    "Prototipazione",
+    "Stampa 3D"
+  ],
+  "status": "Concept dimostrativo",
+  "image": {
+    "src": "anteprima.svg",
+    "alt": "Illustrazione tridimensionale di un supporto modulare per telefono",
+    "width": 900,
+    "height": 650
+  }
+}

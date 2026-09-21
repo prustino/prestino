@@ -1,0 +1,23 @@
+{
+  "title": "Vaso Onda",
+  "order": 2,
+  "kind": "concept",
+  "label": "FORMA & ARREDO",
+  "description": "Una superficie ritmata da scanalature, tra geometria e oggetto d’arredo.",
+  "categories": [
+    "modellazione",
+    "stampa"
+  ],
+  "keywords": "vaso onda arredo design organico decorazione casa scanalature modellazione stampa3d stampa 3d",
+  "tags": [
+    "Modellazione 3D",
+    "Stampa 3D"
+  ],
+  "status": "Concept dimostrativo",
+  "image": {
+    "src": "anteprima.svg",
+    "alt": "Illustrazione tridimensionale di un vaso scanalato color terracotta",
+    "width": 900,
+    "height": 650
+  }
+}
