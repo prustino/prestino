@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contatta Silve per condividere un’idea di progettazione, modellazione o stampa 3D. Telefono e WhatsApp dimostrativi.">
+    <meta name="description" content="Contatta Silve per condividere un’idea di progettazione, modellazione o stampa 3D via telefono, WhatsApp o email.">
     <meta name="theme-color" content="#f6f4ef">
     <title>Contatti — Silve</title>
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&amp;family=Manrope:wght@400;500;600;650;700;750;800&amp;display=swap">
-    <link rel="stylesheet" href="style.css?v=20260921-projects">
-    <script src="script.js?v=20260921-relative" defer></script>
+    <link rel="stylesheet" href="style.css?v=20260922-contacts">
+    <script src="script.js?v=20260922-contacts" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
@@ -42,20 +42,19 @@
           <h2>Facciamo due parole<span>.</span></h2>
           <p>Raccontami la tua idea o lascia un messaggio.</p>
           <div class="contact-methods" aria-label="Telefono e WhatsApp">
-            <div class="contact-method" aria-describedby="contact-demo-note">
+            <a class="contact-method" href="tel:+393348375092" aria-label="Chiama Silve al +39 334 837 5092">
               <span class="contact-method-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-4l-5-2-2 2a15 15 0 0 1-6-6l2-2-2-5Z"/></svg></span>
-              <span class="contact-method-body"><span class="eyebrow">TELEFONO</span><strong>+39 334 837 5092</strong><span>Recapito da aggiungere</span></span>
-              <span class="contact-method-state">Esempio</span>
-            </div>
-            <div class="contact-method contact-method-whatsapp" aria-describedby="contact-demo-note">
+              <span class="contact-method-body"><span class="eyebrow">TELEFONO</span><strong>+39 334 837 5092</strong><span>Chiama ora</span></span>
+              <span class="contact-method-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="contact-method contact-method-whatsapp" href="https://wa.me/393348375092" target="_blank" rel="noopener noreferrer" aria-label="Scrivi a Silve su WhatsApp">
               <span class="contact-method-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.7 7.4L3 20l1.2-4.6A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="m8.3 7 1.4 2.6-1 1.1a9 9 0 0 0 3.6 3.6l1.1-1 2.6 1.4c-.4 1.8-1.8 2.1-3.5 1.4a11 11 0 0 1-5.8-5.8C6 8.6 6.5 7.3 8.3 7Z" stroke-width="1.3"/></svg></span>
               <span class="contact-method-body"><span class="eyebrow">WHATSAPP</span><strong>WhatsApp</strong><span>+39 334 837 5092</span></span>
-              <span class="contact-method-state">Esempio</span>
-            </div>
-            <p id="contact-demo-note" class="contact-demo-note">Telefono e WhatsApp saranno attivi quando verrà aggiunto il numero reale di Silve.</p>
+              <span class="contact-method-arrow" aria-hidden="true">↗</span>
+            </a>
           </div>
           <div class="email-info">
-            <span class="eyebrow">RECAPITO EMAIL</span><span class="email-placeholder">silve.alec@gmail.com</span>
+            <span class="eyebrow">RECAPITO EMAIL</span><a class="email-placeholder" href="mailto:silve.alec@gmail.com">silve.alec@gmail.com</a>
             <p>consulenza gratuita</p>
           </div>
           <div class="contact-topics"><span class="eyebrow">DI COSA POSSIAMO PARLARE</span>
@@ -64,10 +63,10 @@
             </div>
           </div>
         </div>
-        <form class="contact-form" data-contact-form data-email="esempio@email.com"
+        <form class="contact-form" data-contact-form data-email="silve.alec@gmail.com"
           action="contatti.html" method="get">
           <h2 id="message-title">Il tuo messaggio</h2>
-          <div class="form-notice" data-contact-notice id="contact-form-note"><span aria-hidden="true">ⓘ</span><p><strong>Modulo in anteprima.</strong> Sarà possibile scrivere a Silve quando sarà disponibile il suo indirizzo email.</p></div>
+          <div class="form-notice" data-contact-notice id="contact-form-note" hidden><span aria-hidden="true">ⓘ</span><p><strong>Indirizzo email non configurato.</strong> Usa il recapito indicato in questa pagina.</p></div>
           <fieldset data-contact-fields disabled aria-labelledby="message-title" aria-describedby="contact-form-note">
           <p class="form-intro">Tutti i campi sono obbligatori.</p>
           <div class="form-row">
@@ -75,21 +74,21 @@
                 name="nome" autocomplete="name" placeholder="Il tuo nome" maxlength="100" required>
             </div>
             <div class="form-field"><label for="email">La tua email</label><input type="email"
-                id="email" name="email" autocomplete="email" placeholder="nome@esempio.it"
+                id="email" name="email" autocomplete="email" placeholder="nome@dominio.it"
                 maxlength="254" required></div>
           </div>
           <div class="form-field"><label for="messaggio">Cosa vorresti realizzare?</label><textarea
               id="messaggio" name="messaggio" rows="6" placeholder="Raccontami l’oggetto o il progetto che hai in mente…"
               maxlength="5000" required></textarea></div>
 <button type="submit" class="button button-primary" disabled
-            aria-describedby="form-status">Invio non ancora disponibile <svg viewBox="0 0 24 24"
+            aria-describedby="form-status">Apri nel programma email <svg viewBox="0 0 24 24"
               fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
               <path d="M5 12h14m-6-6 6 6-6 6" />
             </svg></button>
           </fieldset>
           <p id="form-status" class="form-status" data-form-status role="status" aria-live="polite">
-            Il modulo non raccoglie e non invia messaggi in questa anteprima.</p><noscript>
-            <p>Il modulo non è ancora disponibile. I recapiti indicati sono dimostrativi.</p>
+            Il messaggio si aprirà nel tuo programma email, dove potrai inviarlo.</p><noscript>
+            <p>Per scrivere a Silve senza JavaScript, usa l’indirizzo email indicato in questa pagina.</p>
           </noscript>
         </form>
       </section>

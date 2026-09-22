@@ -33,7 +33,7 @@ node scripts/progetti.mjs aggiorna
 - `index.html`: reindirizzamento alla pagina Chi sono. Il sito ha tre sezioni: Progetti, Chi sono e Contatti.
 - `progetti.html`: ricerca per parole chiave e filtri per modellazione, stampa 3D e prototipi.
 - `chi-sono.html`: interessi, approccio ed esperienza documentata di Silve sul plastico ITACA presso WASP nel 2022.
-- `contatti.html`: telefono, WhatsApp e modulo dimostrativi.
+- `contatti.html`: telefono, WhatsApp, email e modulo che prepara il messaggio nel programma email dell’utente.
 - `progetti/`: dieci progetti, ciascuno nella propria cartella: ITACA WASP e nove lavori importati da `PORTFOLIO 2026`. Vedi `progetti/README.md` per l’elenco e per aggiungere nuovi lavori.
 - `progetti-nascosti/`: archivio locale escluso dalla copia pubblica; contiene i tre concept dimostrativi `vaso-onda`, `supporto-modulare` e `guscio-nodo` e ammette anche bozze incomplete.
 - `progetti/*/progetto.json`: informazioni per generare ogni scheda nella raccolta.
@@ -61,8 +61,7 @@ La ricerca legge titolo, descrizione, tag e parole chiave delle schede generate 
 - **ITACA WASP:** resta invariato e documenta il plastico realizzato da Silve durante il tirocinio in azienda a Imola nel 2022. L’architettura è attribuita a WASP. Non sono stati forniti rapporto di scala o modelli scaricabili.
 - **Esempi dimostrativi:** Vaso Onda, Supporto Modulare e Guscio Nodo sono conservati in `progetti-nascosti/` e possono essere riattivati con gli strumenti di gestione.
 - **Biografia:** aggiungere una descrizione personale, competenze e strumenti realmente utilizzati quando saranno forniti.
-- **Telefono e WhatsApp:** le schede mostrano `+39 000 000 0000` e sono informative. Con il numero reale, convertirle in link `tel:` e `https://wa.me/` e rimuovere lo stato “Esempio” e il relativo avviso.
-- **Email:** `esempio@email.com` è un segnaposto. Per attivare il modulo, impostare un indirizzo reale in `data-email` e aggiornare il recapito visibile e il testo per chi non usa JavaScript. Il codice abilita i campi, aggiorna il pulsante e prepara una bozza nel programma email dell’utente; non c’è un servizio di invio sul server. Senza JavaScript il modulo resta disabilitato.
+- **Recapiti:** telefono, WhatsApp ed email sono configurati nella pagina Contatti. Il modulo prepara una bozza nel programma email dell’utente; non c’è un servizio di invio sul server. Senza JavaScript il modulo resta disabilitato e la pagina invita a usare il collegamento email diretto.
 
 I caratteri vengono caricati da Google Fonts, con alternativa di sistema. Il sito rispetta la preferenza di riduzione del movimento. Senza JavaScript, navigazione e progetti restano visibili.
 

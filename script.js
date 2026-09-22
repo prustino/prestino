@@ -189,21 +189,19 @@
 
   const contactForm = document.querySelector('[data-contact-form]');
   const formStatus = document.querySelector('[data-form-status]');
-  const placeholderMessage = 'Il contatto è dimostrativo: occorre aggiungere un indirizzo email reale prima di inviare un messaggio.';
-  const isUsableEmail = (email) => {
-    return email.toLowerCase() !== 'esempio@email.com'
-      && /^[^\s@?&#]+@[^\s@?&#]+\.[^\s@?&#]+$/.test(email);
-  };
+  const placeholderMessage = 'Occorre configurare un indirizzo email valido prima di inviare un messaggio.';
+  const isUsableEmail = (email) => /^[^\s@?&#]+@[^\s@?&#]+\.[^\s@?&#]+$/.test(email);
   const emailUrl = (email) => `mailto:${encodeURIComponent(email).replace(/%40/g, '@')}`;
 
   if (contactForm) {
     const configured = isUsableEmail((contactForm.dataset.email || '').trim());
     const fields = contactForm.querySelector('[data-contact-fields]');
     const submit = contactForm.querySelector('[type="submit"]');
+    const notice = contactForm.querySelector('[data-contact-notice]');
     if (fields) fields.disabled = !configured;
     if (submit) submit.disabled = !configured;
+    if (notice) notice.hidden = configured;
     if (configured) {
-      contactForm.querySelector('[data-contact-notice]').hidden = true;
       submit.textContent = 'Apri nel programma email';
       if (formStatus) formStatus.textContent = 'Il messaggio si aprirà nel tuo programma email, dove potrai inviarlo.';
     }

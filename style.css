@@ -898,6 +898,12 @@ h2>span {
   margin-top: 7px
 }
 
+.email-placeholder:hover {
+  color: var(--purple-dark);
+  text-decoration: underline;
+  text-underline-offset: 4px
+}
+
 .email-info>p {
   font-size: 1rem;
   color: var(--muted);
@@ -2064,6 +2070,8 @@ textarea:focus {
   background: #fdfcfa;
   border: 1px solid var(--line);
   border-radius: 9px;
+  color: inherit;
+  text-decoration: none;
   transition: border-color .2s, background .2s;
 }
 
@@ -2131,12 +2139,6 @@ textarea:focus {
 
 .contact-method-whatsapp .contact-method-arrow {
   color: #477458;
-}
-
-.contact-demo-note {
-  font-size: 0.75rem;
-  line-height: 1.7;
-  color: #796f81;
 }
 
 @media (max-width: 850px) {
@@ -2435,7 +2437,6 @@ textarea:focus {
   color: #c7936c;
 }
 
-.contact-demo-note,
 .email-placeholder,
 .form-status,
 .form-notice,
@@ -2830,15 +2831,6 @@ textarea:focus-visible {
 .footer-inner p,
 .about-object p {
   font-size: .875rem;
-}
-
-.contact-method-state {
-  margin-left: auto;
-  font-size: .75rem;
-  color: var(--muted);
-  border: 1px solid var(--line);
-  padding: 3px 7px;
-  border-radius: 4px;
 }
 
 .contact-method {
