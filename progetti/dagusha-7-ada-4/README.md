@@ -1,12 +1,11 @@
-# Dagusha 7 / ADA 4
+# Dagusha VII / ADA IV
 
-Pagina preparata con testi provvisori: Silve deve confermare descrizioni, tecniche e contributo personale prima della versione definitiva. Non sono stati aggiunti anni, clienti, ruoli o scale non forniti.
+Pagina aggiornata con la descrizione del progetto e la scheda tecnica: scala 1:100, studio Luca Dini Design & Architecture, Firenze 2026, PLA e PETG, stampa 3D FDM.
 
 ## Dove modificare i testi
 
-- `index.html`: descrizione iniziale (`detail-lead`), `meta description` e didascalie (`figcaption`). Il commento `TESTO PROVVISORIO` identifica il testo introduttivo. Rimuovere il paragrafo `portfolio-draft` quando la descrizione è definitiva.
-- `progetto.json`: titolo, descrizione breve della scheda, parole chiave, categorie, tag e stato. Sostituire “Descrizione in aggiornamento” con uno stato corretto.
-- Per un racconto più lungo, aggiungere una sezione prima della galleria: obiettivo, lavoro svolto da Silve, strumenti e fasi. Questi dati sono ancora da fornire.
+- `index.html`: descrizione iniziale (`detail-lead`), scheda tecnica (`portfolio-facts`), racconto del progetto (`portfolio-story`), `meta description` e didascalie (`figcaption`).
+- `progetto.json`: titolo, descrizione breve della scheda, parole chiave, categorie, tag e stato.
 - Aggiornare tramite l’anteprima o `node scripts/prepare-site.mjs` dalla cartella principale del sito.
 
 ## Immagini e fonti

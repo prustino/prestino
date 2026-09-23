@@ -1,19 +1,19 @@
 {
   "title": "GoYoke",
-  "label": "MODELLAZIONE DI PRODOTTO",
-  "description": "Studio tridimensionale di un accessorio che avvolge un gamepad. Viste del modello digitale mostrano l’ingombro, le superfici e le connessioni fra i componenti.",
+  "label": "PRODUCT DESIGN · SIM RACING",
+  "description": "Un simulatore di guida pieghevole, trasportabile ed economico, sviluppato durante il semestre Erasmus alla RUAS di Rotterdam.",
   "categories": [
     "modellazione"
   ],
   "tags": [
-    "Modellazione 3D",
-    "CAD",
-    "Accessori"
+    "Product design",
+    "Sim racing",
+    "Modellazione 3D"
   ],
-  "keywords": "goyoke go yoke gamepad controller joystick gaming accessorio modellazione 3d cad superfici geometria",
+  "keywords": "goyoke go yoke simulatore guida sim racing gamepad controller joystick bluetooth pieghevole trasportabile economico erasmus rotterdam ruas product design modellazione 3d cad",
   "order": 10,
   "kind": "real",
-  "status": "Descrizione in aggiornamento",
+  "status": "Progetto Erasmus · RUAS, Rotterdam",
   "image": {
     "src": "immagini/01-720.webp",
     "alt": "Vista posteriore del modello CAD di un gamepad con un accessorio curvo attorno alla scocca.",

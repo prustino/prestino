@@ -57,7 +57,7 @@ La ricerca legge titolo, descrizione, tag e parole chiave delle schede generate 
 
 ## Contenuti da personalizzare
 
-- **Nuovi progetti:** le nove pagine hanno una struttura completa di immagini e testi provvisori, contrassegnati da “Descrizione in aggiornamento”. Silve può correggere descrizioni, didascalie e contributo personale in `index.html`, poi aggiornare descrizione breve, tag, categorie e parole chiave in `progetto.json`. Ogni README dedicato indica i punti da modificare. Prima della versione definitiva vanno confermati tecniche e ruolo svolto; non sono stati aggiunti anni, clienti o scale non forniti.
+- **Nuovi progetti:** le nove pagine importate seguono lo stesso template case study di ITACA: introduzione, scheda tecnica, indice, contributo, processo e risultato. Le informazioni non ancora fornite sono indicate in pagina con `DA AGGIUNGERE`, in particolare per Clove Lamp, la scala di Colosseum 339, alcune fasi operative e il render di Dental ZX. Ogni README dedicato documenta contenuti e immagini; descrizione breve, tag, categorie e parole chiave restano in `progetto.json`.
 - **ITACA WASP:** resta invariato e documenta il plastico realizzato da Silve durante il tirocinio in azienda a Imola nel 2022. L’architettura è attribuita a WASP. Non sono stati forniti rapporto di scala o modelli scaricabili.
 - **Esempi dimostrativi:** Vaso Onda, Supporto Modulare e Guscio Nodo sono conservati in `progetti-nascosti/` e possono essere riattivati con gli strumenti di gestione.
 - **Biografia:** aggiungere una descrizione personale, competenze e strumenti realmente utilizzati quando saranno forniti.

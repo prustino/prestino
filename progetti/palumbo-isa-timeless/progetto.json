@@ -1,19 +1,21 @@
 {
-  "title": "Palumbo ISA Timeless",
+  "title": "ISA Timeless 52",
   "label": "MODELLISMO NAVALE",
-  "description": "Un modello nautico su base riflettente, con ponti arredati, superfici vetrate e piccoli dettagli che rendono leggibili gli spazi dello yacht.",
+  "description": "Modellazione 3D e realizzazione in scala 1:100 dell’ISA Timeless 52 per ISA Yachts – Palumbo Superyachts, su design di Luca Dini Design & Architecture.",
   "categories": [
+    "modellazione",
+    "stampa",
     "prototipi"
   ],
   "tags": [
-    "Modello in scala",
-    "Nautica",
-    "Allestimento"
+    "Scala 1:100",
+    "Modellismo navale",
+    "Stampa 3D e taglio laser"
   ],
-  "keywords": "palumbo isa timeless yacht nautica barca nave modello modellismo navale scafo ponti prua poppa arredamento miniatura teca",
+  "keywords": "isa timeless 52 palumbo superyachts yacht nautica modello modellismo navale scala 1 100 luca dini design architecture pla petg plexiglass stampa 3d fdm taglio laser monaco yacht show firenze 2026",
   "order": 4,
   "kind": "real",
-  "status": "Descrizione in aggiornamento",
+  "status": "Firenze · 2026",
   "image": {
     "src": "immagini/01-720.webp",
     "alt": "Prua e fiancata del modello Palumbo ISA Timeless riflesse nella base",

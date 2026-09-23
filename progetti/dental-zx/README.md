@@ -1,12 +1,11 @@
 # Dental ZX
 
-Pagina preparata con testi provvisori: Silve deve confermare descrizioni, tecniche e contributo personale prima della versione definitiva. Non sono stati aggiunti anni, clienti, ruoli o scale non forniti.
+Pagina aggiornata con la descrizione definitiva del progetto, del percorso di sviluppo presso WASP e della tesi di laurea discussa nel 2023.
 
 ## Dove modificare i testi
 
-- `index.html`: descrizione iniziale (`detail-lead`), `meta description` e didascalie (`figcaption`). Il commento `TESTO PROVVISORIO` identifica il testo introduttivo. Rimuovere il paragrafo `portfolio-draft` quando la descrizione è definitiva.
-- `progetto.json`: titolo, descrizione breve della scheda, parole chiave, categorie, tag e stato. Sostituire “Descrizione in aggiornamento” con uno stato corretto.
-- Per un racconto più lungo, aggiungere una sezione prima della galleria: obiettivo, lavoro svolto da Silve, strumenti e fasi. Questi dati sono ancora da fornire.
+- `index.html`: descrizione iniziale (`detail-lead`), racconto del progetto, `meta description` e didascalie (`figcaption`).
+- `progetto.json`: titolo, descrizione breve della scheda, parole chiave, categorie, tag e stato.
 - Aggiornare tramite l’anteprima o `node scripts/prepare-site.mjs` dalla cartella principale del sito.
 
 ## Immagini e fonti
@@ -29,4 +28,4 @@ Originali forniti nella cartella `PORTFOLIO 2026/Dental ZX`. Selezione di 13 imm
 | `immagini/12.webp` | `WhatsApp Image 2026-09-19 at 17.48.18.jpeg` |
 | `immagini/13.webp` | `schema stampante.JPG` |
 
-I file `-720.webp` sono le anteprime delle stesse immagini. Video e file RAW non sono inclusi in questa prima struttura. I collegamenti sono relativi; spostare sempre la cartella completa tra progetti attivi e nascosti.
+I file `-720.webp` sono le anteprime delle stesse immagini. La selezione documenta ricerca progettuale, disegni CAD, prove, assemblaggio e prototipo; non contiene un render di prodotto dedicato, indicato quindi nella pagina con `DA AGGIUNGERE`. Video e file RAW non sono inclusi in questa prima struttura. I collegamenti sono relativi; spostare sempre la cartella completa tra progetti attivi e nascosti.

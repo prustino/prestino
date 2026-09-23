@@ -1,12 +1,12 @@
 # Clove Lamp
 
-Pagina preparata con testi provvisori: Silve deve confermare descrizioni, tecniche e contributo personale prima della versione definitiva. Non sono stati aggiunti anni, clienti, ruoli o scale non forniti.
+Pagina impostata con il template case study condiviso. I contenuti non ancora forniti sono mostrati esplicitamente come `DA AGGIUNGERE`; non sono stati inventati anni, clienti, ruoli o altri dati mancanti.
 
 ## Dove modificare i testi
 
-- `index.html`: descrizione iniziale (`detail-lead`), `meta description` e didascalie (`figcaption`). Il commento `TESTO PROVVISORIO` identifica il testo introduttivo. Rimuovere il paragrafo `portfolio-draft` quando la descrizione è definitiva.
-- `progetto.json`: titolo, descrizione breve della scheda, parole chiave, categorie, tag e stato. Sostituire “Descrizione in aggiornamento” con uno stato corretto.
-- Per un racconto più lungo, aggiungere una sezione prima della galleria: obiettivo, lavoro svolto da Silve, strumenti e fasi. Questi dati sono ancora da fornire.
+- `index.html`: sostituire i segnaposto nel ruolo, nella scheda tecnica, nel contributo e nel processo quando i contenuti saranno disponibili; aggiornare anche `meta description` e didascalie (`figcaption`) se necessario.
+- `progetto.json`: titolo, descrizione breve della scheda, parole chiave, categorie, tag e stato. Sostituire descrizione e stato `DA AGGIUNGERE` quando il racconto sarà completo.
+- Il template contiene già le sezioni contributo, processo in tre fasi e risultato: completa i blocchi esistenti senza aggiungere una seconda struttura narrativa.
 - Aggiornare tramite l’anteprima o `node scripts/prepare-site.mjs` dalla cartella principale del sito.
 
 ## Immagini e fonti

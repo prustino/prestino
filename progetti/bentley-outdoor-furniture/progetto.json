@@ -1,20 +1,21 @@
 {
   "title": "Bentley Outdoor Furniture",
-  "label": "MODELLI DI ARREDO",
-  "description": "Modelli di sedute e tavoli per esterni: una raccolta di forme, finiture e dettagli, dalle visualizzazioni digitali agli oggetti in scala.",
+  "label": "ARREDO OUTDOOR",
+  "description": "Una linea di arredi da esterni per Bentley, ispirata al mondo della nautica e sviluppata attraverso modellazione 3D e prototipi in scala.",
   "categories": [
+    "modellazione",
     "stampa",
     "prototipi"
   ],
   "tags": [
-    "Arredo",
-    "Modelli in scala",
-    "Stampa 3D"
+    "Product design",
+    "Modellazione 3D",
+    "Prototipi in scala"
   ],
-  "keywords": "bentley outdoor furniture arredi arredamento esterni sedute poltrone tavoli tavolini mobili miniature modelli scala prototipi stampa 3d",
+  "keywords": "bentley outdoor furniture arredi esterni nautica luca dini design architecture product design modellazione 3d prototipi scala stampa 3d sedia coffee table acciaio inossidabile vetro bitta ergonomia",
   "order": 7,
   "kind": "real",
-  "status": "Descrizione in aggiornamento",
+  "status": "Tirocinio · Luca Dini Design & Architecture",
   "image": {
     "src": "immagini/01-720.webp",
     "alt": "Modello di poltrona con struttura color ottone, seduta bianca e intreccio laterale.",

@@ -1,12 +1,11 @@
 # GoYoke
 
-Pagina preparata con testi provvisori: Silve deve confermare descrizioni, tecniche e contributo personale prima della versione definitiva. Non sono stati aggiunti anni, clienti, ruoli o scale non forniti.
+La pagina racconta GoYoke, il simulatore di guida pieghevole e trasportabile sviluppato durante il semestre Erasmus alla Rotterdam University of Applied Sciences (RUAS). I testi descrivono il contesto accademico, il problema affrontato e le caratteristiche della proposta.
 
-## Dove modificare i testi
+## Dove sono gestiti i contenuti
 
-- `index.html`: descrizione iniziale (`detail-lead`), `meta description` e didascalie (`figcaption`). Il commento `TESTO PROVVISORIO` identifica il testo introduttivo. Rimuovere il paragrafo `portfolio-draft` quando la descrizione è definitiva.
-- `progetto.json`: titolo, descrizione breve della scheda, parole chiave, categorie, tag e stato. Sostituire “Descrizione in aggiornamento” con uno stato corretto.
-- Per un racconto più lungo, aggiungere una sezione prima della galleria: obiettivo, lavoro svolto da Silve, strumenti e fasi. Questi dati sono ancora da fornire.
+- `index.html`: introduzione, racconto del progetto, `meta description` e didascalie (`figcaption`).
+- `progetto.json`: titolo, descrizione breve della scheda, parole chiave, categorie, tag e stato.
 - Aggiornare tramite l’anteprima o `node scripts/prepare-site.mjs` dalla cartella principale del sito.
 
 ## Immagini e fonti

@@ -1,19 +1,21 @@
 {
-  "title": "Maiora 53",
+  "title": "M|53",
   "label": "MODELLISMO NAVALE",
-  "description": "Un modello di yacht raccontato attraverso il profilo dello scafo, i ponti sovrapposti e i dettagli degli spazi di bordo.",
+  "description": "Modellazione 3D e realizzazione in scala 1:100 dello yacht M|53 per Next Yacht Group – Maiora, su design di Luca Dini Design & Architecture.",
   "categories": [
+    "modellazione",
+    "stampa",
     "prototipi"
   ],
   "tags": [
-    "Modello in scala",
-    "Nautica",
-    "Dettagli"
+    "Scala 1:100",
+    "Modellismo navale",
+    "Stampa 3D"
   ],
-  "keywords": "maiora 53 yacht nautica barca nave modello modellismo navale scafo ponti prua poppa dettagli miniatura",
+  "keywords": "m53 m 53 maiora next yacht group yacht nautica modello modellismo navale scala 1 100 luca dini design architecture pla petg stampa 3d fdm firenze 2026",
   "order": 5,
   "kind": "real",
-  "status": "Descrizione in aggiornamento",
+  "status": "Firenze · 2026",
   "image": {
     "src": "immagini/01-720.webp",
     "alt": "Modello Maiora 53 di profilo su una base con supporti trasparenti",

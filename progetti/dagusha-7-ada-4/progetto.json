@@ -1,7 +1,7 @@
 {
-  "title": "Dagusha 7 / ADA 4",
+  "title": "Dagusha VII / ADA IV",
   "label": "MODELLISMO NAUTICO",
-  "description": "Un modello nautico raccontato attraverso i componenti, le fasi di assemblaggio e le viste finali. Ponti sovrapposti e dettagli di coperta definiscono il carattere dello yacht in scala.",
+  "description": "Modellazione 3D e realizzazione in stampa 3D FDM del modello in scala 1:100 dello yacht Dagusha VII, progettato da Luca Dini Design & Architecture.",
   "categories": [
     "modellazione",
     "stampa",
@@ -10,15 +10,15 @@
   "tags": [
     "Modello in scala",
     "Nautica",
-    "Assemblaggio"
+    "Stampa 3D FDM"
   ],
-  "keywords": "dagusha ada 4 7 yacht nautica barca modello modellismo scala ponti scafo assemblaggio dettagli stampa 3d",
+  "keywords": "dagusha vii ada iv ada 4 ada yacht works yacht nautica modello modellismo scala 1:100 luca dini design architecture firenze 2026 pla petg stampa 3d fdm armatore",
   "order": 3,
   "kind": "real",
-  "status": "Descrizione in aggiornamento",
+  "status": "Progetto realizzato · Luca Dini, 2026",
   "image": {
     "src": "immagini/01-720.webp",
-    "alt": "Modello dello yacht Dagusha 7 / ADA 4 visto dalla prua",
+    "alt": "Modello dello yacht Dagusha VII / ADA IV visto dalla prua",
     "width": 720,
     "height": 540,
     "srcset": [

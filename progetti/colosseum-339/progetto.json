@@ -1,23 +1,24 @@
 {
-  "title": "colosseum 339",
+  "title": "Colosseum 339",
   "label": "ARCHITETTURA IN SCALA",
-  "description": "Un modello architettonico verticale scandito da archi, terrazze e vegetazione. Le immagini seguono i componenti separati, l’assemblaggio e il modello completo.",
+  "description": "Modellazione 3D e realizzazione del modello architettonico Colosseum 339, progetto di Luca Dini Design & Architecture per la trasformazione urbana di Tirana.",
   "categories": [
     "modellazione",
+    "stampa",
     "prototipi"
   ],
   "tags": [
     "Architettura",
-    "Modello in scala",
-    "Assemblaggio"
+    "Modellazione 3D",
+    "Stampa 3D e taglio laser"
   ],
-  "keywords": "colosseum 339 architettura torre modello plastico archi arcate facciata rosso terracotta vegetazione terrazze assemblaggio modellazione 3d miniature",
+  "keywords": "colosseum 339 tirana albania architettura torre modello plastico riqualificazione urbana skyline waterfront mipim 2026 padiglione albania luca dini design architecture firenze pla petg plexiglass stampa 3d fdm taglio laser",
   "order": 6,
   "kind": "real",
-  "status": "Descrizione in aggiornamento",
+  "status": "Firenze · 2026",
   "image": {
     "src": "immagini/01-720.webp",
-    "alt": "Modello completo di colosseum 339 con arcate rosse, vegetazione e figure in scala",
+    "alt": "Modello completo di Colosseum 339 con arcate rosse, vegetazione e figure in scala",
     "width": 540,
     "height": 720,
     "srcset": [

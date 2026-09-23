@@ -1,21 +1,21 @@
 {
   "title": "Dental ZX",
   "label": "PROTOTIPAZIONE DI PRODOTTO",
-  "description": "Dai disegni tecnici al prototipo assemblato: una sequenza di immagini documenta meccanica, elettronica, prove di ingombro e realizzazione della scocca di Dental ZX.",
+  "description": "Stampante DLP a resina per il settore dentale che integra stampa, lavaggio, asciugatura e polimerizzazione UV in un’unica macchina.",
   "categories": [
     "modellazione",
     "stampa",
     "prototipi"
   ],
   "tags": [
-    "Prototipo",
-    "Stampa 3D",
-    "Sviluppo di prodotto"
+    "Design di prodotto",
+    "Stampa 3D DLP",
+    "Prototipazione"
   ],
-  "keywords": "dental zx stampante 3d resina prototipo prodotto meccanica elettronica scocca involucro disegno cad assemblaggio",
+  "keywords": "Dental ZX stampante 3D DLP resina dentale WASP tesi design prodotto stampa lavaggio asciugatura polimerizzazione UV prototipo ricerca sviluppo meccanica elettronica CAD",
   "order": 9,
   "kind": "real",
-  "status": "Descrizione in aggiornamento",
+  "status": "Tesi di laurea · 2023",
   "image": {
     "src": "immagini/01-720.webp",
     "alt": "Dental ZX con scocca chiusa, sportello trasparente e pannello di controllo",
