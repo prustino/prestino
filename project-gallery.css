@@ -197,6 +197,8 @@ p.portfolio-placeholder {
 }
 .portfolio-media-placeholder h3 { margin-top: 12px; font-size: 1.25rem; font-weight: 600; }
 .portfolio-media-placeholder .portfolio-placeholder { display: block; margin-top: 14px; }
+.portfolio-process-visual { margin-top: 38px; }
+.portfolio-process-visual img { height: auto; max-height: 680px; aspect-ratio: 16 / 9; }
 
 .portfolio-intro {
   display: grid;
@@ -246,6 +248,13 @@ p.portfolio-placeholder {
 .portfolio-zoom { position: absolute; right: 12px; bottom: 12px; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--paper); box-shadow: 0 2px 15px #0002; }
 .portfolio-gallery-grid figcaption { display: flex; align-items: baseline; gap: 16px; margin-top: 12px; font-size: .8rem; color: var(--muted); line-height: 1.6; }
 .portfolio-image-number { flex-shrink: 0; color: var(--purple); font-variant-numeric: tabular-nums; font-size: .7rem; }
+.portfolio-gallery-group-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin: 42px 0 22px; padding-top: 24px; border-top: 1px solid var(--line); }
+.portfolio-gallery-group-heading h3 { font-size: clamp(1.35rem, 2.3vw, 1.8rem); font-weight: 600; }
+.portfolio-gallery-group-heading p { max-width: 44ch; color: var(--muted); font-size: .875rem; line-height: 1.7; }
+.dental-research-grid img,
+.dental-research-grid figure:first-child img { aspect-ratio: 2 / 1; }
+.dental-render-grid img,
+.dental-render-grid figure:first-child img { aspect-ratio: 16 / 9; }
 .portfolio-video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 28px; }
 .portfolio-video-grid figure { margin: 0; }
 .portfolio-video-grid video { display: block; width: 100%; max-height: 540px; background: #22261f; border-radius: 10px; }
@@ -272,6 +281,8 @@ p.portfolio-placeholder {
   .portfolio-story-heading h2 { max-width: 18ch; }
   .portfolio-section-heading { align-items: start; flex-direction: column; gap: 12px; }
   .portfolio-section-heading > p { max-width: 100%; }
+  .portfolio-gallery-group-heading { align-items: start; flex-direction: column; gap: 8px; }
+  .portfolio-gallery-group-heading p { max-width: 100%; }
   .portfolio-gallery { padding-block: 48px 40px; }
   .portfolio-gallery-grid { gap: 26px 18px; }
   .portfolio-cover figcaption { flex-wrap: wrap; gap: 6px; }

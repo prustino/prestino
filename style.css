@@ -164,6 +164,13 @@ button:focus-visible {
   line-height: 1
 }
 
+.brand-logo {
+  width: auto;
+  height: 50px;
+  flex: 0 0 auto;
+  object-fit: contain
+}
+
 .brand-mark {
   width: 40px;
   height: 40px;
@@ -626,7 +633,9 @@ h2>span {
 }
 
 .site-footer {
-  border-top: 1px solid var(--line)
+  border-top: 1px solid #3d4039;
+  background: var(--ink);
+  color: var(--paper)
 }
 
 .footer-inner {
@@ -637,19 +646,30 @@ h2>span {
 }
 
 .footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--paper);
   font-size: 22px;
   font-weight: 700;
   font-family: var(--heading);
   letter-spacing: -1px
 }
 
-.footer-brand>span {
-  color: var(--purple)
+.footer-logo {
+  width: auto;
+  height: 52px;
+  flex: 0 0 auto;
+  object-fit: contain
+}
+
+.footer-brand-word>span {
+  color: #e4b695
 }
 
 .footer-inner p {
   font-size: 1rem;
-  color: var(--muted)
+  color: #cfcec7
 }
 
 .footer-right {
@@ -658,15 +678,15 @@ h2>span {
   align-items: center;
   gap: 32px;
   font-size: 0.75rem;
-  color: var(--muted)
+  color: #b9b8b1
 }
 
 .footer-right a {
-  color: #5e5768
+  color: #deddd6
 }
 
 .footer-right a:hover {
-  color: var(--purple)
+  color: #e4b695
 }
 
 .page-intro {
@@ -1148,6 +1168,10 @@ textarea:focus {
     font-size: 22px
   }
 
+  .brand-logo {
+    height: 44px
+  }
+
   .brand-mark {
     width: 35px;
     height: 35px;
@@ -1366,7 +1390,13 @@ textarea:focus {
   }
 
   .brand {
-    font-size: 22px
+    gap: 8px;
+    font-size: 17px;
+    letter-spacing: -.8px
+  }
+
+  .brand-logo {
+    height: 38px
   }
 
   .header-contact {
@@ -1376,6 +1406,15 @@ textarea:focus {
     font-size: 0.875rem;
     padding: 7px 11px;
     gap: 11px
+  }
+
+  .footer-brand {
+    gap: 8px;
+    font-size: 18px
+  }
+
+  .footer-logo {
+    height: 40px
   }
 
   .menu-toggle {
@@ -1661,6 +1700,10 @@ textarea:focus {
     font-size: 21px
   }
 
+  .footer-logo {
+    height: 46px
+  }
+
   .footer-inner>p {
     font-size: 1rem;
     margin-left: auto
@@ -1870,14 +1913,20 @@ textarea:focus {
   }
 
   .header-contact {
-    margin-right: 14px;
-    padding: 7px 9px;
-    font-size: 0.875rem
+    margin-right: 4px;
+    padding: 7px 8px;
+    font-size: 0.75rem;
+    gap: 6px
   }
 
   .brand {
-    gap: 8px;
-    font-size: 20px
+    gap: 6px;
+    font-size: 15.5px;
+    letter-spacing: -.6px
+  }
+
+  .brand-logo {
+    height: 34px
   }
 
   .brand-mark {
@@ -2189,7 +2238,7 @@ textarea:focus {
   }
 }
 
-/* Silve — forme, materia e progettazione 3D. */
+/* A.Silvestrini — forme, materia e progettazione 3D. */
 .brand-mark {
   border-radius: 10px;
 }

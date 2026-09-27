@@ -1,4 +1,4 @@
-# Progetti attivi di Silve
+# Progetti attivi di A.Silvestrini
 
 Ogni sottocartella è un progetto visibile nel sito. I progetti nascosti sono nella cartella parallela `../progetti-nascosti/`.
 
@@ -67,6 +67,6 @@ I nuovi progetti entrano nella raccolta. La pagina iniziale del sito reindirizza
 
 Le informazioni non ancora confermate sono scritte esattamente come `DA AGGIUNGERE` e usano la classe `portfolio-placeholder`. Sostituisci il segnaposto in `index.html` solo quando il testo o il dato è disponibile; se cambia anche il riepilogo mostrato nella raccolta, aggiorna `progetto.json` e rigenera il sito.
 
-I segnaposto principali riguardano Clove Lamp, la scala di Colosseum 339, alcune descrizioni delle fasi di processo e il render di Dental ZX. Anni, clienti, scale, tecniche e ruoli vanno aggiunti solo quando confermati.
+I segnaposto principali riguardano Clove Lamp, la scala di Colosseum 339 e alcune descrizioni delle fasi di processo. Anni, clienti, scale, tecniche e ruoli vanno aggiunti solo quando confermati.
 
 ITACA WASP documenta il plastico realizzato a Imola nel 2022; le sue fonti e le istruzioni dedicate restano nel suo README.

@@ -1,6 +1,6 @@
-# Silve — Progettazione e stampa 3D
+# A.Silvestrini — Progettazione e stampa 3D
 
-Portfolio statico in italiano dedicato a Silve, alla modellazione, alla prototipazione e alla stampa 3D. Non richiede dipendenze da installare. Node.js genera la raccolta dei progetti e la copia pubblica del sito.
+Portfolio statico in italiano dedicato ad A.Silvestrini, alla modellazione, alla prototipazione e alla stampa 3D. Non richiede dipendenze da installare. Node.js genera la raccolta dei progetti e la copia pubblica del sito.
 
 ## Anteprima locale
 
@@ -32,7 +32,7 @@ node scripts/progetti.mjs aggiorna
 - `scripts/templates/`: sorgenti della raccolta, di “Chi sono” e del reindirizzamento iniziale, con blocchi condizionati dalla presenza dei progetti. Modifica qui queste pagine: le copie HTML nella cartella principale e in `dist/` vengono rigenerate.
 - `index.html`: reindirizzamento alla pagina Chi sono. Il sito ha tre sezioni: Progetti, Chi sono e Contatti.
 - `progetti.html`: ricerca per parole chiave e filtri per modellazione, stampa 3D e prototipi.
-- `chi-sono.html`: interessi, approccio ed esperienza documentata di Silve sul plastico ITACA presso WASP nel 2022.
+- `chi-sono.html`: interessi, approccio ed esperienza documentata di A.Silvestrini sul plastico ITACA presso WASP nel 2022.
 - `contatti.html`: telefono, WhatsApp, email e modulo che prepara il messaggio nel programma email dell’utente.
 - `progetti/`: dieci progetti, ciascuno nella propria cartella: ITACA WASP e nove lavori importati da `PORTFOLIO 2026`. Vedi `progetti/README.md` per l’elenco e per aggiungere nuovi lavori.
 - `progetti-nascosti/`: archivio locale escluso dalla copia pubblica; contiene i tre concept dimostrativi `vaso-onda`, `supporto-modulare` e `guscio-nodo` e ammette anche bozze incomplete.
@@ -40,12 +40,13 @@ node scripts/progetti.mjs aggiorna
 - `scripts/serve-site.mjs` e `scripts/preview-client.js`: anteprima locale con aggiornamento automatico delle cartelle e del browser, supporto ai video ed esclusione dei file nascosti.
 - `scripts/projects.mjs` e `scripts/progetti.mjs`: generazione, convalida e spostamento dei progetti con ripristino in caso di errore.
 - `style.css` e `progetti/progetti-dettaglio.css`: stili responsive, palette panna e terracotta.
+- `img/logo-silve-dark.png` e `img/logo-silve-light.png`: varianti trasparenti del monogramma, rispettivamente per header chiaro e footer scuro.
 - `script.js`: menu mobile, ricerca, conteggi, filtri e preparazione dei messaggi email.
 - `project-gallery.css` e `project-gallery.js`: impaginazione e galleria condivise dai nove nuovi progetti, con ingrandimento delle immagini e navigazione da tastiera.
 - `progetti/itaca-wasp/itaca.js`: indice delle sezioni e galleria per ingrandire foto, modelli digitali e schemi con navigazione da tastiera.
 - `scripts/prepare-site.mjs`: rigenera le pagine in base alle cartelle attive e prepara in `dist/` solo pagine e risorse pubbliche. Usa questa cartella per il server locale e l’hosting.
 - `progetti/itaca-wasp/immagini/`: selezione ottimizzata delle foto, delle viste digitali e dei tre schemi di autosufficienza forniti dall’utente. I video delle lavorazioni sono in `progetti/itaca-wasp/video/`, con controlli nativi e caricamento su richiesta. `README.md` nella cartella ITACA documenta le fonti e la corrispondenza con gli originali.
-- `progetti/*/immagini/`: nei nove nuovi progetti, 77 immagini selezionate e ottimizzate in WebP, ciascuna con un’anteprima più leggera. Ogni progetto ha un `README.md` con la corrispondenza fra i file del sito e gli originali e le istruzioni per modificare i testi. Gli originali restano invariati; video e RAW non sono inclusi in questa prima struttura.
+- `progetti/*/immagini/`: nei nove nuovi progetti, 104 immagini selezionate e ottimizzate in WebP, ciascuna con un’anteprima più leggera. Ogni progetto ha un `README.md` con la corrispondenza fra i file del sito e gli originali e le istruzioni per modificare i testi. Gli originali restano invariati; video e RAW non sono inclusi in questa prima struttura.
 
 Ogni progetto si conserva nella propria cartella completa, in `progetti/` o in `progetti-nascosti/`. Non modificare i file in `dist/`, perché vengono rigenerati.
 
@@ -57,8 +58,8 @@ La ricerca legge titolo, descrizione, tag e parole chiave delle schede generate 
 
 ## Contenuti da personalizzare
 
-- **Nuovi progetti:** le nove pagine importate seguono lo stesso template case study di ITACA: introduzione, scheda tecnica, indice, contributo, processo e risultato. Le informazioni non ancora fornite sono indicate in pagina con `DA AGGIUNGERE`, in particolare per Clove Lamp, la scala di Colosseum 339, alcune fasi operative e il render di Dental ZX. Ogni README dedicato documenta contenuti e immagini; descrizione breve, tag, categorie e parole chiave restano in `progetto.json`.
-- **ITACA WASP:** resta invariato e documenta il plastico realizzato da Silve durante il tirocinio in azienda a Imola nel 2022. L’architettura è attribuita a WASP. Non sono stati forniti rapporto di scala o modelli scaricabili.
+- **Nuovi progetti:** le nove pagine importate seguono lo stesso template case study di ITACA: introduzione, scheda tecnica, indice, contributo, processo e risultato. Le informazioni non ancora fornite sono indicate in pagina con `DA AGGIUNGERE`, in particolare per Clove Lamp, la scala di Colosseum 339 e alcune fasi operative. Ogni README dedicato documenta contenuti e immagini; descrizione breve, tag, categorie e parole chiave restano in `progetto.json`.
+- **ITACA WASP:** resta invariato e documenta il plastico realizzato da A.Silvestrini durante il tirocinio in azienda a Imola nel 2022. L’architettura è attribuita a WASP. Non sono stati forniti rapporto di scala o modelli scaricabili.
 - **Esempi dimostrativi:** Vaso Onda, Supporto Modulare e Guscio Nodo sono conservati in `progetti-nascosti/` e possono essere riattivati con gli strumenti di gestione.
 - **Biografia:** aggiungere una descrizione personale, competenze e strumenti realmente utilizzati quando saranno forniti.
 - **Recapiti:** telefono, WhatsApp ed email sono configurati nella pagina Contatti. Il modulo prepara una bozza nel programma email dell’utente; non c’è un servizio di invio sul server. Senza JavaScript il modulo resta disabilitato e la pagina invita a usare il collegamento email diretto.

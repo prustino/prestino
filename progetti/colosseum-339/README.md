@@ -1,6 +1,6 @@
 # Colosseum 339
 
-Pagina aggiornata con descrizione, ruolo, studio, luogo, data, materiali e tecnologie confermati da Silve. La scala resta da confermare.
+Pagina aggiornata con descrizione, ruolo, studio, luogo, data, materiali e tecnologie confermati da A.Silvestrini. La scala resta da confermare.
 
 ## Contenuti della pagina
 

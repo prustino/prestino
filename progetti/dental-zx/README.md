@@ -10,7 +10,7 @@ Pagina aggiornata con la descrizione definitiva del progetto, del percorso di sv
 
 ## Immagini e fonti
 
-Originali forniti nella cartella `PORTFOLIO 2026/Dental ZX`. Selezione di 13 immagini; gli originali restano invariati. Copie WebP con rotazione EXIF applicata, lato massimo 1600 px e anteprime fino a 720 px. Le didascalie descrivono ciò che è visibile nelle immagini e sono modificabili.
+Gli originali fotografici sono stati forniti nella cartella `PORTFOLIO 2026/Dental ZX`; tavole e render nella cartella `RENDER DENTAL ZX`. La pagina usa 40 immagini uniche. Gli originali restano invariati. Le copie WebP hanno la rotazione EXIF applicata, lato massimo 1600 px e anteprime fino a 720 px. Le didascalie descrivono ciò che è visibile nelle immagini e sono modificabili.
 
 | File del sito | Originale |
 | --- | --- |
@@ -27,5 +27,15 @@ Originali forniti nella cartella `PORTFOLIO 2026/Dental ZX`. Selezione di 13 imm
 | `immagini/11.webp` | `WhatsApp Image 2026-09-19 at 17.48.17.jpeg` |
 | `immagini/12.webp` | `WhatsApp Image 2026-09-19 at 17.48.18.jpeg` |
 | `immagini/13.webp` | `schema stampante.JPG` |
+| `immagini/ricerca-01.webp` | `A1.jpg` |
+| `immagini/ricerca-02.webp` | `A2.jpg` |
+| `immagini/ricerca-03.webp` | `A3.jpg` |
+| `immagini/ricerca-04.webp` | `P1.jpg` |
+| `immagini/render-01.webp` – `immagini/render-12.webp` | `R1.jpg` – `R12.jpg` |
+| `immagini/render-13.webp` | `RR13.jpg` |
+| `immagini/render-14.webp` – `immagini/render-18.webp` | `R14.jpg` – `R18.jpg` |
+| `immagini/render-19.webp` | `RR19.jpg` |
+| `immagini/render-20.webp` | `RR20.jpg` |
+| `immagini/render-21.webp` – `immagini/render-23.webp` | `R21.jpg` – `R23.jpg` |
 
-I file `-720.webp` sono le anteprime delle stesse immagini. La selezione documenta ricerca progettuale, disegni CAD, prove, assemblaggio e prototipo; non contiene un render di prodotto dedicato, indicato quindi nella pagina con `DA AGGIUNGERE`. Video e file RAW non sono inclusi in questa prima struttura. I collegamenti sono relativi; spostare sempre la cartella completa tra progetti attivi e nascosti.
+I file `-720.webp` sono le anteprime delle stesse immagini. La sottocartella `RENDERZZ` ricevuta contiene copie identiche dei 27 JPEG alla radice e non è stata importata. La pagina divide le tavole di ricerca, i render e le fotografie del prototipo in tre gallerie navigabili. Video e file RAW non sono inclusi in questa prima struttura. I collegamenti sono relativi; spostare sempre la cartella completa tra progetti attivi e nascosti.
