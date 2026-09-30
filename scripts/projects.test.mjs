@@ -30,8 +30,15 @@ test('moving complete projects keeps content and public visibility consistent', 
     await buildSite(root);
     const initialEntry = await read(root, 'dist/index.html');
     const initialItaca = await read(root, 'progetti/itaca-wasp/index.html');
+    const initialAbout = await read(root, 'dist/chi-sono.html');
+    const initialProjects = await read(root, 'dist/progetti.html');
     assert.equal((await inventory(root)).attivi.length, 4);
     assert.equal(await exists(join(root, 'dist/progetti/itaca-wasp/progetto.json')), false);
+    assert.equal((initialAbout.match(/data-about-slide/g) || []).length, 4);
+    assert.match(initialAbout, /data-about-carousel/);
+    assert.match(initialProjects, /data-filter="architettura"[^>]*>[\s\S]*?data-filter-count>1</);
+    assert.match(initialProjects, /data-filter="prodotto"[^>]*>[\s\S]*?data-filter-count>3</);
+    assert.match(initialProjects, /data-search-tag="Architettura"/);
 
     await moveProject(root, 'vaso-onda', 'nascosti');
     await assertAbsent(root, 'vaso-onda');
@@ -45,9 +52,11 @@ test('moving complete projects keeps content and public visibility consistent', 
     for (const slug of ['vaso-onda', 'supporto-modulare', 'guscio-nodo']) await moveProject(root, slug, 'nascosti');
     assert.match(await read(root, 'dist/progetti.html'), /Nuovi progetti in arrivo/);
     assert.doesNotMatch(await read(root, 'dist/progetti.html'), /data-project\s/);
+    assert.doesNotMatch(await read(root, 'dist/chi-sono.html'), /data-about-carousel/);
 
     await moveProject(root, 'vaso-onda', 'attivi');
     assert.doesNotMatch(await read(root, 'dist/progetti/vaso-onda/index.html'), /class="container project-pagination"/);
+    assert.doesNotMatch(await read(root, 'dist/chi-sono.html'), /data-about-controls/);
     await moveProject(root, 'supporto-modulare', 'attivi');
     const two = await read(root, 'dist/progetti/vaso-onda/index.html');
     assert.equal((two.match(/href="\.\.\/supporto-modulare\/index.html"/g) || []).length, 1);

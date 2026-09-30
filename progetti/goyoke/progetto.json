@@ -3,30 +3,30 @@
   "label": "PRODUCT DESIGN · SIM RACING",
   "description": "Un simulatore di guida pieghevole, trasportabile ed economico, sviluppato durante il semestre Erasmus alla RUAS di Rotterdam.",
   "categories": [
-    "modellazione"
+    "prodotto"
   ],
   "tags": [
-    "Product design",
+    "Design di prodotto",
     "Sim racing",
-    "Modellazione 3D"
+    "Prototipazione"
   ],
-  "keywords": "goyoke go yoke simulatore guida sim racing gamepad controller joystick bluetooth pieghevole trasportabile economico erasmus rotterdam ruas product design modellazione 3d cad",
+  "keywords": "goyoke go yoke simulatore guida sim racing gamepad controller joystick bluetooth pieghevole trasportabile economico erasmus rotterdam ruas product design modellazione 3d cad prototipo prototipazione test utenti user testing",
   "order": 10,
   "kind": "real",
   "status": "Progetto Erasmus · RUAS, Rotterdam",
   "image": {
-    "src": "immagini/01-720.webp",
-    "alt": "Vista posteriore del modello CAD di un gamepad con un accessorio curvo attorno alla scocca.",
-    "width": 540,
-    "height": 720,
+    "src": "immagini/hero-720.webp",
+    "alt": "Render ambientato di GoYoke utilizzato da una persona seduta, con il controller collegato al supporto pieghevole.",
+    "width": 720,
+    "height": 405,
     "srcset": [
       {
-        "src": "immagini/01-720.webp",
-        "width": 540
+        "src": "immagini/hero-720.webp",
+        "width": 720
       },
       {
-        "src": "immagini/01.webp",
-        "width": 1200
+        "src": "immagini/hero.webp",
+        "width": 1600
       }
     ]
   }

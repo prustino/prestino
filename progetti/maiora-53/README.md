@@ -1,6 +1,6 @@
 # M|53
 
-Pagina aggiornata con descrizione, ruolo, scala, studio, luogo, data, materiali e tecnologia confermati da A.Silvestrini.
+Pagina aggiornata con descrizione, ruolo, scala, studio, luogo, data, materiali e tecnologia confermati da Alessio Silvestrino.
 
 ## Contenuti della pagina
 

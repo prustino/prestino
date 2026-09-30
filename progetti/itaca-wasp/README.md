@@ -1,15 +1,15 @@
 # ITACA · WASP
 
-Primo progetto reale inserito nel portfolio: il plastico espositivo realizzato da A.Silvestrini durante l’esperienza presso WASP a Imola nel 2022.
+Primo progetto reale inserito nel portfolio: il plastico espositivo realizzato da Alessio Silvestrino durante l’esperienza presso WASP a Imola nel 2022.
 
 ## Fonti e attribuzione
 
 - Fonte aggiornata: `descriz..txt` e materiali nella cartella `/Users/oppog/Downloads/ITACA WASP 2/`, ricevuta il 19 settembre 2026. Integra la precedente cartella `itaca wasp`.
 - Progetto architettonico: [ITACA sul sito WASP](https://www.3dwasp.com/en/itaca-the-self-sufficient-and-eco-sustainable-3d-printed-house/).
-- Il contributo di A.Silvestrini riguarda il plastico, non la progettazione dell’edificio.
+- Il contributo di Alessio Silvestrino riguarda il plastico, non la progettazione dell’edificio.
 - Luogo e anno della realizzazione del plastico: Imola, 2022. Rapporto di scala, impostazioni numeriche e software specifici non sono stati forniti e non vengono dichiarati.
 - Materiali del plastico: PLA, resine fotopolimeriche, plexiglass, MDF/compensato; pareti in pellet a prevalenza di cellulosa. Tecnologie: FDM, DLP, taglio/incisione laser e CNC.
-- Gli schemi dell’abitazione sono attribuiti a WASP; non sono progetti impiantistici di A.Silvestrini.
+- Gli schemi dell’abitazione sono attribuiti a WASP; non sono progetti impiantistici di Alessio Silvestrino.
 - Le immagini sono state fornite dall’utente. Le copie WebP mantengono l’inquadratura originale, con orientamento corretto e dimensioni adatte al web. Gli originali restano nella cartella di origine.
 - Il materiale in pellet a prevalenza di cellulosa è quello descritto per la replica delle pareti del plastico. Il riferimento alle pareti in argilla CRANE WASP è circoscritto al lavoro del 2022 descritto dall’utente. `parete-riferimento.webp` usa il nuovo ritaglio di `IMG_7771.jpg` fornito dall’utente.
 
@@ -49,6 +49,6 @@ I poster sono in `immagini/video-*.webp`. Gli originali e le altre foto/clip for
 
 ## Lettura e immagini
 
-La pagina segue il contributo di A.Silvestrini: modellazione e lavorazioni, sfida delle pareti, plastico finito, quindi i sistemi della casa progettata da WASP. L’indice resta disponibile durante lo scorrimento e indica la sezione corrente.
+La pagina segue il contributo di Alessio Silvestrino: modellazione e lavorazioni, sfida delle pareti, plastico finito, quindi i sistemi della casa progettata da WASP. L’indice resta disponibile durante lo scorrimento e indica la sezione corrente.
 
 `itaca.js` gestisce l’indice e l’ingrandimento delle immagini. Foto, viste digitali e schemi sono raccolti in tre gruppi separati. La galleria usa un dialogo nativo con chiusura tramite pulsante, Escape o sfondo, navigazione con frecce e ripristino del focus. I collegamenti ai file restano utilizzabili senza JavaScript.

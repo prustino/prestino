@@ -3,13 +3,11 @@
   "label": "MODELLISMO NAUTICO",
   "description": "Modellazione 3D e realizzazione in stampa 3D FDM del modello in scala 1:100 dello yacht Dagusha VII, progettato da Luca Dini Design & Architecture.",
   "categories": [
-    "modellazione",
-    "stampa",
-    "prototipi"
+    "nautica"
   ],
   "tags": [
-    "Modello in scala",
     "Nautica",
+    "Modellismo navale",
     "Stampa 3D FDM"
   ],
   "keywords": "dagusha vii ada iv ada 4 ada yacht works yacht nautica modello modellismo scala 1:100 luca dini design architecture firenze 2026 pla petg stampa 3d fdm armatore",

@@ -3,13 +3,12 @@
   "label": "LUCE & STAMPA 3D",
   "description": "DA AGGIUNGERE",
   "categories": [
-    "stampa",
-    "prototipi"
+    "prodotto"
   ],
   "tags": [
+    "Design di prodotto",
     "Illuminazione",
-    "Stampa 3D",
-    "Prototipo"
+    "Stampa 3D"
   ],
   "keywords": "clove lamp lampada luce illuminazione design prodotto diffusore stampa 3d fdm prototipo assemblaggio",
   "order": 8,

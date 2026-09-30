@@ -1,6 +1,6 @@
 # ISA Timeless 52
 
-Pagina aggiornata con descrizione, ruolo, scala, studio, luogo, data, materiali e tecnologie confermati da A.Silvestrini.
+Pagina aggiornata con descrizione, ruolo, scala, studio, luogo, data, materiali e tecnologie confermati da Alessio Silvestrino.
 
 ## Contenuti della pagina
 

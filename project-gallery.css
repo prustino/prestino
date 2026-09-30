@@ -255,6 +255,14 @@ p.portfolio-placeholder {
 .dental-research-grid figure:first-child img { aspect-ratio: 2 / 1; }
 .dental-render-grid img,
 .dental-render-grid figure:first-child img { aspect-ratio: 16 / 9; }
+.goyoke-project-logo { display: block; width: 112px; height: auto; margin-bottom: 20px; }
+.goyoke-render-grid,
+.goyoke-test-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.goyoke-render-grid img,
+.goyoke-render-grid figure:first-child img { aspect-ratio: 16 / 9; }
+.goyoke-process-visual img { aspect-ratio: 4 / 3; }
+.goyoke-prototype-grid figure:first-child img,
+.goyoke-test-grid figure:first-child img { aspect-ratio: 4 / 3; }
 .portfolio-video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 28px; }
 .portfolio-video-grid figure { margin: 0; }
 .portfolio-video-grid video { display: block; width: 100%; max-height: 540px; background: #22261f; border-radius: 10px; }

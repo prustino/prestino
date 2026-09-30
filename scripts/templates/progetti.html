@@ -3,21 +3,21 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Esplora i progetti di modellazione e stampa 3D di A.Silvestrini, tra lavori realizzati e concept. Cerca per parola chiave e filtra per modellazione, stampa 3D o prototipi.">
+    <meta name="description" content="Esplora i progetti di Alessio Silvestrino tra architettura, nautica e design di prodotto. Cerca per parola chiave, seleziona i tag e filtra per ambito.">
     <meta name="theme-color" content="#f6f4ef">
-    <title>Progetti — A.Silvestrini</title>
+    <title>Progetti — Alessio Silvestrino</title>
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&amp;family=Manrope:wght@400;500;600;650;700;750;800&amp;display=swap">
-    <link rel="stylesheet" href="style.css?v=20260927-brand">
-    <script src="script.js?v=20260921-relative" defer></script>
+    <link rel="stylesheet" href="style.css?v=20260930-portfolio">
+    <script src="script.js?v=20260930-tags" defer></script>
   </head>
   <body class="projects-page">
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
     <header class="site-header">
       <div class="container header-inner">
-        <a href="progetti.html" class="brand" aria-label="A.Silvestrini, progetti"><img class="brand-logo" src="img/logo-silve-dark.png" width="247" height="399" alt=""><span>A<span class="brand-dot">.</span>Silvestrini</span></a>
+        <a href="progetti.html" class="brand" aria-label="Alessio Silvestrino, progetti"><img class="brand-logo" src="img/logo-silve-dark.png" width="247" height="399" alt=""><span>Alessio Silvestrino</span></a>
         <button class="menu-toggle" type="button" data-menu-toggle aria-controls="navigation" aria-expanded="false" aria-label="Apri menu"><span></span><span></span></button>
         <nav class="site-nav" id="navigation" data-nav aria-label="Navigazione principale">
           <a href="progetti.html" class="active" aria-current="page">Progetti</a>
@@ -30,8 +30,8 @@
     <main id="contenuto" tabindex="-1">
       <section class="page-intro container"><span class="eyebrow">PROGETTI / MODELLAZIONE E STAMPA 3D</span><h1>Dai modelli agli <em>oggetti.</em></h1><p>Architettura, nautica e oggetti: una raccolta di modelli, prototipi e forme da esplorare.</p></section>
       <section class="container project-gallery" aria-label="Raccolta progetti">
-        <div class="project-controls" {{CONTROLS_HIDDEN}}><div class="project-search"><label for="project-search">Trova il progetto che ti interessa</label><div class="search-input-wrap"><svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="project-search" name="q" data-project-search placeholder="Cerca un progetto…" autocomplete="off" spellcheck="false" aria-describedby="search-hint"><button type="button" class="search-clear" data-search-clear hidden aria-label="Cancella la ricerca">Cancella</button></div><p id="search-hint" class="search-hint">Cerca per nome o ambito: per esempio nautica, arredo o architettura. Puoi combinare la ricerca con i filtri.</p></div>
-        <div class="filter-bar"><div class="filters" role="group" aria-label="Filtra progetti per ambito"><button type="button" data-filter="all" aria-pressed="true" class="is-active">Tutti i progetti <span data-filter-count>{{COUNT_ALL}}</span></button><button type="button" data-filter="modellazione" aria-pressed="false">Modellazione 3D <span data-filter-count>{{COUNT_MODELLAZIONE}}</span></button><button type="button" data-filter="stampa" aria-pressed="false">Stampa 3D <span data-filter-count>{{COUNT_STAMPA}}</span></button><button type="button" data-filter="prototipi" aria-pressed="false">Prototipi <span data-filter-count>{{COUNT_PROTOTIPI}}</span></button></div></div><div class="search-summary"><span class="filter-count" data-filter-status role="status" aria-live="polite">{{COUNT_LABEL}}</span><button class="search-reset" type="button" data-search-reset hidden>Azzera ricerca e filtri</button></div></div>
+        <div class="project-controls" {{CONTROLS_HIDDEN}}><div class="project-search"><label for="project-search">Trova il progetto che ti interessa</label><div class="search-input-wrap"><svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="project-search" name="q" data-project-search placeholder="Titolo, settore o tecnica…" autocomplete="off" spellcheck="false" aria-describedby="search-hint"><button type="button" class="search-clear" data-search-clear hidden aria-label="Cancella la ricerca">Cancella</button></div><p id="search-hint" class="search-hint">Scrivi una parola oppure seleziona un tag nelle schede. Puoi combinare la ricerca con i filtri per ambito.</p></div>
+        <div class="filter-bar"><div class="filters" role="group" aria-label="Filtra progetti per ambito"><button type="button" data-filter="all" aria-pressed="true" class="is-active">Tutti i progetti <span data-filter-count>{{COUNT_ALL}}</span></button><button type="button" data-filter="architettura" aria-pressed="false">Architettura <span data-filter-count>{{COUNT_ARCHITETTURA}}</span></button><button type="button" data-filter="nautica" aria-pressed="false">Nautica <span data-filter-count>{{COUNT_NAUTICA}}</span></button><button type="button" data-filter="prodotto" aria-pressed="false">Design di prodotto <span data-filter-count>{{COUNT_PRODOTTO}}</span></button></div></div><div class="search-summary"><span class="filter-count" data-filter-status role="status" aria-live="polite">{{COUNT_LABEL}}</span><button class="search-reset" type="button" data-search-reset hidden>Azzera ricerca e filtri</button></div></div>
         <div class="project-grid">
 {{PROJECT_CARDS}}
         </div>
@@ -45,9 +45,9 @@
     </main>
     <footer class="site-footer">
       <div class="container footer-inner">
-        <a class="footer-brand" href="progetti.html" aria-label="A.Silvestrini, progetti"><img class="footer-logo" src="img/logo-silve-light.png" width="247" height="399" alt=""><span class="footer-brand-word">A<span>.</span>Silvestrini</span></a>
+        <a class="footer-brand" href="progetti.html" aria-label="Alessio Silvestrino, progetti"><img class="footer-logo" src="img/logo-silve-light.png" width="247" height="399" alt=""><span class="footer-brand-word">Alessio Silvestrino</span></a>
         <p>Idee che prendono forma.</p>
-        <div class="footer-right"><span>© 2026 A.Silvestrini</span><a href="#top" aria-label="Torna all’inizio della pagina">Torna su ↑</a></div>
+        <div class="footer-right"><span>© 2026 Alessio Silvestrino</span><a href="#top" aria-label="Torna all’inizio della pagina">Torna su ↑</a></div>
       </div>
     </footer>
   </body>

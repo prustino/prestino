@@ -1,4 +1,4 @@
-# Progetti attivi di A.Silvestrino
+# Progetti attivi di Alessio Silvestrino
 
 Ogni sottocartella è un progetto visibile nel sito. I progetti nascosti sono nella cartella parallela `../progetti-nascosti/`.
 
@@ -47,11 +47,21 @@ L’anteprima dinamica ricarica la pagina conservando ricerca e filtri. Per una 
 
 1. Prepara una cartella con nome breve, in minuscolo e senza spazi (esempio `portaoggetti/`), inizialmente in `progetti-nascosti/`.
 2. Aggiungi la pagina `index.html` e tutti i suoi file. Puoi partire dalla struttura di un progetto esistente.
-3. Copia e personalizza `progetto.json`: titolo, descrizione, `order` (ordine crescente), `kind` (`real` o `concept`), etichetta, stato, tag, parole chiave e anteprima. Le categorie ammesse sono `modellazione`, `stampa`, `prototipi`; se ne possono indicare più di una.
+3. Copia e personalizza `progetto.json`: titolo, descrizione, `order` (ordine crescente), `kind` (`real` o `concept`), etichetta, stato, tag, parole chiave e anteprima. In `categories` indica l’ambito principale usando uno solo dei valori ammessi: `architettura`, `nautica` o `prodotto`.
 4. I percorsi `image.src` e gli eventuali `image.srcset` sono relativi alla cartella del progetto. Aggiorna anche testo alternativo, larghezza e altezza.
-5. Attiva il progetto dal comando di gestione. La scheda nella raccolta viene generata automaticamente, senza modificare `progetti.html`.
+5. Attiva il progetto dal comando di gestione. La scheda nella raccolta e la card scorrevole nel “Chi sono” vengono generate automaticamente, senza modificare i due HTML.
 
-I nuovi progetti entrano nella raccolta. La pagina iniziale del sito reindirizza a Chi sono; il menu contiene Progetti, Chi sono e Contatti.
+I nuovi progetti entrano sia nella raccolta sia nella vetrina del “Chi sono”. La pagina iniziale del sito reindirizza a Chi sono; il menu contiene Progetti, Chi sono e Contatti.
+
+### Categorie, tag e parole chiave
+
+Le categorie alimentano i tre filtri principali della raccolta e identificano l’ambito del progetto:
+
+- `architettura`: plastici e modelli architettonici;
+- `nautica`: yacht e modellismo navale;
+- `prodotto`: arredo, illuminazione, dispositivi e altri progetti di prodotto.
+
+I tag visibili devono essere brevi, coerenti e scritti in italiano. Usali per specificare la tipologia o la tecnica, per esempio `Plastico`, `Modellismo navale`, `Prototipazione` o `Stampa 3D FDM`; non ripetere nei tag il titolo del progetto. Il campo `keywords` può invece includere nomi propri, sinonimi, materiali, software, luoghi e varianti utili alla ricerca anche quando non devono apparire sulla scheda.
 
 ## Modificare le pagine
 

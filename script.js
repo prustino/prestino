@@ -41,8 +41,112 @@
     window.matchMedia('(max-width: 650px)').addEventListener('change', () => setMenuOpen(false));
   }
 
+  const aboutCarousel = document.querySelector('[data-about-carousel]');
+
+  if (aboutCarousel) {
+    const slides = [...aboutCarousel.querySelectorAll('[data-about-slide]')];
+    const controls = aboutCarousel.querySelector('[data-about-controls]');
+    const previous = aboutCarousel.querySelector('[data-about-prev]');
+    const next = aboutCarousel.querySelector('[data-about-next]');
+    const toggle = aboutCarousel.querySelector('[data-about-toggle]');
+    const toggleLabel = aboutCarousel.querySelector('[data-about-toggle-label]');
+    const counter = aboutCarousel.querySelector('[data-about-counter]');
+    const status = aboutCarousel.querySelector('[data-about-status]');
+
+    if (slides.length > 1 && controls && previous && next && toggle) {
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      let current = 0;
+      let timer;
+      let pausedByUser = reducedMotion.matches;
+      let pointerInside = false;
+      let focusInside = false;
+
+      const stopTimer = () => {
+        window.clearTimeout(timer);
+        timer = undefined;
+      };
+
+      const updateToggle = () => {
+        const paused = pausedByUser;
+        toggle.setAttribute('aria-label', paused ? 'Riprendi lo scorrimento automatico' : 'Metti in pausa lo scorrimento automatico');
+        if (toggleLabel) toggleLabel.textContent = paused ? 'Riprendi' : 'Pausa';
+      };
+
+      const schedule = () => {
+        stopTimer();
+        if (pausedByUser || pointerInside || focusInside || document.hidden) return;
+        timer = window.setTimeout(() => showSlide(current + 1), 6500);
+      };
+
+      const showSlide = (index, announce = false) => {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+          const active = slideIndex === current;
+          slide.hidden = !active;
+          slide.classList.toggle('is-active', active);
+          slide.setAttribute('aria-hidden', String(!active));
+        });
+        const followingImage = slides[(current + 1) % slides.length].querySelector('img[loading="lazy"]');
+        if (followingImage) followingImage.loading = 'eager';
+        if (counter) counter.textContent = `${String(current + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+        if (announce && status) status.textContent = `Progetto ${current + 1} di ${slides.length}: ${slides[current].querySelector('strong')?.textContent || ''}`;
+        schedule();
+      };
+
+      const pauseAfterControl = () => {
+        pausedByUser = true;
+        updateToggle();
+        stopTimer();
+      };
+
+      previous.addEventListener('click', () => {
+        pauseAfterControl();
+        showSlide(current - 1, true);
+      });
+      next.addEventListener('click', () => {
+        pauseAfterControl();
+        showSlide(current + 1, true);
+      });
+      toggle.addEventListener('click', () => {
+        pausedByUser = !pausedByUser;
+        updateToggle();
+        if (status) status.textContent = pausedByUser ? 'Scorrimento automatico in pausa.' : 'Scorrimento automatico attivo.';
+        schedule();
+      });
+      aboutCarousel.addEventListener('pointerenter', () => {
+        pointerInside = true;
+        stopTimer();
+      });
+      aboutCarousel.addEventListener('pointerleave', () => {
+        pointerInside = false;
+        schedule();
+      });
+      aboutCarousel.addEventListener('focusin', () => {
+        focusInside = true;
+        stopTimer();
+      });
+      aboutCarousel.addEventListener('focusout', (event) => {
+        if (!aboutCarousel.contains(event.relatedTarget)) {
+          focusInside = false;
+          schedule();
+        }
+      });
+      document.addEventListener('visibilitychange', schedule);
+      reducedMotion.addEventListener('change', (event) => {
+        if (event.matches) pausedByUser = true;
+        updateToggle();
+        schedule();
+      });
+
+      controls.hidden = false;
+      updateToggle();
+      showSlide(0);
+    }
+  }
+
   const filterButtons = [...document.querySelectorAll('button[data-filter]')];
   const projects = [...document.querySelectorAll('[data-project]')];
+  const searchTags = [...document.querySelectorAll('button[data-search-tag]')];
   const filterStatus = document.querySelector('[data-filter-status]');
   const projectSearch = document.querySelector('[data-project-search]');
   const searchClear = document.querySelector('[data-search-clear]');
@@ -51,6 +155,7 @@
   const emptyState = document.querySelector('[data-empty-state]');
 
   if (filterButtons.length && (projects.length || projectSearch)) {
+    searchTags.forEach((button) => { button.disabled = false; });
     const normalizeSearch = (value) => value
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')
@@ -125,6 +230,12 @@
         ).length;
       });
 
+      searchTags.forEach((button) => {
+        const active = Boolean(query) && normalizeSearch(button.dataset.searchTag || '') === query;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
+
       if (filterStatus) {
         const countText = visibleCount === 1 ? '1 progetto' : `${visibleCount} progetti`;
         const queryText = projectSearch?.value.trim();
@@ -143,6 +254,15 @@
     filterButtons.forEach((button) => {
       button.addEventListener('click', () => {
         activeFilter = button.dataset.filter;
+        applyFilters();
+      });
+    });
+
+    searchTags.forEach((button) => {
+      button.addEventListener('click', () => {
+        if (!projectSearch) return;
+        const tag = button.dataset.searchTag || '';
+        projectSearch.value = normalizeSearch(projectSearch.value) === normalizeSearch(tag) ? '' : tag;
         applyFilters();
       });
     });

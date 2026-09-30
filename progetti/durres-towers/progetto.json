@@ -3,13 +3,11 @@
   "label": "ARCHITETTURA IN SCALA",
   "description": "Modellazione 3D e realizzazione in stampa 3D FDM del plastico in scala 1:150 di Durres Towers, presentato al Bread & Heart Festival 2026 di Tirana.",
   "categories": [
-    "modellazione",
-    "stampa",
-    "prototipi"
+    "architettura"
   ],
   "tags": [
-    "Plastico",
     "Architettura",
+    "Plastico",
     "Stampa 3D FDM"
   ],
   "keywords": "durres towers tirana albania bread heart festival 2026 landscapes of abundance luca dini design architecture plastico architettonico scala 1:150 pla stampa 3d fdm modellazione riqualificazione urbana skyline waterfront",

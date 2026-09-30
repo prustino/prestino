@@ -3,14 +3,12 @@
   "label": "ARREDO OUTDOOR",
   "description": "Una linea di arredi da esterni per Bentley, ispirata al mondo della nautica e sviluppata attraverso modellazione 3D e prototipi in scala.",
   "categories": [
-    "modellazione",
-    "stampa",
-    "prototipi"
+    "prodotto"
   ],
   "tags": [
-    "Product design",
-    "Modellazione 3D",
-    "Prototipi in scala"
+    "Design di prodotto",
+    "Arredo",
+    "Prototipazione"
   ],
   "keywords": "bentley outdoor furniture arredi esterni nautica luca dini design architecture product design modellazione 3d prototipi scala stampa 3d sedia coffee table acciaio inossidabile vetro bitta ergonomia",
   "order": 7,

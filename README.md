@@ -1,6 +1,6 @@
-# A.Silvestrini — Progettazione e stampa 3D
+# Alessio Silvestrino — Progettazione e stampa 3D
 
-Portfolio statico in italiano dedicato ad A.Silvestrini, alla modellazione, alla prototipazione e alla stampa 3D. Non richiede dipendenze da installare. Node.js genera la raccolta dei progetti e la copia pubblica del sito.
+Portfolio statico in italiano dedicato ad Alessio Silvestrino, alla modellazione, alla prototipazione e alla stampa 3D. Non richiede dipendenze da installare. Node.js genera la raccolta dei progetti e la copia pubblica del sito.
 
 ## Anteprima locale
 
@@ -16,7 +16,7 @@ Con questa anteprima, spostare le cartelle nel Finder aggiorna automaticamente i
 
 Apri con doppio clic **Gestisci progetti.command**: scegli **1** per nascondere un progetto, **2** per riattivarlo o **3** per aggiornare manualmente quando l’anteprima dinamica è spenta. I progetti attivi sono in `progetti/`, quelli nascosti in `progetti-nascosti/`. Sposta sempre la cartella completa. Con l’anteprima dinamica accesa il browser si aggiorna da solo.
 
-La raccolta, la ricerca, i contatori e i collegamenti mostrano solo i progetti attivi. Se nascondi ITACA, anche foto e riferimenti dedicati in “Chi sono” scompaiono; riattivandolo tornano. La copia `dist/` non contiene cartelle nascoste, metadati o strumenti di gestione. Per aggiornare una versione online occorre ripubblicare `dist/`.
+La raccolta, la ricerca, i contatori e i collegamenti mostrano solo i progetti attivi. Anche la selezione di lavori in “Chi sono” segue le cartelle attive. La copia `dist/` non contiene cartelle nascoste, metadati o strumenti di gestione. Per aggiornare una versione online occorre ripubblicare `dist/`.
 
 Comandi equivalenti da terminale:
 
@@ -31,8 +31,8 @@ node scripts/progetti.mjs aggiorna
 
 - `scripts/templates/`: sorgenti della raccolta, di “Chi sono” e del reindirizzamento iniziale, con blocchi condizionati dalla presenza dei progetti. Modifica qui queste pagine: le copie HTML nella cartella principale e in `dist/` vengono rigenerate.
 - `index.html`: reindirizzamento alla pagina Chi sono. Il sito ha tre sezioni: Progetti, Chi sono e Contatti.
-- `progetti.html`: ricerca per parole chiave e filtri per modellazione, stampa 3D e prototipi.
-- `chi-sono.html`: interessi, approccio ed esperienza documentata di A.Silvestrini sul plastico ITACA presso WASP nel 2022.
+- `progetti.html`: ricerca per titolo, tag e parole chiave, con filtri per architettura, nautica e design di prodotto.
+- `chi-sono.html`: biografia, percorso, competenze e una vetrina scorrevole generata automaticamente dai progetti attivi.
 - `contatti.html`: telefono, WhatsApp, email e modulo che prepara il messaggio nel programma email dell’utente.
 - `progetti/`: dieci progetti, ciascuno nella propria cartella: ITACA WASP e nove lavori importati da `PORTFOLIO 2026`. Vedi `progetti/README.md` per l’elenco e per aggiungere nuovi lavori.
 - `progetti-nascosti/`: archivio locale escluso dalla copia pubblica; contiene i tre concept dimostrativi `vaso-onda`, `supporto-modulare` e `guscio-nodo` e ammette anche bozze incomplete.
@@ -54,14 +54,14 @@ Ogni progetto si conserva nella propria cartella completa, in `progetti/` o in `
 
 I collegamenti interni, le risorse e il redirect iniziale restano relativi alla pagina, anche quando JavaScript aggiunge i parametri di ricerca o apre la galleria. Non inserire domini o prefissi come `/prestino/` nei percorsi interni: il sito deve funzionare anche in un’altra sottocartella. Gli indirizzi di servizi e siti esterni restano completi.
 
-La ricerca legge titolo, descrizione, tag e parole chiave delle schede generate dai file `progetto.json` dei soli progetti attivi. Ignora maiuscole e accenti e cerca tutte le parole inserite. I conteggi dei filtri si aggiornano con la ricerca. Il pulsante “Azzera ricerca e filtri” ripristina la raccolta. I parametri URL `q` e `categoria` conservano il contesto anche usando “Tutti i progetti” dalla pagina di un progetto.
+La ricerca legge titolo, descrizione, tag e parole chiave delle schede generate dai file `progetto.json` dei soli progetti attivi. Ignora maiuscole e accenti e cerca tutte le parole inserite. Le tre categorie descrivono l’ambito principale del lavoro (`architettura`, `nautica` o `prodotto`); i tag precisano tipologia e tecniche e possono essere usati come termini di ricerca. I conteggi dei filtri si aggiornano con la ricerca. Il pulsante “Azzera ricerca e filtri” ripristina la raccolta. I parametri URL `q` e `categoria` conservano il contesto anche usando “Tutti i progetti” dalla pagina di un progetto.
 
 ## Contenuti da personalizzare
 
 - **Nuovi progetti:** le nove pagine importate seguono lo stesso template case study di ITACA: introduzione, scheda tecnica, indice, contributo, processo e risultato. Le informazioni non ancora fornite sono indicate in pagina con `DA AGGIUNGERE`, in particolare per Clove Lamp, la scala di Colosseum 339 e alcune fasi operative. Ogni README dedicato documenta contenuti e immagini; descrizione breve, tag, categorie e parole chiave restano in `progetto.json`.
-- **ITACA WASP:** resta invariato e documenta il plastico realizzato da A.Silvestrini durante il tirocinio in azienda a Imola nel 2022. L’architettura è attribuita a WASP. Non sono stati forniti rapporto di scala o modelli scaricabili.
+- **ITACA WASP:** resta invariato e documenta il plastico realizzato da Alessio Silvestrino durante il tirocinio in azienda a Imola nel 2022. L’architettura è attribuita a WASP. Non sono stati forniti rapporto di scala o modelli scaricabili.
 - **Esempi dimostrativi:** Vaso Onda, Supporto Modulare e Guscio Nodo sono conservati in `progetti-nascosti/` e possono essere riattivati con gli strumenti di gestione.
-- **Biografia:** aggiungere una descrizione personale, competenze e strumenti realmente utilizzati quando saranno forniti.
+- **Biografia:** il testo presenta formazione, specializzazione e dieci anni di esperienza nella produzione additiva; aggiornalo nel template `scripts/templates/chi-sono.html` quando cambia il percorso professionale.
 - **Recapiti:** telefono, WhatsApp ed email sono configurati nella pagina Contatti. Il modulo prepara una bozza nel programma email dell’utente; non c’è un servizio di invio sul server. Senza JavaScript il modulo resta disabilitato e la pagina invita a usare il collegamento email diretto.
 
 I caratteri vengono caricati da Google Fonts, con alternativa di sistema. Il sito rispetta la preferenza di riduzione del movimento. Senza JavaScript, navigazione e progetti restano visibili.

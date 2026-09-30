@@ -26,9 +26,9 @@ test('preview follows manual folder moves, reloads clients and serves only curre
     const initial = await status();
     assert.equal(initial.projects.length, 4);
     for (const path of ['/', '/index.html']) {
-      const entry = await request(`${path}?q=stampa&categoria=modellazione`, { redirect: 'manual' });
+      const entry = await request(`${path}?q=plastico&categoria=architettura`, { redirect: 'manual' });
       assert.equal(entry.status, 302);
-      assert.equal(entry.headers.get('location'), '/chi-sono.html?q=stampa&categoria=modellazione');
+      assert.equal(entry.headers.get('location'), '/chi-sono.html?q=plastico&categoria=architettura');
     }
     const initialPage = await request('/progetti.html');
     assert.equal(initialPage.headers.get('cache-control'), 'no-store');

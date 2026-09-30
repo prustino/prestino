@@ -3,14 +3,12 @@
   "label": "MODELLISMO NAVALE",
   "description": "Modellazione 3D e realizzazione in scala 1:100 dello yacht M|53 per Next Yacht Group – Maiora, su design di Luca Dini Design & Architecture.",
   "categories": [
-    "modellazione",
-    "stampa",
-    "prototipi"
+    "nautica"
   ],
   "tags": [
-    "Scala 1:100",
+    "Nautica",
     "Modellismo navale",
-    "Stampa 3D"
+    "Stampa 3D FDM"
   ],
   "keywords": "m53 m 53 maiora next yacht group yacht nautica modello modellismo navale scala 1 100 luca dini design architecture pla petg stampa 3d fdm firenze 2026",
   "order": 5,
