@@ -1,4 +1,4 @@
-# Progetti attivi di A.Silvestrini
+# Progetti attivi di A.Silvestrino
 
 Ogni sottocartella è un progetto visibile nel sito. I progetti nascosti sono nella cartella parallela `../progetti-nascosti/`.
 
