@@ -121,18 +121,26 @@ export async function startPreview({ root = siteRoot, port = 4173, pollMs = 500,
         send(200, html.replace('</body>', `${liveScript(pageRevision)}</body>`), types['.html']);
         return;
       }
+      // Su Windows un file ancora aperto impedisce di rinominare dist/ al successivo aggiornamento:
+      // i file fino a 64 MB (foto e video del sito pesano pochi MB) si leggono in memoria e si chiudono subito.
+      let body = null;
+      if (info.size <= 64 * 1024 * 1024) {
+        try { body = await handle.readFile(); } finally { await handle.close(); }
+      }
+      const release = async () => { if (!body) await handle.close(); };
       response.setHeader('Accept-Ranges', 'bytes');
       let start = 0, end = info.size - 1;
       if (request.headers.range) {
         const match = /^bytes=(\d*)-(\d*)$/.exec(request.headers.range);
-        if (!match || (!match[1] && !match[2])) { await handle.close(); response.setHeader('Content-Range', `bytes */${info.size}`); send(416, 'Intervallo non valido.'); return; }
+        if (!match || (!match[1] && !match[2])) { await release(); response.setHeader('Content-Range', `bytes */${info.size}`); send(416, 'Intervallo non valido.'); return; }
         if (match[1]) { start = Number(match[1]); end = match[2] ? Math.min(Number(match[2]), end) : end; }
         else start = Math.max(0, info.size - Number(match[2]));
-        if (!Number.isSafeInteger(start) || !Number.isSafeInteger(end) || start > end || start >= info.size) { await handle.close(); response.setHeader('Content-Range', `bytes */${info.size}`); send(416, 'Intervallo non valido.'); return; }
+        if (!Number.isSafeInteger(start) || !Number.isSafeInteger(end) || start > end || start >= info.size) { await release(); response.setHeader('Content-Range', `bytes */${info.size}`); send(416, 'Intervallo non valido.'); return; }
         response.setHeader('Content-Range', `bytes ${start}-${end}/${info.size}`);
       }
       response.writeHead(request.headers.range ? 206 : 200, { 'Content-Type': types[extension] || 'application/octet-stream', 'Content-Length': Math.max(0, end - start + 1) });
-      if (request.method === 'HEAD' || info.size === 0) { await handle.close(); response.end(); return; }
+      if (request.method === 'HEAD' || info.size === 0) { await release(); response.end(); return; }
+      if (body) { response.end(body.subarray(start, end + 1)); return; }
       const stream = handle.createReadStream({ start, end });
       stream.on('error', () => response.destroy());
       response.on('close', () => stream.destroy());

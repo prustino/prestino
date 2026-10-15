@@ -50,7 +50,8 @@ export async function readProjects(root, state = 'attivi', validate = true) {
     if (!Array.isArray(data.categories) || data.categories.length !== 1 || data.categories.some((category) => !['architettura', 'nautica', 'prodotto'].includes(category))) throw new Error(`${entry.name}: categorie non valide.`);
     if (!Array.isArray(data.tags) || !data.tags.length || data.tags.some((tag) => typeof tag !== 'string' || !tag.trim())) throw new Error(`${entry.name}: tags non validi.`);
     if (!data.image || typeof data.image.alt !== 'string' || !data.image.alt.trim() || !Number.isInteger(data.image.width) || data.image.width <= 0 || !Number.isInteger(data.image.height) || data.image.height <= 0) throw new Error(`${entry.name}: anteprima non valida.`);
-    await localFile(projectDir, 'index.html');
+    if (data.image.position !== undefined && (typeof data.image.position !== 'string' || !/^\d{1,3}% \d{1,3}%$/.test(data.image.position))) throw new Error(`${entry.name}: posizione dell’anteprima non valida (usa per esempio "50% 40%").`);
+    if (data.image.zoom !== undefined && (typeof data.image.zoom !== 'number' || data.image.zoom < 1 || data.image.zoom > 3)) throw new Error(`${entry.name}: zoom dell’anteprima non valido (numero tra 1 e 3).`);    await localFile(projectDir, 'index.html');
     await localFile(projectDir, data.image.src);
     if (data.image.srcset !== undefined) {
       if (!Array.isArray(data.image.srcset)) throw new Error(`${entry.name}: srcset non valido.`);
@@ -71,14 +72,23 @@ export async function inventory(root, validate = true) {
   return { attivi, nascosti };
 }
 
+// Le anteprime riempiono un riquadro 4:3. In progetto.json: "position" sposta il ritaglio sul soggetto,
+// "zoom" ingrandisce attorno a quel punto. Le foto non vengono mai specchiate.
+const focus = (image) => {
+  const styles = [];
+  if (image.position) styles.push(`object-position: ${image.position}`);
+  if (image.zoom) styles.push(`transform-origin: ${image.position || '50% 50%'}`, `scale: ${image.zoom}`);
+  return styles.length ? ` style="${styles.join('; ')}"` : '';
+};
+
 function card(project, index) {
   const base = `progetti/${project.slug}/`;
   const url = `${base}index.html`;
   const real = project.kind === 'real';
   const image = project.image;
   const srcset = image.srcset?.length ? ` srcset="${image.srcset.map((source) => `${escape(base + source.src)} ${source.width}w`).join(', ')}" sizes="(max-width: 650px) calc(100vw - 40px), 600px"` : '';
-  return `          <article class="project-card${real ? ' project-card-real' : ''}${real && index === 0 ? ' project-card-featured' : ''}" id="${project.slug}" data-project data-category="${escape(project.categories.join(' '))}" data-keywords="${escape(project.keywords)}">
-            <a class="project-preview-link" href="${url}" aria-label="Scopri ${escape(project.title)}"><div class="project-visual ${real ? 'photo' : 'object'}-visual"><img src="${escape(base + image.src)}"${srcset} width="${image.width}" height="${image.height}" loading="lazy" decoding="async" alt="${escape(image.alt)}"></div></a>
+  return `          <article class="project-card${real ? ' project-card-real' : ''}" id="${project.slug}" data-project data-category="${escape(project.categories.join(' '))}" data-keywords="${escape(project.keywords)}">
+            <a class="project-preview-link" href="${url}" aria-label="Scopri ${escape(project.title)}"><div class="project-visual ${real ? 'photo' : 'object'}-visual"><img src="${escape(base + image.src)}"${srcset} width="${image.width}" height="${image.height}"${focus(image)} loading="lazy" decoding="async" alt="${escape(image.alt)}"></div></a>
             <div class="project-content"><div class="project-eyebrow"><span>${escape(project.label)}</span><span>/${String(index + 1).padStart(2, '0')}</span></div><h2><a href="${url}">${escape(project.title)}<span class="project-arrow" aria-hidden="true">↗</span></a></h2><p>${escape(project.description)}</p><div class="tags" aria-label="Tag ricercabili">${project.tags.map((tag) => `<button class="project-tag" type="button" data-search-tag="${escape(tag)}" aria-pressed="false" disabled>${escape(tag)}</button>`).join('')}</div><span class="${real ? 'project-status' : 'concept-label'}">${escape(project.status)}</span><a class="text-link" href="${url}">${real ? 'Scopri il progetto' : 'Esplora il concept'} <span aria-hidden="true">↗</span></a></div>
           </article>`;
 }
@@ -91,7 +101,7 @@ function aboutCarousel(projects) {
     const image = project.image;
     const srcset = image.srcset?.length ? ` srcset="${image.srcset.map((source) => `${escape(base + source.src)} ${source.width}w`).join(', ')}" sizes="(max-width: 650px) calc(100vw - 40px), 430px"` : '';
     return `          <figure class="about-project-slide${index === 0 ? ' is-active' : ''}" data-about-slide role="group" aria-roledescription="slide" aria-label="${index + 1} di ${total}: ${escape(project.title)}"${index === 0 ? '' : ' hidden'}>
-            <a class="about-project-media" href="${base}index.html" aria-label="Scopri ${escape(project.title)}"><img src="${escape(base + image.src)}"${srcset} width="${image.width}" height="${image.height}" ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" alt="${escape(image.alt)}"></a>
+            <a class="about-project-media" href="${base}index.html" aria-label="Scopri ${escape(project.title)}"><img src="${escape(base + image.src)}"${srcset} width="${image.width}" height="${image.height}"${focus(image)} ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" alt="${escape(image.alt)}"></a>
             <figcaption><span>${escape(project.label)}</span><strong>${escape(project.title)}</strong><a class="text-link" href="${base}index.html">Scopri il progetto <span aria-hidden="true">↗</span></a></figcaption>
           </figure>`;
   }).join('\n');

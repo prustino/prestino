@@ -22,5 +22,16 @@ Originali forniti nella cartella `PORTFOLIO 2026/Bentley outdoor furniture`. Sel
 | `immagini/06.webp` | `WhatsApp Image 2026-09-19 at 17.58.52.jpeg` |
 | `immagini/07.webp` | `WhatsApp Image 2026-09-19 at 17.54.42.jpeg` |
 | `immagini/08.webp` | `WhatsApp Image 2026-09-19 at 17.54.43.jpeg` |
+| `immagini/09.webp` | `WhatsApp Image 2026-09-19 at 17.52.45.jpeg` |
+| `immagini/10.webp` | `WhatsApp Image 2026-09-19 at 17.52.46.jpeg` |
+| `immagini/11.webp` | `WhatsApp Image 2026-09-19 at 17.53.06.jpeg` |
+| `immagini/12.webp` | `WhatsApp Image 2026-09-19 at 17.53.40 (2).jpeg` |
+| `immagini/13.webp` | `WhatsApp Image 2026-09-19 at 17.53.40.jpeg` |
+| `immagini/14.webp` | `WhatsApp Image 2026-09-19 at 17.58.48.jpeg` |
+| `immagini/15.webp` | `WhatsApp Image 2026-09-19 at 17.58.50 (1).jpeg` |
+| `immagini/16.webp` | `WhatsApp Image 2026-09-19 at 17.58.51 (1).jpeg` |
+| `immagini/17.webp` | `WhatsApp Image 2026-09-19 at 17.58.51.jpeg` |
+| `immagini/18.webp` | `WhatsApp Image 2026-09-19 at 17.58.52 (1).jpeg` |
+| `immagini/19.webp` | `WhatsApp Image 2026-09-19 at 17.58.52 (2).jpeg` |
 
 I file `-720.webp` sono le anteprime delle stesse immagini. Video e file RAW non sono inclusi in questa prima struttura. I collegamenti sono relativi; spostare sempre la cartella completa tra progetti attivi e nascosti.

@@ -15,19 +15,20 @@
   "kind": "real",
   "status": "Progetto realizzato · Luca Dini, 2026",
   "image": {
-    "src": "immagini/01-720.webp",
-    "alt": "Plastico di Durres Towers con due torri e facciate dettagliate",
+    "src": "immagini/09-720.webp",
+    "alt": "Vista dall’alto del plastico di Durres Towers",
     "width": 405,
     "height": 720,
     "srcset": [
       {
-        "src": "immagini/01-720.webp",
+        "src": "immagini/09-720.webp",
         "width": 405
       },
       {
-        "src": "immagini/01.webp",
+        "src": "immagini/09.webp",
         "width": 900
       }
-    ]
+    ],
+    "position": "50% 14%"
   }
 }

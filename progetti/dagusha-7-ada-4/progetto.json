@@ -15,17 +15,17 @@
   "kind": "real",
   "status": "Progetto realizzato · Luca Dini, 2026",
   "image": {
-    "src": "immagini/01-720.webp",
-    "alt": "Modello dello yacht Dagusha VII / ADA IV visto dalla prua",
+    "src": "immagini/02-720.webp",
+    "alt": "Vista laterale del modello dello yacht sulla base espositiva",
     "width": 720,
     "height": 540,
     "srcset": [
       {
-        "src": "immagini/01-720.webp",
+        "src": "immagini/02-720.webp",
         "width": 720
       },
       {
-        "src": "immagini/01.webp",
+        "src": "immagini/02.webp",
         "width": 1600
       }
     ]

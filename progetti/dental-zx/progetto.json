@@ -15,19 +15,20 @@
   "kind": "real",
   "status": "Tesi di laurea · 2023",
   "image": {
-    "src": "immagini/01-720.webp",
-    "alt": "Dental ZX con scocca chiusa, sportello trasparente e pannello di controllo",
-    "width": 540,
-    "height": 720,
+    "src": "immagini/render-01-720.webp",
+    "alt": "Dental ZX chiusa in vista prospettica con scocca color rame trasparente",
+    "width": 720,
+    "height": 405,
     "srcset": [
       {
-        "src": "immagini/01-720.webp",
-        "width": 540
+        "src": "immagini/render-01-720.webp",
+        "width": 720
       },
       {
-        "src": "immagini/01.webp",
-        "width": 1200
+        "src": "immagini/render-01.webp",
+        "width": 1600
       }
-    ]
+    ],
+    "position": "55% 50%"
   }
 }

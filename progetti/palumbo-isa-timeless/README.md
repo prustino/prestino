@@ -24,5 +24,20 @@ Originali forniti nella cartella `PORTFOLIO 2026/Palumbo ISA Timeless`. Selezion
 | `immagini/07.webp` | `WhatsApp Image 2026-09-21 at 18.47.59 (1).jpeg` |
 | `immagini/08.webp` | `WhatsApp Image 2026-09-21 at 18.48.07 (5).jpeg` |
 | `immagini/09.webp` | `WhatsApp Image 2026-09-21 at 18.46.25.jpeg` |
+| `immagini/10.webp` | `WhatsApp Image 2026-09-21 at 18.47.58 (2).jpeg` |
+| `immagini/11.webp` | `WhatsApp Image 2026-09-21 at 18.47.59.jpeg` |
+| `immagini/12.webp` | `WhatsApp Image 2026-09-21 at 18.48.03 (1).jpeg` |
+| `immagini/13.webp` | `WhatsApp Image 2026-09-21 at 18.48.03.jpeg` |
+| `immagini/14.webp` | `WhatsApp Image 2026-09-21 at 18.48.04 (1).jpeg` |
+| `immagini/15.webp` | `WhatsApp Image 2026-09-21 at 18.48.04 (2).jpeg` |
+| `immagini/16.webp` | `WhatsApp Image 2026-09-21 at 18.48.04.jpeg` |
+| `immagini/17.webp` | `WhatsApp Image 2026-09-21 at 18.48.05 (1).jpeg` |
+| `immagini/18.webp` | `WhatsApp Image 2026-09-21 at 18.48.05.jpeg` |
+| `immagini/19.webp` | `WhatsApp Image 2026-09-21 at 18.48.06 (1).jpeg` |
+| `immagini/20.webp` | `WhatsApp Image 2026-09-21 at 18.48.06 (2).jpeg` |
+| `immagini/21.webp` | `WhatsApp Image 2026-09-21 at 18.48.07 (1).jpeg` |
+| `immagini/22.webp` | `WhatsApp Image 2026-09-21 at 18.48.07 (6).jpeg` |
+| `immagini/23.webp` | `WhatsApp Image 2026-09-21 at 18.48.07.jpeg` |
+| `immagini/24.webp` | `WhatsApp Image 2026-09-21 at 18.48.08.jpeg` |
 
 I file `-720.webp` sono le anteprime delle stesse immagini. Video e file RAW non sono inclusi in questa prima struttura. I collegamenti sono relativi; spostare sempre la cartella completa tra progetti attivi e nascosti.

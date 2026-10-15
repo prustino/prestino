@@ -26,5 +26,25 @@ Originali forniti nella cartella `PORTFOLIO 2026/Durres Towers`. Selezione di 12
 | `immagini/10.webp` | `image00012.jpeg` |
 | `immagini/11.webp` | `WhatsApp Image 2026-09-19 at 18.48.28.jpeg` |
 | `immagini/12.webp` | `WhatsApp Image 2026-09-19 at 18.48.29 (2).jpeg` |
+| `immagini/13.webp` | `image00001.jpeg` |
+| `immagini/14.webp` | `image00004.jpeg` |
+| `immagini/15.webp` | `image00009.jpeg` |
+| `immagini/16.webp` | `image00014.jpeg` |
+| `immagini/17.webp` | `WhatsApp Image 2026-09-19 at 18.48.24.jpeg` |
+| `immagini/18.webp` | `WhatsApp Image 2026-09-19 at 18.48.25 (1).jpeg` |
+| `immagini/19.webp` | `WhatsApp Image 2026-09-19 at 18.48.25 (2).jpeg` |
+| `immagini/20.webp` | `WhatsApp Image 2026-09-19 at 18.48.25.jpeg` |
+| `immagini/21.webp` | `WhatsApp Image 2026-09-19 at 18.48.26.jpeg` |
+| `immagini/22.webp` | `WhatsApp Image 2026-09-19 at 18.48.27 (1).jpeg` |
+| `immagini/23.webp` | `WhatsApp Image 2026-09-19 at 18.48.27 (2).jpeg` |
+| `immagini/24.webp` | `WhatsApp Image 2026-09-19 at 18.48.27.jpeg` |
+| `immagini/25.webp` | `WhatsApp Image 2026-09-19 at 18.48.28 (1).jpeg` |
+| `immagini/26.webp` | `WhatsApp Image 2026-09-19 at 18.48.29 (1).jpeg` |
+| `immagini/27.webp` | `WhatsApp Image 2026-09-19 at 18.48.29.jpeg` |
+| `immagini/28.webp` | `WhatsApp Image 2026-09-19 at 18.48.58 (1).jpeg` |
+| `immagini/29.webp` | `WhatsApp Image 2026-09-19 at 18.48.58 (2).jpeg` |
+| `immagini/30.webp` | `WhatsApp Image 2026-09-19 at 18.48.59 (1).jpeg` |
+| `immagini/31.webp` | `WhatsApp Image 2026-09-19 at 18.48.59.jpeg` |
+| `immagini/32.webp` | `WhatsApp Image 2026-09-19 at 18.49.00.jpeg` |
 
 I file `-720.webp` sono le anteprime delle stesse immagini. Video e file RAW non sono inclusi in questa prima struttura. I collegamenti sono relativi; spostare sempre la cartella completa tra progetti attivi e nascosti.

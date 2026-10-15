@@ -120,8 +120,11 @@ button:focus-visible {
   display: none !important
 }
 
+/* Margine laterale fluido (circa 4% dello schermo, tra 20 e 80 px) e contenuto largo al massimo 1760 px:
+   su un monitor da 1920 px restano 80 px per lato. */
 .container {
-  width: min(1160px, calc(100% - 96px));
+  --gutter: clamp(20px, 4vw, 80px);
+  width: min(1760px, calc(100% - 2 * var(--gutter)));
   margin-inline: auto
 }
 
@@ -1106,10 +1109,6 @@ textarea:focus {
 }
 
 @media(max-width:1100px) {
-  .container {
-    width: calc(100% - 64px)
-  }
-
   .hero {
     gap: 30px;
     padding-top: 65px;
@@ -1456,10 +1455,6 @@ textarea:focus {
 }
 
 @media(max-width:650px) {
-  .container {
-    width: calc(100% - 40px)
-  }
-
   .header-inner {
     min-height: 77px;
     height: auto;
@@ -1988,7 +1983,7 @@ textarea:focus {
 
 @media(max-width:370px) {
   .container {
-    width: calc(100% - 32px)
+    --gutter: 16px
   }
 
   .header-contact {
@@ -3514,5 +3509,49 @@ textarea:focus-visible {
   .header-search input,
   .header-search-toggle {
     transition: none;
+  }
+}
+
+/* Raccolta progetti: griglia regolare, riquadri 4:3 uguali per tutti i progetti.
+   Il ritaglio si centra sul soggetto con "position" in progetto.json. */
+.project-gallery .project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px 32px;
+}
+
+.project-gallery .project-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-gallery .project-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.project-gallery .project-content > .text-link {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.project-gallery .photo-visual {
+  aspect-ratio: 4 / 3;
+}
+
+.project-gallery .photo-visual img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-project-media img {
+  object-fit: cover;
+}
+
+@media (max-width: 650px) {
+  .project-gallery .project-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
   }
 }

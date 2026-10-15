@@ -44,6 +44,33 @@ Selezione dalla sottocartella `WhatsApp Unknown 2026-09-19 at 18.15.34/` della n
 | `video/stampa-pareti.mp4` | `WhatsApp Video 2026-09-19 at 17.18.51.mp4` | 19,93 s |
 | `video/lavorazione-laser.mp4` | `WhatsApp Video 2026-09-19 at 17.23.40 (2).mp4` | 22,96 s |
 | `video/plastico-copertura.mp4` | `WhatsApp Video 2026-09-19 at 17.23.40.mp4` | 26,10 s |
+| `immagini/foto-01.webp` | `3D_printed_walls_Itaca_Crane_WASP_construction_site.jpg` |
+| `immagini/foto-02.webp` | `6-shamballa_2739903_20260609120017.webp` |
+| `immagini/foto-03.webp` | `dff268fb-b7c1-4de8-bdca-861319ef2c05.jpg` |
+| `immagini/foto-04.webp` | `foto plastico/IMG_8353.JPG` |
+| `immagini/foto-05.webp` | `foto plastico/IMG_8354.JPG` |
+| `immagini/foto-06.webp` | `foto plastico/IMG_8372.JPG` |
+| `immagini/foto-07.webp` | `foto plastico/IMG_8377.jpg` |
+| `immagini/foto-08.webp` | `foto plastico/IMG_8378.jpg` |
+| `immagini/foto-09.webp` | `foto plastico/IMG_8380.JPG` |
+| `immagini/foto-10.webp` | `foto plastico/IMG_8381.JPG` |
+| `immagini/foto-11.webp` | `foto plastico/IMG_8382.JPG` |
+| `immagini/foto-12.webp` | `foto plastico/IMG_8389.JPG` |
+| `immagini/foto-13.webp` | `foto plastico/IMG_8390.JPG` |
+| `immagini/foto-14.webp` | `IMG_7772.jpg` |
+| `immagini/foto-15.webp` | `itaca-eco-sustainable-3D-printed-house.webp` |
+| `immagini/foto-16.webp` | `Itaca_3D_printed_house_exploded_view_WASP_3D_Build_web.jpg` |
+| `immagini/foto-17.webp` | `Parametric_3D_printed_walls_Itaca.jpg` |
+| `immagini/foto-18.webp` | `shamballa-wasp-eco-sustainable-open-air-laboratory.webp` |
+| `immagini/foto-19.webp` | `WhatsApp Image 2026-09-19 at 19.18.27.jpeg` |
+| `immagini/foto-20.webp` | `WhatsApp Unknown 2026-09-19 at 18.15.34/WhatsApp Image 2026-09-19 at 17.23.26 (2).jpeg` |
+| `immagini/foto-21.webp` | `WhatsApp Unknown 2026-09-19 at 18.15.34/WhatsApp Image 2026-09-19 at 17.23.26 (3).jpeg` |
+| `immagini/foto-22.webp` | `WhatsApp Unknown 2026-09-19 at 18.15.34/WhatsApp Image 2026-09-19 at 17.23.26 (4).jpeg` |
+| `immagini/foto-23.webp` | `WhatsApp Unknown 2026-09-19 at 18.15.34/WhatsApp Image 2026-09-19 at 17.23.26 (6).jpeg` |
+| `immagini/foto-24.webp` | `WhatsApp Unknown 2026-09-19 at 18.15.34/WhatsApp Image 2026-09-19 at 17.23.26 (7).jpeg` |
+| `immagini/foto-25.webp` | `WhatsApp Unknown 2026-09-19 at 18.15.34/WhatsApp Image 2026-09-19 at 17.23.26 (8).jpeg` |
+| `immagini/foto-26.webp` | `WhatsApp Unknown 2026-09-19 at 18.15.34/WhatsApp Image 2026-09-19 at 17.23.26.jpeg` |
+| `immagini/foto-27.webp` | `WhatsApp Unknown 2026-09-19 at 18.15.34/WhatsApp Image 2026-09-19 at 17.38.49.jpeg` |
 
 I poster sono in `immagini/video-*.webp`. Gli originali e le altre foto/clip fornite restano nelle cartelle di origine; la pagina propone una selezione senza duplicare scatti simili.
 

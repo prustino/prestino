@@ -37,5 +37,26 @@ Gli originali fotografici sono stati forniti nella cartella `PORTFOLIO 2026/Dent
 | `immagini/render-19.webp` | `RR19.jpg` |
 | `immagini/render-20.webp` | `RR20.jpg` |
 | `immagini/render-21.webp` – `immagini/render-23.webp` | `R21.jpg` – `R23.jpg` |
+| `immagini/14.webp` | `IMG_8544.jpg` |
+| `immagini/15.webp` | `IMG_8562.JPG` |
+| `immagini/16.webp` | `IMG_8563.JPG` |
+| `immagini/17.webp` | `IMG_8572.JPG` |
+| `immagini/18.webp` | `IMG_8574.JPG` |
+| `immagini/19.webp` | `IMG_8576.JPG` |
+| `immagini/20.webp` | `IMG_8577.JPG` |
+| `immagini/21.webp` | `IMG_8578.JPG` |
+| `immagini/22.webp` | `IMG_8581.JPG` |
+| `immagini/23.webp` | `IMG_8582.JPG` |
+| `immagini/24.webp` | `WhatsApp Image 2022-07-19 at 08.50.10.jpeg` |
+| `immagini/25.webp` | `WhatsApp Image 2022-07-19 at 08.50.12.jpeg` |
+| `immagini/26.webp` | `WhatsApp Image 2026-09-19 at 17.35.32.jpeg` |
+| `immagini/27.webp` | `WhatsApp Image 2026-09-19 at 17.35.43.jpeg` |
+| `immagini/28.webp` | `WhatsApp Image 2026-09-19 at 17.37.07.jpeg` |
+| `immagini/29.webp` | `WhatsApp Image 2026-09-19 at 17.37.21.jpeg` |
+| `immagini/30.webp` | `WhatsApp Image 2026-09-19 at 17.39.19.jpeg` |
+| `immagini/31.webp` | `WhatsApp Image 2026-09-19 at 17.39.20 (1).jpeg` |
+| `immagini/32.webp` | `WhatsApp Image 2026-09-19 at 17.39.20.jpeg` |
+| `immagini/33.webp` | `WhatsApp Image 2026-09-19 at 17.42.22.jpeg` |
+| `immagini/34.webp` | `WhatsApp Image 2026-09-19 at 17.44.04.jpeg` |
 
 I file `-720.webp` sono le anteprime delle stesse immagini. La sottocartella `RENDERZZ` ricevuta contiene copie identiche dei 27 JPEG alla radice e non è stata importata. La pagina divide le tavole di ricerca, i render e le fotografie del prototipo in tre gallerie navigabili. Video e file RAW non sono inclusi in questa prima struttura. I collegamenti sono relativi; spostare sempre la cartella completa tra progetti attivi e nascosti.

@@ -15,19 +15,21 @@
   "kind": "real",
   "status": "Firenze · 2026",
   "image": {
-    "src": "immagini/01-720.webp",
-    "alt": "Prua e fiancata del modello Palumbo ISA Timeless riflesse nella base",
+    "src": "immagini/10-720.webp",
+    "alt": "Modello ISA Timeless 52 di profilo, quasi all’altezza dello scafo, davanti a una finestra sul giardino",
     "width": 720,
     "height": 540,
     "srcset": [
       {
-        "src": "immagini/01-720.webp",
+        "src": "immagini/10-720.webp",
         "width": 720
       },
       {
-        "src": "immagini/01.webp",
+        "src": "immagini/10.webp",
         "width": 1600
       }
-    ]
+    ],
+    "position": "50% 42%",
+    "zoom": 1.1
   }
 }

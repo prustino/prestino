@@ -15,19 +15,20 @@
   "kind": "real",
   "status": "Firenze · 2026",
   "image": {
-    "src": "immagini/01-720.webp",
-    "alt": "Modello completo di Colosseum 339 con arcate rosse, vegetazione e figure in scala",
+    "src": "immagini/02-720.webp",
+    "alt": "Modello colosseum 339 su base nera fotografato all’interno",
     "width": 540,
     "height": 720,
     "srcset": [
       {
-        "src": "immagini/01-720.webp",
+        "src": "immagini/02-720.webp",
         "width": 540
       },
       {
-        "src": "immagini/01.webp",
+        "src": "immagini/02.webp",
         "width": 1200
       }
-    ]
+    ],
+    "position": "50% 50%"
   }
 }

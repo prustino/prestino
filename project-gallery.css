@@ -35,7 +35,11 @@
   gap: 12px 24px;
   margin-top: 28px;
 }
+/* Copertina nel formato reale della foto: le verticali restano verticali, senza fasce ai lati. */
 .portfolio-case-cover {
+  justify-self: end;
+  width: fit-content;
+  max-width: 100%;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -66,10 +70,18 @@
 .portfolio-case-cover > a[data-gallery]:hover::after { background: var(--accent-fill); color: white; }
 .portfolio-case-cover img {
   display: block;
-  width: 100%;
-  height: clamp(330px, 44vw, 620px);
-  object-fit: contain;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: clamp(330px, 44vw, 620px);
 }
+.portfolio-case-cover figcaption { width: 0; min-width: 100%; }
+/* Copertina verticale: la foto diventa più alta, il testo prende tutto lo spazio rimasto
+   e il titolo resta su una riga, ridotto quanto serve alla larghezza della colonna. */
+.portfolio-case-hero:has(.portfolio-case-cover.is-portrait) { grid-template-columns: minmax(0, 1fr) auto; }
+.portfolio-case-hero:has(.portfolio-case-cover.is-portrait) .portfolio-case-hero-copy { container-type: inline-size; }
+.portfolio-case-hero:has(.portfolio-case-cover.is-portrait) h1 { max-width: none; white-space: nowrap; font-size: min(clamp(3.5rem, 6.3vw, 5.7rem), 13cqi); }
+.portfolio-case-cover.is-portrait img { max-height: min(78vh, 700px); }
 .portfolio-case-cover figcaption {
   display: flex;
   flex-wrap: wrap;
@@ -89,6 +101,34 @@
   margin-block: 0;
   padding-block: 25px;
   border-top: 1px solid var(--line);
+}
+/* La scheda tecnica sta nella testata: sotto testo e foto su schermi medi, sotto il titolo su quelli larghi. */
+.portfolio-case-hero > .portfolio-case-facts { grid-column: 1 / -1; }
+/* Sezione "Il contributo" dentro la testata: a tutta larghezza sotto la scheda tecnica sugli schermi medi. */
+.portfolio-case-hero > .portfolio-phase { grid-column: 1 / -1; padding-bottom: 0; }
+
+@media (min-width: 1200px) {
+  .portfolio-case-hero {
+    grid-template-areas: "copy cover" "facts cover";
+    grid-template-rows: auto auto;
+    align-content: center;
+    row-gap: 36px;
+  }
+  .portfolio-case-hero-copy { grid-area: copy; align-self: end; }
+  .portfolio-case-cover { grid-area: cover; align-self: center; }
+  .portfolio-case-hero > .portfolio-case-facts { grid-area: facts; align-self: start; }
+
+  /* Foto verticale molto grande; accanto al titolo entra anche "Il contributo", così non resta spazio vuoto. */
+  .portfolio-case-cover.is-portrait img { max-height: min(calc(100vh - 150px), 980px); }
+}
+/* Con la foto verticale e uno schermo molto largo, "Il contributo" sta sotto il titolo e sopra la scheda
+   tecnica, nella colonna di sinistra; sotto i 1600 px resta a tutta larghezza dopo la testata. */
+@media (min-width: 1600px) {
+  .portfolio-case-hero:has(.portfolio-case-cover.is-portrait) {
+    grid-template-areas: "copy cover" "contrib cover" "facts cover";
+    grid-template-rows: auto auto auto;
+  }
+  .portfolio-case-hero > .portfolio-phase { grid-area: contrib; padding-block: 0; }
 }
 .portfolio-case-facts dt { color: var(--muted); font-size: .75rem; }
 .portfolio-case-facts dd {
@@ -180,6 +220,20 @@ p.portfolio-placeholder {
   list-style: none;
 }
 .portfolio-steps li { padding-top: 18px; border-top: 1px solid var(--line); }
+/* Una foto per fase, in riquadri quadrati uguali; il ritaglio resta centrato sul soggetto. */
+.portfolio-step-media {
+  display: block;
+  aspect-ratio: 1 / 1;
+  margin: 0 0 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #22231f;
+}
+.portfolio-step-media a { display: block; width: 100%; height: 100%; cursor: zoom-in; }
+.portfolio-step-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .25s ease; }
+.portfolio-step-media a:hover img { transform: scale(1.025); }
+.portfolio-step-missing { display: grid; place-items: center; padding: 20px; border-style: dashed; background: transparent; text-align: center; font-size: .75rem; }
 .portfolio-step-number { color: var(--purple); font: .875rem/1.5 monospace; }
 .portfolio-steps h3 { margin-block: 14px 12px; font-size: 1.25rem; font-weight: 600; }
 .portfolio-steps p { color: var(--muted); font-size: 1rem; line-height: 1.85; }
@@ -228,9 +282,10 @@ p.portfolio-placeholder {
 .portfolio-story-copy { max-width: 68ch; color: var(--muted); font-size: 1rem; line-height: 1.85; }
 .portfolio-story-copy p + p { margin-top: 18px; }
 .portfolio-story-copy h3 { margin: 30px 0 9px; color: var(--ink); font-size: 1.05rem; font-weight: 650; letter-spacing: -.02em; }
-.portfolio-cover { margin: 0; }
+.portfolio-cover { width: fit-content; max-width: 100%; margin: 0 auto; }
 .portfolio-cover > a { display: block; overflow: hidden; border-radius: 12px; background: #22231f; }
-.portfolio-cover img { width: 100%; height: clamp(300px, 48vw, 640px); object-fit: contain; }
+.portfolio-cover img { display: block; width: auto; max-width: 100%; height: auto; max-height: clamp(300px, 48vw, 640px); }
+.portfolio-cover figcaption { width: 0; min-width: 100%; }
 .portfolio-cover figcaption { display: flex; justify-content: space-between; gap: 16px; margin-top: 12px; color: var(--muted); font-size: .8rem; }
 .portfolio-cover figcaption a { color: var(--purple-dark); white-space: nowrap; }
 .portfolio-gallery { padding-block: 64px 46px; border-top: 1px solid var(--line); }
@@ -238,12 +293,13 @@ p.portfolio-placeholder {
 .portfolio-section-heading h2 { margin-top: 12px; font-size: clamp(28px, 3vw, 40px); font-weight: 600; }
 .portfolio-section-heading > p { max-width: 29ch; color: var(--muted); font-size: .875rem; }
 .portfolio-gallery > .portfolio-section-heading { padding-top: 0; border-top: 0; }
-.portfolio-gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 38px 24px; }
-.portfolio-gallery-grid figure { min-width: 0; margin: 0; }
-.portfolio-gallery-grid figure:first-child { grid-column: 1 / -1; }
+/* Righe giustificate: ogni foto conserva il proprio formato (--ar = larghezza/altezza, scritto su ogni figure)
+   e le foto di una stessa riga hanno la stessa altezza, senza fasce vuote né tagli. */
+.portfolio-gallery-grid { --row: clamp(260px, 21vw, 420px); display: flex; flex-wrap: wrap; gap: 38px 24px; }
+.portfolio-gallery-grid::after { content: ''; flex: 2 1 0; }
+.portfolio-gallery-grid figure { flex: var(--ar, 1.3333) 1 calc(var(--ar, 1.3333) * var(--row)); min-width: 0; margin: 0; }
 .portfolio-gallery-grid a { position: relative; display: block; overflow: hidden; background: #22231f; border: 1px solid var(--line); border-radius: 9px; }
-.portfolio-gallery-grid img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; transition: transform .25s ease; }
-.portfolio-gallery-grid figure:first-child img { max-height: 720px; aspect-ratio: 16 / 10; }
+.portfolio-gallery-grid img { display: block; width: 100%; height: auto; aspect-ratio: var(--ar, 4 / 3); object-fit: cover; transition: transform .25s ease; }
 .portfolio-gallery-grid a:hover img { transform: scale(1.025); }
 .portfolio-zoom { position: absolute; right: 12px; bottom: 12px; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--paper); box-shadow: 0 2px 15px #0002; }
 .portfolio-gallery-grid figcaption { display: flex; align-items: baseline; gap: 16px; margin-top: 12px; font-size: .8rem; color: var(--muted); line-height: 1.6; }
@@ -251,18 +307,7 @@ p.portfolio-placeholder {
 .portfolio-gallery-group-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin: 42px 0 22px; padding-top: 24px; border-top: 1px solid var(--line); }
 .portfolio-gallery-group-heading h3 { font-size: clamp(1.35rem, 2.3vw, 1.8rem); font-weight: 600; }
 .portfolio-gallery-group-heading p { max-width: 44ch; color: var(--muted); font-size: .875rem; line-height: 1.7; }
-.dental-research-grid img,
-.dental-research-grid figure:first-child img { aspect-ratio: 2 / 1; }
-.dental-render-grid img,
-.dental-render-grid figure:first-child img { aspect-ratio: 16 / 9; }
 .goyoke-project-logo { display: block; width: 112px; height: auto; margin-bottom: 20px; }
-.goyoke-render-grid,
-.goyoke-test-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.goyoke-render-grid img,
-.goyoke-render-grid figure:first-child img { aspect-ratio: 16 / 9; }
-.goyoke-process-visual img { aspect-ratio: 4 / 3; }
-.goyoke-prototype-grid figure:first-child img,
-.goyoke-test-grid figure:first-child img { aspect-ratio: 4 / 3; }
 .portfolio-video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 28px; }
 .portfolio-video-grid figure { margin: 0; }
 .portfolio-video-grid video { display: block; width: 100%; max-height: 540px; background: #22261f; border-radius: 10px; }
@@ -275,7 +320,7 @@ p.portfolio-placeholder {
 
 @media (max-width: 1000px) {
   .portfolio-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .portfolio-gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .portfolio-gallery-grid { --row: 200px; }
   .portfolio-steps { gap: 22px; }
 }
 @media (max-width: 760px) {
@@ -308,9 +353,14 @@ p.portfolio-placeholder {
   .portfolio-case-hero .tags { order: 4; margin: 0; }
   .portfolio-hero-actions { order: 5; margin: 0; }
   .portfolio-case-hero h1 { max-width: 100%; font-size: clamp(3.2rem, 13vw, 4.4rem); }
-  .portfolio-case-cover img { height: auto; min-height: 220px; max-height: 480px; }
+  .portfolio-case-cover { justify-self: center; }
+  .portfolio-case-cover img,
+  .portfolio-case-cover.is-portrait img { max-height: 480px; }
+  .portfolio-case-hero:has(.portfolio-case-cover.is-portrait) { grid-template-columns: minmax(0, 1fr); }
+  .portfolio-case-hero:has(.portfolio-case-cover.is-portrait) h1 { font-size: min(clamp(3.2rem, 13vw, 4.4rem), 12vw); }
   .portfolio-case-cover figcaption { padding: 12px 16px; }
-  .portfolio-case-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; }
+  .portfolio-case-facts { order: 6; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; }
+  .portfolio-case-hero > .portfolio-phase { order: 7; padding-top: 20px; }
   .portfolio-case-facts dd { font-size: .875rem; }
   .portfolio-page .detail-index { top: var(--project-header-height, 77px); gap: 20px; }
   .portfolio-page .detail-index > span { display: none; }
@@ -318,8 +368,8 @@ p.portfolio-placeholder {
   .portfolio-process { padding-block: 40px; }
   .portfolio-steps { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .portfolio-facts { grid-template-columns: 1fr; }
-  .portfolio-gallery-grid { grid-template-columns: 1fr; }
-  .portfolio-cover img { height: auto; min-height: 220px; max-height: 480px; }
+  .portfolio-gallery-grid { --row: 150px; gap: 24px 12px; }
+  .portfolio-cover img { max-height: 480px; }
 }
 @media (max-width: 420px) {
   .portfolio-case-facts { grid-template-columns: minmax(0, 1fr); }

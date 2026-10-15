@@ -23,5 +23,7 @@ Originali forniti nella cartella `PORTFOLIO 2026/Maiora 53`. Selezione di 8 imma
 | `immagini/06.webp` | `WhatsApp Image 2026-09-21 at 18.47.58 (1).jpeg` |
 | `immagini/07.webp` | `WhatsApp Image 2026-09-21 at 18.47.58.jpeg` |
 | `immagini/08.webp` | `WhatsApp Image 2026-09-21 at 18.47.56.jpeg` |
+| `immagini/09.webp` | `WhatsApp Image 2026-09-21 at 18.47.55 (1).jpeg` |
+| `immagini/10.webp` | `WhatsApp Image 2026-09-21 at 18.47.56 (2).jpeg` |
 
 I file `-720.webp` sono le anteprime delle stesse immagini. Video e file RAW non sono inclusi in questa prima struttura. I collegamenti sono relativi; spostare sempre la cartella completa tra progetti attivi e nascosti.

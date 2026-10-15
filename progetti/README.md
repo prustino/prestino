@@ -53,6 +53,49 @@ L’anteprima dinamica ricarica la pagina conservando ricerca e filtri. Per una 
 
 I nuovi progetti entrano sia nella raccolta sia nella vetrina del “Chi sono”. La pagina iniziale del sito reindirizza a Chi sono; il menu contiene Progetti, Chi sono e Contatti.
 
+### Copertina della scheda (`image` in `progetto.json`)
+
+Nella raccolta tutte le schede hanno lo stesso riquadro 4:3. Scegli come copertina una foto orizzontale del progetto e, dentro ogni categoria, usa la stessa inquadratura, così le schede restano coerenti tra loro:
+
+- `architettura`: plastico intero visto dall’alto, di tre quarti;
+- `prodotto`: oggetto intero di tre quarti;
+- `nautica`: vedi le regole qui sotto.
+
+Campi facoltativi per regolare il ritaglio senza modificare la foto:
+
+- `position`: punto da tenere al centro del riquadro, per esempio `"50% 40%"` (orizzontale, verticale);
+- `zoom`: ingrandimento attorno a `position`, tra `1` e `3`, per esempio `1.2`.
+
+Le foto non si specchiano mai: l’orientamento deve essere quello reale dello scatto.
+
+#### Regole per i progetti di nautica
+
+1. **Prua verso destra, sempre:** la barca è rivolta da sinistra a destra, con la poppa a sinistra e la prua a destra.
+2. **Vista laterale:** la copertina mostra la barca di profilo, il più possibile ortogonale al fianco. Evita le viste troppo dall’alto: i riferimenti sono le copertine di M|53 (`maiora-53`, foto 02) e di ISA Timeless 52 (`palumbo-isa-timeless`, foto 10), fotografate quasi all’altezza dello scafo.
+3. **Se non c’è un profilo con la prua a destra:** usa una vista di tre quarti anteriore, sempre con la barca che guarda da sinistra verso destra.
+4. **Se manca anche questa:** non specchiare e non scegliere una foto con la prua a sinistra. Segnala che serve una nuova foto con l’orientamento corretto, da aggiungere nella cartella `immagini/` del progetto.
+5. **Barca grande nel riquadro:** la barca deve occupare quasi tutta la larghezza del riquadro, con un piccolo margine ai lati e senza toccare i bordi. Se c’è troppo spazio intorno, ingrandisci con `zoom` (di solito tra `1.1` e `1.25`) e centra la barca con `position`.
+6. **Formato:** usa una foto orizzontale 4:3, come quelle già presenti, così il riquadro si riempie senza tagliare prua o poppa.
+
+**Copertine da sostituire:** Dagusha VII (`dagusha-7-ada-4`) usa provvisoriamente il profilo della foto 02, che ha la prua a sinistra. Tra le foto attuali non c’è né un profilo né un tre quarti anteriore con la prua a destra; la foto 06 ha l’orientamento giusto ma mostra il modello ancora in montaggio. Serve una nuova foto.
+
+Esempio (M|53):
+
+```json
+"image": {
+  "src": "immagini/02-720.webp",
+  "alt": "Vista laterale del modello Maiora 53 dal lato opposto",
+  "width": 720,
+  "height": 540,
+  "srcset": [
+    { "src": "immagini/02-720.webp", "width": 720 },
+    { "src": "immagini/02.webp", "width": 1600 }
+  ],
+  "position": "49% 52%",
+  "zoom": 1.22
+}
+```
+
 ### Categorie, tag e parole chiave
 
 Le categorie alimentano i tre filtri principali della raccolta e identificano l’ambito del progetto:
@@ -70,6 +113,7 @@ I tag visibili devono essere brevi, coerenti e scritti in italiano. Usali per sp
 - Lascia `<!-- PROJECT-NAVIGATION -->` nel punto in cui vuoi i link agli altri progetti: il sito genera collegamenti ai soli lavori attivi, senza collegare un progetto a se stesso.
 - Le risorse generali usano `../../style.css`, `../../script.js` e `../../contatti.html`. Il foglio di stile condiviso usa `../../progetti/progetti-dettaglio.css`: il percorso resta valido anche spostando la cartella.
 - Le nove nuove pagine usano anche `../../project-gallery.css` e `../../project-gallery.js` per il template case study, l’indice sticky, l’ingrandimento delle immagini e la navigazione da tastiera. Mantieni relativi tutti i collegamenti interni, senza domini o prefissi come `/prestino/`.
+- Ogni fase del processo (`ol.portfolio-steps`) si apre con una foto in un riquadro quadrato: `<figure class="portfolio-step-media"><a href="immagini/04.webp" data-gallery="processo"><img src="immagini/04-720.webp" …></a></figure>`. Finché la foto manca resta il segnaposto `portfolio-step-missing` con la scritta IMMAGINE DA AGGIUNGERE.
 - Foto, video e modelli usano percorsi interni al progetto, per esempio `immagini/dettaglio.webp` o `materiali/modello.stl`.
 - L’anteprima dinamica rileva le modifiche. Se è spenta, scegli **3 — Aggiorna** o esegui `node scripts/prepare-site.mjs`.
 
