@@ -39,8 +39,8 @@ node scripts/progetti.mjs aggiorna
 - `progetti/*/progetto.json`: informazioni per generare ogni scheda nella raccolta.
 - `scripts/serve-site.mjs` e `scripts/preview-client.js`: anteprima locale con aggiornamento automatico delle cartelle e del browser, supporto ai video ed esclusione dei file nascosti.
 - `scripts/projects.mjs` e `scripts/progetti.mjs`: generazione, convalida e spostamento dei progetti con ripristino in caso di errore.
-- `style.css` e `progetti/progetti-dettaglio.css`: stili responsive, palette panna e terracotta.
-- `img/logo-silve-dark.png` e `img/logo-silve-light.png`: varianti trasparenti del monogramma, rispettivamente per header chiaro e footer scuro.
+- `style.css` e `progetti/progetti-dettaglio.css`: stili responsive, tema scuro con accenti terracotta. I colori principali sono variabili in `:root` all’inizio di `style.css`.
+- `img/logo-silve-dark.png` e `img/logo-silve-light.png`: varianti trasparenti del monogramma, per sfondi chiari e scuri. Con il tema scuro header e footer usano la variante chiara.
 - `script.js`: menu mobile, ricerca, conteggi, filtri e preparazione dei messaggi email.
 - `project-gallery.css` e `project-gallery.js`: impaginazione e galleria condivise dai nove nuovi progetti, con ingrandimento delle immagini e navigazione da tastiera.
 - `progetti/itaca-wasp/itaca.js`: indice delle sezioni e galleria per ingrandire foto, modelli digitali e schemi con navigazione da tastiera.

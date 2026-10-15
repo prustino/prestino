@@ -24,7 +24,7 @@
 .itaca-page figure img { width: 100%; height: auto; }
 .itaca-page a[data-gallery] { display: block; position: relative; cursor: zoom-in; }
 .itaca-page a[data-gallery]::after { content: '↗'; position: absolute; right: 12px; bottom: 12px; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--paper); color: var(--ink); box-shadow: 0 2px 8px #0002; font-size: 18px; pointer-events: none; }
-.itaca-page a[data-gallery]:hover::after { background: var(--purple); color: white; }
+.itaca-page a[data-gallery]:hover::after { background: var(--accent-fill); color: white; }
 .itaca-page .detail-index { position: sticky; top: var(--project-header-height, 88px); z-index: 15; background: var(--paper); border-bottom: 1px solid var(--line); gap: 6px 20px; padding-block: 8px; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: thin; }
 .itaca-page .detail-index > span { white-space: nowrap; color: var(--purple); font-weight: 600; margin-right: auto; }
 .itaca-page .detail-index a { white-space: nowrap; flex-shrink: 0; border-bottom: 2px solid transparent; }
@@ -33,7 +33,7 @@
 .itaca-cover {
   overflow: hidden;
   border-radius: 14px;
-  background: #ebe6dc;
+  background: #22231f;
   border: 1px solid var(--line);
 }
 
@@ -91,7 +91,7 @@
 
 .itaca-systems { padding-block: 48px 64px; border-top: 1px solid var(--line); }
 .itaca-system-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-.itaca-system { display: flex; flex-direction: column; gap: 24px; padding: 20px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+.itaca-system { display: flex; flex-direction: column; gap: 24px; padding: 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--white); }
 .itaca-system a { display: block; border-radius: 6px; }
 .itaca-system figcaption { width: 100%; }
 .itaca-system h3 { margin-block: 14px 12px; font-size: 1.25rem; font-weight: 600; }
@@ -120,7 +120,7 @@
 .itaca-workshop, .itaca-videos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .itaca-workshop { margin-top: 36px; }
 .itaca-workshop a { display: block; border-radius: 8px; }
-.itaca-workshop img { aspect-ratio: 4 / 5; object-fit: contain; background: #eae7e0; border-radius: 8px; }
+.itaca-workshop img { aspect-ratio: 4 / 5; object-fit: contain; background: #22231f; border-radius: 8px; }
 .itaca-workshop figcaption, .itaca-videos figcaption { font-size: .875rem; line-height: 1.7; color: var(--muted); margin-top: 14px; }
 .itaca-workshop figcaption h3, .itaca-gallery-wide figcaption h3 { font-size: 1rem; line-height: 1.5; font-weight: 600; color: var(--ink); margin: 0 0 8px; }
 .itaca-workshop figcaption p, .itaca-gallery-wide figcaption p { margin: 0; }
@@ -130,7 +130,7 @@
 .itaca-videos figcaption .text-link { display: flex; width: fit-content; margin-top: 10px; font-size: .8125rem; }
 .itaca-videos figcaption > span { display: block; font-size: .75rem; letter-spacing: .06em; color: var(--ink); margin-bottom: 7px; }
 
-.itaca-material-section { background: var(--ink); color: var(--paper); }
+.itaca-material-section { background: var(--night); color: var(--ink); }
 .itaca-material-inner { padding-block: 58px; display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.25fr); gap: 54px; align-items: center; }
 .itaca-material-copy .eyebrow { color: #d8b39b; }
 .itaca-material-copy h2 { font-size: clamp(1.8rem, 2.8vw, 2.4rem); }
@@ -156,7 +156,7 @@
 .itaca-credits strong { color: var(--ink); font-weight: 600; }
 
 .image-viewer-open { overflow: hidden; }
-.image-viewer { width: min(1120px, calc(100% - 32px)); max-width: none; height: min(900px, calc(100dvh - 32px)); max-height: none; margin: auto; padding: 0; background: #22261f; color: #f6f4ef; border: 1px solid #ffffff30; border-radius: 14px; box-shadow: 0 20px 80px #0006; }
+.image-viewer { width: min(1120px, calc(100% - 32px)); max-width: none; height: min(900px, calc(100dvh - 32px)); max-height: none; margin: auto; padding: 0; background: #22261f; color: #f6f4ef; border: 1px solid #ffffff08; border-radius: 14px; box-shadow: 0 20px 80px #0006; }
 .image-viewer[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
 .image-viewer::backdrop { background: #11150fea; }
 .image-viewer-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 20px; }
