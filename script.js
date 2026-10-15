@@ -3,6 +3,207 @@
 
   document.documentElement.classList.add('js');
 
+  const normalizeSearch = (value) => value
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  // Ricerca in tutto il sito: la lente compare nell'header di ogni pagina.
+  const siteRoot = new URL('.', document.currentScript?.src || window.location.href);
+  const onProjectsPage = document.body.classList.contains('projects-page');
+  const headerInner = document.querySelector('.header-inner');
+  let siteSearch = null;
+
+  if (headerInner) {
+    headerInner.insertAdjacentHTML('beforeend', `
+      <div class="header-search" data-search-box>
+        <label class="visually-hidden" for="site-search">Cerca nel sito</label>
+        <input type="search" id="site-search" data-project-search placeholder="Cerca…" autocomplete="off" spellcheck="false" tabindex="-1" aria-controls="site-search-results">
+        <button type="button" class="header-search-clear" data-search-clear hidden aria-label="Cancella la ricerca">×</button>
+        <button type="button" class="header-search-toggle" data-search-toggle aria-expanded="false" aria-controls="site-search" aria-label="Apri la ricerca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button>
+        <div class="search-results" id="site-search-results" hidden><p class="search-results-status" role="status" aria-live="polite"></p><ul></ul></div>
+      </div>`);
+
+    const box = headerInner.querySelector('[data-search-box]');
+    const input = box.querySelector('input');
+    const clear = box.querySelector('[data-search-clear]');
+    const toggle = box.querySelector('[data-search-toggle]');
+    const results = box.querySelector('.search-results');
+    const resultsStatus = results.querySelector('.search-results-status');
+    const resultsList = results.querySelector('ul');
+    let indexPromise;
+    let renderTimer;
+
+    const fetchPage = async (url) => {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`${response.status} ${url}`);
+      return new DOMParser().parseFromString(await response.text(), 'text/html');
+    };
+
+    const toEntry = (doc, url, section) => {
+      const main = doc.querySelector('main') || doc.body;
+      main.querySelectorAll('script, noscript, .visually-hidden, [hidden]').forEach((node) => node.remove());
+      const chunks = [...main.querySelectorAll('h1, h2, h3, p, li, figcaption, dt, dd, blockquote, a, strong, label')]
+        .map((node) => node.textContent.replace(/\s+/g, ' ').trim())
+        .filter(Boolean);
+      const title = (doc.title || '').split(' — ')[0].trim() || section;
+      const description = doc.querySelector('meta[name="description"]')?.content || '';
+      return { url, section, title, chunks, titleText: normalizeSearch(title), text: normalizeSearch(`${title} ${description} ${chunks.join(' ')}`) };
+    };
+
+    // L'indice si costruisce alla prima ricerca leggendo le pagine pubblicate: progetti attivi, Chi sono e Contatti.
+    const loadIndex = () => {
+      indexPromise ||= (async () => {
+        const projectsUrl = new URL('progetti.html', siteRoot);
+        const projectsDoc = onProjectsPage ? document : await fetchPage(projectsUrl);
+        const projectUrls = new Set([...projectsDoc.querySelectorAll('[data-project] .project-content a[href]')]
+          .map((link) => new URL(link.getAttribute('href').split(/[?#]/)[0], projectsUrl).href));
+        const pages = [
+          [new URL('chi-sono.html', siteRoot).href, 'Chi sono'],
+          [new URL('contatti.html', siteRoot).href, 'Contatti'],
+          ...[...projectUrls].map((href) => [href, 'Progetto'])
+        ];
+        const entries = await Promise.all(pages.map(async ([url, section]) => {
+          try { return toEntry(await fetchPage(url), url, section); } catch { return null; }
+        }));
+        return entries.filter(Boolean);
+      })();
+      return indexPromise;
+    };
+
+    const snippetFor = (entry, terms) => {
+      const chunk = entry.chunks.find((text) => normalizeSearch(text).includes(terms[0])) || entry.chunks[0] || '';
+      if (chunk.length <= 120) return chunk;
+      const start = Math.max(0, normalizeSearch(chunk).indexOf(terms[0]) - 40);
+      return `${start ? '…' : ''}${chunk.slice(start, start + 120).trim()}…`;
+    };
+
+    const renderResults = async () => {
+      const query = normalizeSearch(input.value);
+      if (!query) {
+        results.hidden = true;
+        return;
+      }
+      const terms = query.split(' ');
+      let entries;
+      try {
+        entries = await loadIndex();
+      } catch {
+        resultsList.replaceChildren();
+        resultsStatus.textContent = 'La ricerca nel sito non è disponibile in questa anteprima.';
+        results.hidden = false;
+        return;
+      }
+      if (normalizeSearch(input.value) !== query) return;
+      // Nella pagina Progetti le schede si filtrano già sotto: qui si mostrano solo le altre sezioni.
+      const matches = entries
+        .filter((entry) => !(onProjectsPage && entry.section === 'Progetto'))
+        .filter((entry) => terms.every((term) => entry.text.includes(term)))
+        .sort((a, b) => Number(terms.every((term) => b.titleText.includes(term))) - Number(terms.every((term) => a.titleText.includes(term))))
+        .slice(0, 6);
+      resultsList.replaceChildren(...matches.map((entry) => {
+        const item = document.createElement('li');
+        const link = document.createElement('a');
+        const section = document.createElement('span');
+        const title = document.createElement('strong');
+        const snippet = document.createElement('span');
+        link.href = entry.url;
+        section.className = 'search-result-section';
+        section.textContent = entry.section;
+        title.textContent = entry.title;
+        snippet.className = 'search-result-snippet';
+        snippet.textContent = snippetFor(entry, terms);
+        link.append(section, title, snippet);
+        item.append(link);
+        return item;
+      }));
+      if (onProjectsPage && !matches.length) {
+        results.hidden = true;
+        return;
+      }
+      resultsStatus.textContent = matches.length
+        ? (onProjectsPage ? 'Anche nelle altre sezioni' : `${matches.length} ${matches.length === 1 ? 'risultato' : 'risultati'}`)
+        : 'Nessun risultato';
+      results.hidden = false;
+    };
+
+    const setOpen = (open, focus = false) => {
+      box.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Chiudi la ricerca' : 'Apri la ricerca');
+      input.tabIndex = open ? 0 : -1;
+      if (!open) results.hidden = true;
+      if (open) loadIndex().catch(() => {});
+      if (open && focus) input.focus({ preventScroll: true });
+    };
+
+    const setValue = (value) => {
+      input.value = value;
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+    };
+
+    input.addEventListener('input', () => {
+      clear.hidden = !input.value;
+      window.clearTimeout(renderTimer);
+      renderTimer = window.setTimeout(renderResults, 150);
+    });
+    input.addEventListener('focus', () => { if (input.value) renderResults(); });
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        if (input.value) setValue('');
+        else {
+          setOpen(false);
+          toggle.focus();
+        }
+      } else if (event.key === 'ArrowDown') {
+        const first = resultsList.querySelector('a');
+        if (first && !results.hidden) {
+          event.preventDefault();
+          first.focus();
+        }
+      } else if (event.key === 'Enter' && !onProjectsPage) {
+        const first = resultsList.querySelector('a');
+        if (first && !results.hidden) window.location.href = first.href;
+      }
+    });
+    resultsList.addEventListener('keydown', (event) => {
+      const links = [...resultsList.querySelectorAll('a')];
+      const index = links.indexOf(document.activeElement);
+      if (event.key === 'ArrowDown' && index < links.length - 1) {
+        event.preventDefault();
+        links[index + 1].focus();
+      } else if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        (index > 0 ? links[index - 1] : input).focus();
+      } else if (event.key === 'Escape') {
+        input.focus();
+      }
+    });
+    toggle.addEventListener('click', () => {
+      const open = !box.classList.contains('is-open');
+      if (!open && input.value) setValue('');
+      setOpen(open, true);
+      if (!open) toggle.focus();
+    });
+    clear.addEventListener('click', () => {
+      setValue('');
+      input.focus();
+    });
+    box.addEventListener('focusout', (event) => {
+      if (box.contains(event.relatedTarget)) return;
+      results.hidden = true;
+      if (!input.value) setOpen(false);
+    });
+
+    siteSearch = {
+      open: () => { if (!box.classList.contains('is-open')) setOpen(true); },
+      close: () => setOpen(false),
+      sync: () => { clear.hidden = !input.value; }
+    };
+  }
+
   const menuToggle = document.querySelector('[data-menu-toggle]');
   const nav = document.querySelector('[data-nav]');
 
@@ -19,7 +220,7 @@
     });
 
     nav.addEventListener('click', (event) => {
-      if (event.target.closest('a')) setMenuOpen(false);
+      if (event.target.closest('a') && !event.defaultPrevented) setMenuOpen(false);
     });
 
     document.addEventListener('click', (event) => {
@@ -144,30 +345,45 @@
     }
   }
 
+  // Il menu dei filtri si apre al passaggio del mouse; sugli schermi touch con un tocco su "Progetti".
+  const navSubmenu = document.querySelector('[data-nav-submenu]');
+
+  if (navSubmenu && !navSubmenu.querySelector('.nav-submenu')?.hidden) {
+    const submenuLink = navSubmenu.querySelector('a');
+    const canHover = window.matchMedia('(hover: hover)');
+    submenuLink.addEventListener('click', (event) => {
+      if (canHover.matches) return;
+      event.preventDefault();
+      navSubmenu.classList.toggle('is-open');
+    });
+    document.addEventListener('click', (event) => {
+      if (!navSubmenu.contains(event.target)) navSubmenu.classList.remove('is-open');
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') navSubmenu.classList.remove('is-open');
+    });
+  }
+
   const filterButtons = [...document.querySelectorAll('button[data-filter]')];
   const projects = [...document.querySelectorAll('[data-project]')];
   const searchTags = [...document.querySelectorAll('button[data-search-tag]')];
   const filterStatus = document.querySelector('[data-filter-status]');
   const projectSearch = document.querySelector('[data-project-search]');
-  const searchClear = document.querySelector('[data-search-clear]');
-  const searchReset = document.querySelector('[data-search-reset]');
   const resetButtons = [...document.querySelectorAll('[data-search-reset], [data-search-reset-empty]')];
   const emptyState = document.querySelector('[data-empty-state]');
 
   if (filterButtons.length && (projects.length || projectSearch)) {
     searchTags.forEach((button) => { button.disabled = false; });
-    const normalizeSearch = (value) => value
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .toLowerCase()
-      .replace(/\s+/g, ' ')
-      .trim();
     const availableFilters = new Set(filterButtons.map((button) => button.dataset.filter));
-    const initialFilter = filterButtons.find((button) => button.getAttribute('aria-pressed') === 'true');
-    let activeFilter = initialFilter ? initialFilter.dataset.filter : 'all';
+    // Al massimo un ambito attivo; nessun ambito attivo mostra tutti i progetti.
+    const activeFilters = new Set(filterButtons
+      .filter((button) => button.getAttribute('aria-pressed') === 'true')
+      .map((button) => button.dataset.filter));
     const filterLabels = new Map(filterButtons.map((button) => [button.dataset.filter,
       [...button.childNodes].filter((node) => node.nodeType === Node.TEXT_NODE).map((node) => node.textContent).join('').trim()
     ]));
+    const matchesFilters = (categories, filters = activeFilters) => !filters.size || categories.some((category) => filters.has(category));
+    const categoryParam = () => [...availableFilters].filter((filter) => activeFilters.has(filter)).join(',');
     let announcementTimer;
 
     // Keep illustrative mockups out of the searchable project content.
@@ -184,7 +400,7 @@
       const query = projectSearch.value.replace(/\s+/g, ' ').trim();
       if (query) url.searchParams.set('q', query);
       else url.searchParams.delete('q');
-      if (activeFilter !== 'all') url.searchParams.set('categoria', activeFilter);
+      if (activeFilters.size) url.searchParams.set('categoria', categoryParam());
       else url.searchParams.delete('categoria');
 
       if (url.href !== window.location.href) {
@@ -203,8 +419,7 @@
       let visibleCount = 0;
 
       projectIndex.forEach((project) => {
-        const matchesCategory = activeFilter === 'all' || project.categories.includes(activeFilter);
-        const visible = matchesCategory && terms.every((term) => project.text.includes(term));
+        const visible = matchesFilters(project.categories) && terms.every((term) => project.text.includes(term));
         project.element.hidden = !visible;
         if (visible) visibleCount += 1;
         project.element.querySelectorAll('a[href]').forEach((link) => {
@@ -213,21 +428,16 @@
           const rawQuery = projectSearch?.value.trim() || '';
           if (rawQuery) url.searchParams.set('q', rawQuery);
           else url.searchParams.delete('q');
-          if (activeFilter !== 'all') url.searchParams.set('categoria', activeFilter);
+          if (activeFilters.size) url.searchParams.set('categoria', categoryParam());
           else url.searchParams.delete('categoria');
           link.setAttribute('href', `${href.split(/[?#]/)[0]}${url.search}${url.hash}`);
         });
       });
 
       filterButtons.forEach((button) => {
-        const active = button.dataset.filter === activeFilter;
+        const active = activeFilters.has(button.dataset.filter);
         button.setAttribute('aria-pressed', String(active));
         button.classList.toggle('is-active', active);
-        const count = button.querySelector('[data-filter-count]');
-        if (count) count.textContent = projectIndex.filter((project) =>
-          (button.dataset.filter === 'all' || project.categories.includes(button.dataset.filter))
-          && terms.every((term) => project.text.includes(term))
-        ).length;
       });
 
       searchTags.forEach((button) => {
@@ -239,21 +449,24 @@
       if (filterStatus) {
         const countText = visibleCount === 1 ? '1 progetto' : `${visibleCount} progetti`;
         const queryText = projectSearch?.value.trim();
-        const categoryText = activeFilter === 'all' ? '' : ` · ${filterLabels.get(activeFilter)}`;
+        const categoryText = activeFilters.size ? ` · ${categoryParam().split(',').map((filter) => filterLabels.get(filter)).join(', ')}` : '';
         const announce = () => { filterStatus.textContent = `${countText}${queryText ? ` per “${queryText}”` : ''}${categoryText}.`; };
         window.clearTimeout(announcementTimer);
         if (announcementDelay) announcementTimer = window.setTimeout(announce, announcementDelay);
         else announce();
       }
       if (emptyState) emptyState.hidden = visibleCount > 0;
-      if (searchClear) searchClear.hidden = !projectSearch?.value.length;
-      if (searchReset) searchReset.hidden = !query && activeFilter === 'all';
+      if (projectSearch?.value) siteSearch?.open();
       if (updateUrl) writeSearchToUrl();
     };
 
     filterButtons.forEach((button) => {
       button.addEventListener('click', () => {
-        activeFilter = button.dataset.filter;
+        // Un solo ambito alla volta: un secondo clic sullo stesso filtro lo spegne.
+        const filter = button.dataset.filter;
+        const wasActive = activeFilters.has(filter);
+        activeFilters.clear();
+        if (!wasActive) activeFilters.add(filter);
         applyFilters();
       });
     });
@@ -263,6 +476,7 @@
         if (!projectSearch) return;
         const tag = button.dataset.searchTag || '';
         projectSearch.value = normalizeSearch(projectSearch.value) === normalizeSearch(tag) ? '' : tag;
+        projectSearch.dispatchEvent(new Event('input'));
         applyFilters();
       });
     });
@@ -270,23 +484,21 @@
     if (projectSearch) {
       const readSearchFromUrl = () => {
         const params = new URL(window.location.href).searchParams;
-        const category = params.get('categoria');
         projectSearch.value = params.get('q') || '';
-        activeFilter = availableFilters.has(category) ? category : 'all';
+        activeFilters.clear();
+        const category = (params.get('categoria') || '').split(',').find((value) => availableFilters.has(value));
+        if (category) activeFilters.add(category);
         applyFilters(false);
+        siteSearch?.sync();
       };
 
       projectSearch.addEventListener('input', () => applyFilters(true, 250));
-      searchClear?.addEventListener('click', () => {
-        projectSearch.value = '';
-        applyFilters();
-        projectSearch.focus();
-      });
       resetButtons.forEach((button) => button.addEventListener('click', () => {
         projectSearch.value = '';
-        activeFilter = 'all';
+        projectSearch.dispatchEvent(new Event('input'));
+        activeFilters.clear();
         applyFilters();
-        projectSearch.focus();
+        siteSearch?.close();
       }));
       window.addEventListener('popstate', readSearchFromUrl);
       readSearchFromUrl();

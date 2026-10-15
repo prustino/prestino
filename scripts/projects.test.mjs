@@ -36,8 +36,10 @@ test('moving complete projects keeps content and public visibility consistent', 
     assert.equal(await exists(join(root, 'dist/progetti/itaca-wasp/progetto.json')), false);
     assert.equal((initialAbout.match(/data-about-slide/g) || []).length, 4);
     assert.match(initialAbout, /data-about-carousel/);
-    assert.match(initialProjects, /data-filter="architettura"[^>]*>[\s\S]*?data-filter-count>1</);
-    assert.match(initialProjects, /data-filter="prodotto"[^>]*>[\s\S]*?data-filter-count>3</);
+    assert.match(initialProjects, /data-filter="architettura"/);
+    assert.match(initialProjects, /data-filter="prodotto"/);
+    assert.equal((initialProjects.match(/data-category="[^"]*\barchitettura\b/g) || []).length, 1);
+    assert.equal((initialProjects.match(/data-category="[^"]*\bprodotto\b/g) || []).length, 3);
     assert.match(initialProjects, /data-search-tag="Architettura"/);
 
     await moveProject(root, 'vaso-onda', 'nascosti');

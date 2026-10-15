@@ -3227,3 +3227,292 @@ textarea:focus-visible {
 .about-hero:not(:has(.about-object)) { grid-template-columns: minmax(0, 1fr); }
 .silve-hero:not(:has(.hero-scene)) .hero-copy,
 .about-hero:not(:has(.about-object)) .about-intro { max-width: 780px; }
+
+
+/* Progetti: filtri in un menu a tendina sotto la voce "Progetti" e ricerca accanto a "Parliamone". */
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-submenu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 150px;
+  padding: 8px 18px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  box-shadow: 0 14px 34px #0007;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -4px);
+  transition: opacity .25s ease, transform .25s ease, visibility 0s linear .25s;
+}
+
+/* Ponte invisibile: il menu resta aperto mentre il mouse scende dalla voce. */
+.nav-submenu::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: 12px;
+}
+
+.js .nav-item:hover .nav-submenu,
+.js .nav-item:has(:focus-visible) .nav-submenu,
+.js .nav-item.is-open .nav-submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+  transition-delay: 0s;
+}
+
+.nav-submenu button {
+  border: 0;
+  background: transparent;
+  padding: 7px 0;
+  min-height: 34px;
+  font-size: .75rem;
+  font-weight: 550;
+  letter-spacing: .02em;
+  white-space: nowrap;
+  text-align: left;
+  color: var(--ink);
+  opacity: .45;
+  transition: opacity .35s ease, color .35s ease;
+}
+
+.nav-submenu button:hover {
+  opacity: .8;
+}
+
+.nav-submenu button.is-active {
+  opacity: 1;
+  color: var(--purple);
+}
+
+.header-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.header-search input {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  width: 0;
+  min-height: 34px;
+  padding: 6px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--paper);
+  font-size: .875rem;
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: width .45s cubic-bezier(.2, .7, .2, 1), padding .45s cubic-bezier(.2, .7, .2, 1), opacity .3s ease, border-color .3s ease;
+}
+
+.header-search.is-open input {
+  width: 190px;
+  padding: 6px 28px 6px 4px;
+  opacity: 1;
+}
+
+.header-search input:focus,
+.header-search input:focus-visible {
+  outline: none;
+  box-shadow: none;
+  border-color: var(--purple);
+}
+
+.header-search input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.header-search-clear {
+  position: absolute;
+  right: calc(100% + 2px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.header-search-clear:hover {
+  color: var(--ink);
+}
+
+.header-search-toggle {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  opacity: .7;
+  transition: opacity .3s ease, color .3s ease;
+}
+
+.header-search-toggle:hover,
+.header-search.is-open .header-search-toggle {
+  opacity: 1;
+}
+
+.header-search.is-open .header-search-toggle {
+  color: var(--purple);
+}
+
+.header-search-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 0;
+  z-index: 40;
+  width: 340px;
+  max-height: min(70vh, 520px);
+  overflow-y: auto;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  box-shadow: 0 14px 34px #0007;
+}
+
+.search-results-status {
+  padding: 6px 10px 4px;
+  color: var(--muted);
+  font-size: .6875rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.search-results a {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 9px 10px;
+  border-radius: 7px;
+  transition: background .2s ease;
+}
+
+.search-results a:hover,
+.search-results a:focus-visible {
+  background: var(--lavender);
+  outline: none;
+}
+
+.search-result-section {
+  color: var(--purple);
+  font-size: .6875rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.search-results strong {
+  font-family: var(--heading);
+  font-size: .9375rem;
+  font-weight: 600;
+}
+
+.search-result-snippet {
+  color: var(--muted);
+  font-size: .8125rem;
+  line-height: 1.5;
+}
+
+.site-nav {
+  transition: opacity .3s ease;
+}
+
+/* Su schermi medi la ricerca aperta occupa lo spazio del menu, che si dissolve finché resta aperta. */
+@media (min-width: 651px) and (max-width: 1000px) {
+  .header-inner:has(.header-search.is-open) .site-nav {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .header-search {
+    order: 1;
+    margin-left: auto;
+    margin-right: 8px;
+  }
+
+  .header-search.is-open input {
+    width: min(190px, 52vw);
+  }
+
+  .search-results {
+    right: -48px;
+    width: calc(100vw - 32px);
+  }
+
+  /* Nel menu mobile (che scorre) i filtri si aprono in linea sotto "Progetti". */
+  .nav-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-item.is-open {
+    grid-column: 1 / -1;
+  }
+
+  .nav-submenu,
+  .js .nav-item:hover .nav-submenu,
+  .js .nav-item:has(:focus-visible) .nav-submenu {
+    position: static;
+    display: none;
+    min-width: 0;
+    padding: 4px 14px 6px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .js .nav-item.is-open .nav-submenu {
+    display: flex;
+    transform: none;
+  }
+
+  .nav-submenu::before {
+    display: none;
+  }
+
+  .nav-submenu button {
+    min-height: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-submenu,
+  .nav-submenu button,
+  .header-search input,
+  .header-search-toggle {
+    transition: none;
+  }
+}
