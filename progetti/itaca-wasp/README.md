@@ -66,7 +66,6 @@ Selezione dalla sottocartella `WhatsApp Unknown 2026-09-19 at 18.15.34/` della n
 | `immagini/foto-20.webp` | `WhatsApp Unknown 2026-09-19 at 18.15.34/WhatsApp Image 2026-09-19 at 17.23.26 (2).jpeg` |
 | `immagini/foto-21.webp` | `WhatsApp Unknown 2026-09-19 at 18.15.34/WhatsApp Image 2026-09-19 at 17.23.26 (3).jpeg` |
 | `immagini/foto-22.webp` | `WhatsApp Unknown 2026-09-19 at 18.15.34/WhatsApp Image 2026-09-19 at 17.23.26 (4).jpeg` |
-| `immagini/foto-23.webp` | `WhatsApp Unknown 2026-09-19 at 18.15.34/WhatsApp Image 2026-09-19 at 17.23.26 (6).jpeg` |
 | `immagini/foto-24.webp` | `WhatsApp Unknown 2026-09-19 at 18.15.34/WhatsApp Image 2026-09-19 at 17.23.26 (7).jpeg` |
 | `immagini/foto-25.webp` | `WhatsApp Unknown 2026-09-19 at 18.15.34/WhatsApp Image 2026-09-19 at 17.23.26 (8).jpeg` |
 | `immagini/foto-26.webp` | `WhatsApp Unknown 2026-09-19 at 18.15.34/WhatsApp Image 2026-09-19 at 17.23.26.jpeg` |
