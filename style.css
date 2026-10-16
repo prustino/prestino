@@ -3145,16 +3145,18 @@ textarea:focus-visible {
   .site-nav,
   .js .site-nav.is-open {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 4px 16px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 4px 8px;
   }
   .js .site-nav:not(.is-open) {
     display: none;
   }
   .site-nav a {
     min-height: 44px;
-    padding: 10px 14px;
+    padding: 10px 12px;
     border-radius: 6px;
+    white-space: nowrap;
   }
   .site-nav a.active {
     background: var(--lavender);
@@ -3464,14 +3466,10 @@ textarea:focus-visible {
     width: calc(100vw - 32px);
   }
 
-  /* Nel menu mobile (che scorre) i filtri si aprono in linea sotto "Progetti". */
+  /* Nel menu mobile le tre voci stanno su una riga; i filtri si aprono sotto "Progetti", nella sua colonna. */
   .nav-item {
     flex-direction: column;
     align-items: stretch;
-  }
-
-  .nav-item.is-open {
-    grid-column: 1 / -1;
   }
 
   .nav-submenu,
@@ -3480,7 +3478,7 @@ textarea:focus-visible {
     position: static;
     display: none;
     min-width: 0;
-    padding: 4px 14px 6px;
+    padding: 4px 12px 6px;
     border: 0;
     background: transparent;
     box-shadow: none;
