@@ -405,3 +405,63 @@ p.portfolio-placeholder {
   .image-viewer-controls { gap: 8px; flex-wrap: wrap; }
   .image-viewer-footer > p { max-height: 7.5rem; overflow-y: auto; }
 }
+
+/* Modello 3D interattivo (modello-3d.js): riquadro ampio con la foto del modello come attesa. */
+.portfolio-model { padding-block: 64px 24px; border-top: 1px solid var(--line); }
+.portfolio-model > .portfolio-section-heading { padding-top: 0; border-top: 0; }
+.model-3d {
+  position: relative;
+  overflow: hidden;
+  height: clamp(420px, 68vh, 820px);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: radial-gradient(120% 90% at 50% 35%, #34362f 0%, #1c1e1b 70%), #1c1e1b;
+}
+.model-3d::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--poster) center / cover no-repeat;
+  opacity: .35;
+  filter: blur(2px);
+  transition: opacity .6s ease;
+}
+.model-3d.is-ready::before { opacity: 0; }
+.model-3d.is-unsupported::before { opacity: 1; filter: none; }
+.model-3d-stage { position: absolute; inset: 0; cursor: grab; touch-action: none; }
+.model-3d-stage:active { cursor: grabbing; }
+.model-3d-stage canvas { display: block; width: 100%; height: 100%; }
+.model-3d-status {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #0009;
+  color: var(--ink);
+  font-size: .8125rem;
+  pointer-events: none;
+}
+.model-3d-status:empty { display: none; }
+.model-3d-views { position: absolute; left: 16px; bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+.model-3d-views button {
+  min-height: 38px;
+  padding: 7px 14px;
+  border: 1px solid #ffffff2e;
+  border-radius: 999px;
+  background: #11131099;
+  color: var(--ink);
+  font-size: .8125rem;
+  backdrop-filter: blur(6px);
+  transition: background .2s ease, border-color .2s ease;
+}
+.model-3d-views button:hover { background: #1d201bcc; border-color: var(--purple); }
+.model-3d:not(.is-ready) .model-3d-views { display: none; }
+.model-3d-note { margin-top: 12px; color: var(--muted); font-size: .8rem; line-height: 1.6; }
+@media (max-width: 650px) {
+  .portfolio-model { padding-block: 40px 16px; }
+  .model-3d { height: 62vh; min-height: 360px; }
+  .model-3d-views { left: 10px; right: 10px; bottom: 10px; }
+}

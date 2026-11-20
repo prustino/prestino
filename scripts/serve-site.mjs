@@ -7,7 +7,7 @@ import { setTimeout as delay } from 'node:timers/promises';
 import { buildSite, siteRoot, withSiteLock } from './projects.mjs';
 
 const generatedPages = new Set(['index.html', 'progetti.html', 'chi-sono.html']);
-const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.ico': 'image/x-icon', '.mp4': 'video/mp4', '.pdf': 'application/pdf', '.stl': 'model/stl', '.3mf': 'model/3mf', '.step': 'application/step', '.woff2': 'font/woff2' };
+const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.ico': 'image/x-icon', '.mp4': 'video/mp4', '.pdf': 'application/pdf', '.stl': 'model/stl', '.glb': 'model/gltf-binary', '.3mf': 'model/3mf', '.step': 'application/step', '.woff2': 'font/woff2' };
 const escape = (value) => String(value).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 
 async function fingerprint(root) {

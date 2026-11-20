@@ -12,16 +12,18 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&amp;family=Manrope:wght@400;500;600;650;700;750;800&amp;display=swap">
     <link rel="stylesheet" href="../../style.css?v=20261015">
     <link rel="stylesheet" href="../../progetti/progetti-dettaglio.css?v=20261015">
-    <link rel="stylesheet" href="../../project-gallery.css?v=20261015">
+    <link rel="stylesheet" href="../../project-gallery.css?v=20261120">
     <script src="../../script.js?v=20261015" defer></script>
     <script src="../../project-gallery.js?v=20260923-case-study" defer></script>
+    <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+    <script type="module" src="../../modello-3d.js?v=20261120"></script>
   </head>
   <body class="portfolio-page">
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
     <header class="site-header">
       <div class="container header-inner">
         <a href="../../progetti.html" class="brand"
-          aria-label="Alessio Silvestrino, progetti"><img class="brand-logo" src="../../img/logo-silve-light.png" width="247" height="399" alt=""><span>Alessio Silvestrino</span></a>
+          aria-label="Alessio Silvestrino, progetti"><img class="brand-logo" src="../../img/logo-silve-light.png" width="247" height="399" alt=""></a>
         <button class="menu-toggle" type="button" data-menu-toggle aria-controls="navigation"
           aria-expanded="false" aria-label="Apri menu"><span></span><span></span></button>
         <nav class="site-nav" id="navigation" data-nav aria-label="Navigazione principale">
@@ -55,7 +57,7 @@
           <div><dt>Tecnologie</dt><dd>Stampa 3D FDM, taglio laser</dd></div>
         </dl>
       </section>
-      <nav class="container detail-index" aria-label="In questo progetto"><span>ISA TIMELESS 52 /</span><a href="#contributo">Il contributo</a><a href="#processo">Il processo</a><a href="#galleria">Il risultato</a></nav>
+      <nav class="container detail-index" aria-label="In questo progetto"><span>ISA TIMELESS 52 /</span><a href="#contributo">Il contributo</a><a href="#modello">Il modello 3D</a><a href="#processo">Il processo</a><a href="#galleria">Il risultato</a></nav>
       <section class="container portfolio-phase" id="contributo" aria-labelledby="contributo-title">
         <div class="portfolio-phase-heading"><span class="eyebrow">01 / IL CONTRIBUTO</span><h2 id="contributo-title">Un modello per il Monaco Yacht Show.</h2></div>
         <div class="portfolio-phase-copy">
@@ -63,8 +65,17 @@
           <p>Il modello è stato realizzato all’interno dello studio Luca Dini Design &amp; Architecture in vista della 35ª edizione del Monaco Yacht Show del 2026.</p>
         </div>
       </section>
+      <section class="container portfolio-model" id="modello" aria-labelledby="modello-title">
+        <div class="portfolio-section-heading"><div><span class="eyebrow">02 / IL MODELLO 3D</span><h2 id="modello-title">Lo yacht, da ogni lato.</h2></div><p>Il modello digitale preparato per la stampa: trascina per ruotarlo, usa la rotella o due dita per avvicinarti.</p></div>
+        <div class="model-3d" data-model-3d data-src="modelli/timeless-52.glb?v=2" style="--poster: url('immagini/10-720.webp')">
+          <div class="model-3d-stage" data-model-stage role="img" aria-label="Modello 3D interattivo dell’ISA Timeless 52, con scafo bianco, vetrate scure e ponti in teak"></div>
+          <p class="model-3d-status" data-model-status aria-live="polite">Il modello 3D si carica quando arrivi a questa sezione.</p>
+          <div class="model-3d-views" role="group" aria-label="Viste del modello"><button type="button" data-model-view="tre">Tre quarti</button><button type="button" data-model-view="profilo">Profilo</button><button type="button" data-model-view="alto">Dall’alto</button></div>
+        </div>
+        <p class="model-3d-note">Colori e materiali sono indicativi: ricostruiti dai render pubblicati dallo studio Luca Dini Design &amp; Architecture e dal modello stampato.</p>
+      </section>
       <section class="container portfolio-process" id="processo" aria-labelledby="processo-title">
-        <div class="portfolio-section-heading"><div><span class="eyebrow">02 / IL PROCESSO</span><h2 id="processo-title">Dal digitale al modello espositivo.</h2></div><p>Stampa 3D e taglio laser riuniti in una realizzazione in scala 1:100.</p></div>
+        <div class="portfolio-section-heading"><div><span class="eyebrow">03 / IL PROCESSO</span><h2 id="processo-title">Dal digitale al modello espositivo.</h2></div><p>Stampa 3D e taglio laser riuniti in una realizzazione in scala 1:100.</p></div>
         <ol class="portfolio-steps">
           <li><div class="portfolio-step-media portfolio-step-missing"><span class="portfolio-placeholder">IMMAGINE DA AGGIUNGERE</span></div><span class="portfolio-step-number">01</span><h3>Preparazione del modello</h3><p class="portfolio-placeholder">DA AGGIUNGERE</p></li>
           <li><figure class="portfolio-step-media"><a href="immagini/09.webp" data-gallery="processo"><img src="immagini/09-720.webp" srcset="immagini/09-720.webp 540w, immagini/09.webp 1200w" sizes="(max-width: 650px) calc(100vw - 40px), 420px" width="1200" height="1600" alt="Componente rettangolare nero con divisioni interne sul banco di lavoro" loading="lazy" decoding="async"></a></figure><span class="portfolio-step-number">02</span><h3>Stampa 3D e taglio laser</h3><p class="portfolio-placeholder">DA AGGIUNGERE</p></li>
@@ -72,7 +83,7 @@
         </ol>
       </section>
       <section class="container portfolio-gallery" id="galleria" aria-labelledby="gallery-title">
-        <div class="portfolio-section-heading"><div><span class="eyebrow">03 / IL RISULTATO</span><h2 id="gallery-title">Il progetto, da vicino.</h2></div><p>Nove immagini tra viste d’insieme, dettagli e una fase di lavorazione.</p></div>
+        <div class="portfolio-section-heading"><div><span class="eyebrow">04 / IL RISULTATO</span><h2 id="gallery-title">Il progetto, da vicino.</h2></div><p>Nove immagini tra viste d’insieme, dettagli e una fase di lavorazione.</p></div>
         <div class="portfolio-gallery-grid">
           <figure style="--ar: 1.3333">
             <a href="immagini/02.webp" data-gallery="progetto"><img src="immagini/02-720.webp" srcset="immagini/02-720.webp 720w, immagini/02.webp 1600w" sizes="(max-width: 650px) calc(100vw - 40px), 560px" width="1600" height="1200" alt="Profilo completo del modello Palumbo ISA Timeless davanti a una finestra" loading="lazy" decoding="async"><span class="portfolio-zoom" aria-hidden="true">↗</span></a>
@@ -173,7 +184,7 @@
     </main>
     <footer class="site-footer">
       <div class="container footer-inner">
-        <a class="footer-brand" href="../../progetti.html" aria-label="Alessio Silvestrino, progetti"><img class="footer-logo" src="../../img/logo-silve-light.png" width="247" height="399" alt=""><span class="footer-brand-word">Alessio Silvestrino</span></a>
+        <a class="footer-brand" href="../../progetti.html" aria-label="Alessio Silvestrino, progetti"><img class="footer-logo" src="../../img/logo-silve-light.png" width="247" height="399" alt=""></a>
         <p>Idee che prendono forma.</p>
         <div class="footer-right">
           <span>© 2026 Alessio Silvestrino</span><a href="#top" aria-label="Torna all’inizio della pagina">Torna
