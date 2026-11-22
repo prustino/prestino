@@ -292,6 +292,7 @@ p.portfolio-placeholder {
 .portfolio-section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 26px; padding-top: 28px; border-top: 1px solid var(--line); }
 .portfolio-section-heading h2 { margin-top: 12px; font-size: clamp(28px, 3vw, 40px); font-weight: 600; }
 .portfolio-section-heading > p { max-width: 29ch; color: var(--muted); font-size: .875rem; }
+.portfolio-section-heading > p.portfolio-concept { max-width: 56ch; font-size: .9375rem; line-height: 1.75; }
 .portfolio-gallery > .portfolio-section-heading { padding-top: 0; border-top: 0; }
 /* Righe giustificate: ogni foto conserva il proprio formato (--ar = larghezza/altezza, scritto su ogni figure)
    e le foto di una stessa riga hanno la stessa altezza, senza fasce vuote né tagli. */
@@ -301,6 +302,12 @@ p.portfolio-placeholder {
 .portfolio-gallery-grid a { position: relative; display: block; overflow: hidden; background: #22231f; border: 1px solid var(--line); border-radius: 9px; }
 .portfolio-gallery-grid img { display: block; width: 100%; height: auto; aspect-ratio: var(--ar, 4 / 3); object-fit: cover; transition: transform .25s ease; }
 .portfolio-gallery-grid a:hover img { transform: scale(1.025); }
+/* Con le righe bilanciate (project-gallery.js) ogni riga è già piena: niente riempitivo in fondo. */
+.portfolio-gallery-grid.is-balanced { justify-content: center; }
+.portfolio-gallery-grid.is-balanced::after { display: none; }
+/* Secondo gruppo della galleria (foto precedenti), separato da quello delle foto della fotocamera. */
+.portfolio-gallery-grid + .portfolio-gallery-grid { margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--line); }
+.portfolio-gallery-grid video { display: block; width: 100%; height: auto; aspect-ratio: var(--ar, 16 / 9); object-fit: cover; background: #22231f; border: 1px solid var(--line); border-radius: 9px; }
 .portfolio-zoom { position: absolute; right: 12px; bottom: 12px; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--paper); box-shadow: 0 2px 15px #0002; }
 .portfolio-gallery-grid figcaption { display: flex; align-items: baseline; gap: 16px; margin-top: 12px; font-size: .8rem; color: var(--muted); line-height: 1.6; }
 .portfolio-image-number { flex-shrink: 0; color: var(--purple); font-variant-numeric: tabular-nums; font-size: .7rem; }

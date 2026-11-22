@@ -15,21 +15,19 @@
   "kind": "real",
   "status": "Firenze · 2026",
   "image": {
-    "src": "immagini/10-720.webp",
-    "alt": "Modello ISA Timeless 52 di profilo, quasi all’altezza dello scafo, davanti a una finestra sul giardino",
+    "src": "immagini/copertina-720.webp",
+    "alt": "Modello dell’ISA Timeless 52 di profilo visto leggermente dall’alto, con la base nera",
     "width": 720,
     "height": 540,
     "srcset": [
       {
-        "src": "immagini/10-720.webp",
+        "src": "immagini/copertina-720.webp",
         "width": 720
       },
       {
-        "src": "immagini/10.webp",
+        "src": "immagini/copertina.webp",
         "width": 1600
       }
-    ],
-    "position": "50% 42%",
-    "zoom": 1.1
+    ]
   }
 }

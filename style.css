@@ -3553,3 +3553,13 @@ textarea:focus-visible {
     gap: 40px;
   }
 }
+/* Video dei progetti come sfondo in movimento: a tutta larghezza dietro la sezione, fermo mentre si scorre, semitrasparente. */
+.has-backdrop { position: relative; isolation: isolate; }
+/* Prima della galleria il video si vede pieno, a tutto schermo; scorrendo diventa semitrasparente (--backdrop-opacity, da script.js)
+   mentre testi e foto salgono sopra. */
+.has-backdrop::before { content: ''; display: block; height: 82vh; height: 82svh; }
+.project-backdrop { position: absolute; inset-block: 0; left: 50%; z-index: -1; width: 100vw; margin-left: -50vw; overflow: clip; pointer-events: none; }
+.project-backdrop-inner { position: sticky; top: 0; height: 100vh; height: 100svh; }
+.project-backdrop video { display: block; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .9s ease; -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent); mask-image: linear-gradient(to bottom, #000 80%, transparent); }
+.project-backdrop video.is-playing { opacity: var(--backdrop-opacity, 1); transition: opacity .25s linear; }
+@media (prefers-reduced-motion: reduce) { .project-backdrop { display: none; } .has-backdrop::before { content: none; } }

@@ -4,13 +4,13 @@ La pagina racconta il contributo personale allo sviluppo della linea di arredi d
 
 ## Dove sono gestiti i contenuti
 
-- `index.html`: introduzione, racconto del progetto, `meta description` e didascalie (`figcaption`).
+- `index.html`: introduzione, racconto del progetto e `meta description`. Niente didascalie sotto le immagini, salvo richiesta espressa.
 - `progetto.json`: titolo, descrizione breve della scheda, parole chiave, categorie, tag e stato.
 - Aggiornare tramite l’anteprima o `node scripts/prepare-site.mjs` dalla cartella principale del sito.
 
 ## Immagini e fonti
 
-Originali forniti nella cartella `PORTFOLIO 2026/Bentley outdoor furniture`. Selezione di 8 immagini; gli originali restano invariati. Copie WebP con rotazione EXIF applicata, lato massimo 1600 px e anteprime fino a 720 px. Le didascalie descrivono ciò che è visibile nelle immagini e sono modificabili.
+Originali forniti nella cartella `PORTFOLIO 2026/Bentley outdoor furniture`. Selezione di 8 immagini; gli originali restano invariati. Copie WebP con rotazione EXIF applicata, lato massimo 1600 px e anteprime fino a 720 px. Le immagini non hanno didascalie; il testo alternativo (`alt`) descrive ciò che è visibile.
 
 | File del sito | Originale |
 | --- | --- |

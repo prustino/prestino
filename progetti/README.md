@@ -71,13 +71,13 @@ Le foto non si specchiano mai: l’orientamento deve essere quello reale dello s
 #### Regole per i progetti di nautica
 
 1. **Prua verso destra, sempre:** la barca è rivolta da sinistra a destra, con la poppa a sinistra e la prua a destra.
-2. **Vista laterale:** la copertina mostra la barca di profilo, il più possibile ortogonale al fianco. Evita le viste troppo dall’alto: i riferimenti sono le copertine di M|53 (`maiora-53`, foto 02) e di ISA Timeless 52 (`palumbo-isa-timeless`, foto 10), fotografate quasi all’altezza dello scafo.
+2. **Vista laterale:** la copertina mostra la barca di profilo, il più possibile ortogonale al fianco. Evita le viste troppo dall’alto: i riferimenti sono le copertine di M|53 (`maiora-53`, foto 02) e di ISA Timeless 52 (`palumbo-isa-timeless`, foto f02), fotografate quasi all’altezza dello scafo.
 3. **Se non c’è un profilo con la prua a destra:** usa una vista di tre quarti anteriore, sempre con la barca che guarda da sinistra verso destra.
 4. **Se manca anche questa:** non specchiare e non scegliere una foto con la prua a sinistra. Segnala che serve una nuova foto con l’orientamento corretto, da aggiungere nella cartella `immagini/` del progetto.
 5. **Barca grande nel riquadro:** la barca deve occupare quasi tutta la larghezza del riquadro, con un piccolo margine ai lati e senza toccare i bordi. Se c’è troppo spazio intorno, ingrandisci con `zoom` (di solito tra `1.1` e `1.25`) e centra la barca con `position`.
 6. **Formato:** usa una foto orizzontale 4:3, come quelle già presenti, così il riquadro si riempie senza tagliare prua o poppa.
 
-**Copertine da sostituire:** Dagusha VII (`dagusha-7-ada-4`) usa provvisoriamente il profilo della foto 02, che ha la prua a sinistra. Tra le foto attuali non c’è né un profilo né un tre quarti anteriore con la prua a destra; la foto 06 ha l’orientamento giusto ma mostra il modello ancora in montaggio. Serve una nuova foto.
+Le copertine dei progetti di modellismo usano le foto della fotocamera (file `fNN.webp`). Dagusha VII (`dagusha-7-ada-4`) usa il profilo f01, con la prua a destra; in questa foto lo yacht occupa l’80% della larghezza, quindi nel riquadro 4:3 le punte di prua e poppa toccano i bordi.
 
 Esempio (M|53):
 

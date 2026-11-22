@@ -4,14 +4,14 @@ Pagina aggiornata con descrizione, ruolo, scala, studio, luogo, data, materiali 
 
 ## Contenuti della pagina
 
-- `index.html`: introduzione, scheda tecnica, racconto del progetto e didascalie della galleria.
+- `index.html`: introduzione, scheda tecnica e racconto del progetto. Niente didascalie sotto le immagini, salvo richiesta espressa.
 - `progetto.json`: titolo, descrizione breve della scheda, parole chiave, categorie, tag e stato mostrati nella raccolta.
 - La cartella mantiene il nome storico `maiora-53`, mentre il titolo pubblico è `M|53`.
 - Aggiornare tramite l’anteprima o `node scripts/prepare-site.mjs` dalla cartella principale del sito.
 
 ## Immagini e fonti
 
-Originali forniti nella cartella `PORTFOLIO 2026/Maiora 53`. Selezione di 8 immagini; gli originali restano invariati. Copie WebP con rotazione EXIF applicata, lato massimo 1600 px e anteprime fino a 720 px. Le didascalie descrivono ciò che è visibile nelle immagini e sono modificabili.
+Originali forniti nella cartella `PORTFOLIO 2026/Maiora 53`. Selezione di 8 immagini; gli originali restano invariati. Copie WebP con rotazione EXIF applicata, lato massimo 1600 px e anteprime fino a 720 px. Le immagini non hanno didascalie; il testo alternativo (`alt`) descrive ciò che è visibile.
 
 | File del sito | Originale |
 | --- | --- |

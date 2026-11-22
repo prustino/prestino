@@ -4,14 +4,14 @@ Pagina impostata con il template case study condiviso. I contenuti non ancora fo
 
 ## Dove modificare i testi
 
-- `index.html`: sostituire i segnaposto nel ruolo, nella scheda tecnica, nel contributo e nel processo quando i contenuti saranno disponibili; aggiornare anche `meta description` e didascalie (`figcaption`) se necessario.
+- `index.html`: sostituire i segnaposto nel ruolo, nella scheda tecnica, nel contributo e nel processo quando i contenuti saranno disponibili; aggiornare anche e `meta description`. Niente didascalie sotto le immagini, salvo richiesta espressa.
 - `progetto.json`: titolo, descrizione breve della scheda, parole chiave, categorie, tag e stato. Sostituire descrizione e stato `DA AGGIUNGERE` quando il racconto sarà completo.
 - Il template contiene già le sezioni contributo, processo in tre fasi e risultato: completa i blocchi esistenti senza aggiungere una seconda struttura narrativa.
 - Aggiornare tramite l’anteprima o `node scripts/prepare-site.mjs` dalla cartella principale del sito.
 
 ## Immagini e fonti
 
-Originali forniti nella cartella `PORTFOLIO 2026/Clove Lamp`. Selezione di 3 immagini; gli originali restano invariati. Copie WebP con rotazione EXIF applicata, lato massimo 1600 px e anteprime fino a 720 px. Le didascalie descrivono ciò che è visibile nelle immagini e sono modificabili.
+Originali forniti nella cartella `PORTFOLIO 2026/Clove Lamp`. Selezione di 3 immagini; gli originali restano invariati. Copie WebP con rotazione EXIF applicata, lato massimo 1600 px e anteprime fino a 720 px. Le immagini non hanno didascalie; il testo alternativo (`alt`) descrive ciò che è visibile.
 
 | File del sito | Originale |
 | --- | --- |

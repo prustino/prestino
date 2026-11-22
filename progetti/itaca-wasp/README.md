@@ -37,7 +37,7 @@ Primo progetto reale inserito nel portfolio: il plastico espositivo realizzato d
 
 ## Video
 
-Selezione dalla sottocartella `WhatsApp Unknown 2026-09-19 at 18.15.34/` della nuova fonte. Copie MP4 predisposte per l’avvio web, senza modifiche a scene, orientamento o audio. Nessun autoplay; `preload="none"` e poster WebP estratti dai filmati. Le didascalie descrivono le scene visibili; non sono trascrizioni dell’audio.
+Selezione dalla sottocartella `WhatsApp Unknown 2026-09-19 at 18.15.34/` della nuova fonte. Copie MP4 predisposte per l’avvio web, senza modifiche a scene, orientamento o audio. Nessun autoplay; `preload="none"` e poster WebP estratti dai filmati. I video non hanno didascalie.
 
 | File nel sito | Originale | Durata |
 | --- | --- | --- |
@@ -48,8 +48,6 @@ Selezione dalla sottocartella `WhatsApp Unknown 2026-09-19 at 18.15.34/` della n
 | `immagini/foto-02.webp` | `6-shamballa_2739903_20260609120017.webp` |
 | `immagini/foto-03.webp` | `dff268fb-b7c1-4de8-bdca-861319ef2c05.jpg` |
 | `immagini/foto-04.webp` | `foto plastico/IMG_8353.JPG` |
-| `immagini/foto-05.webp` | `foto plastico/IMG_8354.JPG` |
-| `immagini/foto-06.webp` | `foto plastico/IMG_8372.JPG` |
 | `immagini/foto-07.webp` | `foto plastico/IMG_8377.jpg` |
 | `immagini/foto-08.webp` | `foto plastico/IMG_8378.jpg` |
 | `immagini/foto-09.webp` | `foto plastico/IMG_8380.JPG` |
@@ -78,3 +76,5 @@ I poster sono in `immagini/video-*.webp`. Gli originali e le altre foto/clip for
 La pagina segue il contributo di Alessio Silvestrino: modellazione e lavorazioni, sfida delle pareti, plastico finito, quindi i sistemi della casa progettata da WASP. L’indice resta disponibile durante lo scorrimento e indica la sezione corrente.
 
 `itaca.js` gestisce l’indice e l’ingrandimento delle immagini. Foto, viste digitali e schemi sono raccolti in tre gruppi separati. La galleria usa un dialogo nativo con chiusura tramite pulsante, Escape o sfondo, navigazione con frecce e ripristino del focus. I collegamenti ai file restano utilizzabili senza JavaScript.
+
+Il 22/11/2026 sono state tolte `foto-05.webp` e `foto-06.webp`, quasi identiche a `foto-04.webp` e a `plastico-completo.webp`, e le copie in galleria di `foto-27.webp` e `assemblaggio.webp`, già presenti nel processo.

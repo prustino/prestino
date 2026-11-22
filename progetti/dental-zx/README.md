@@ -4,13 +4,13 @@ Pagina aggiornata con la descrizione definitiva del progetto, del percorso di sv
 
 ## Dove modificare i testi
 
-- `index.html`: descrizione iniziale (`detail-lead`), racconto del progetto, `meta description` e didascalie (`figcaption`).
+- `index.html`: descrizione iniziale (`detail-lead`), racconto del progetto e `meta description`. Niente didascalie sotto le immagini, salvo richiesta espressa.
 - `progetto.json`: titolo, descrizione breve della scheda, parole chiave, categorie, tag e stato.
 - Aggiornare tramite l’anteprima o `node scripts/prepare-site.mjs` dalla cartella principale del sito.
 
 ## Immagini e fonti
 
-Gli originali fotografici sono stati forniti nella cartella `PORTFOLIO 2026/Dental ZX`; tavole e render nella cartella `RENDER DENTAL ZX`. La pagina usa 40 immagini uniche. Gli originali restano invariati. Le copie WebP hanno la rotazione EXIF applicata, lato massimo 1600 px e anteprime fino a 720 px. Le didascalie descrivono ciò che è visibile nelle immagini e sono modificabili.
+Gli originali fotografici sono stati forniti nella cartella `PORTFOLIO 2026/Dental ZX`; tavole e render nella cartella `RENDER DENTAL ZX`. La pagina usa 40 immagini uniche. Gli originali restano invariati. Le copie WebP hanno la rotazione EXIF applicata, lato massimo 1600 px e anteprime fino a 720 px. Le immagini non hanno didascalie; il testo alternativo (`alt`) descrive ciò che è visibile.
 
 | File del sito | Originale |
 | --- | --- |

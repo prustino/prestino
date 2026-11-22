@@ -561,3 +561,43 @@
     });
   }
 })();
+
+// Video di sfondo dei progetti: si caricano e partono solo quando la sezione è visibile, uno dopo l'altro.
+(() => {
+  'use strict';
+  const backdrops = document.querySelectorAll('[data-backdrop]');
+  if (!backdrops.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  backdrops.forEach((backdrop) => {
+    const sources = backdrop.dataset.backdrop.split(/\s+/).filter(Boolean);
+    const video = backdrop.querySelector('video');
+    let current = 0;
+    const load = () => { video.src = sources[current]; video.load(); };
+    video.muted = true;
+    video.addEventListener('playing', () => video.classList.add('is-playing'));
+    video.addEventListener('ended', () => {
+      if (sources.length < 2) { video.currentTime = 0; video.play().catch(() => {}); return; }
+      video.classList.remove('is-playing');
+      current = (current + 1) % sources.length;
+      setTimeout(() => { load(); video.play().catch(() => {}); }, 600);
+    });
+    // Opacità legata allo scorrimento: piena finché la sezione non arriva in cima, poi scende fino al 17%.
+    const section = backdrop.parentElement;
+    let queued = false;
+    const fade = () => {
+      queued = false;
+      const top = section.getBoundingClientRect().top;
+      const progress = Math.min(1, Math.max(0, -top / (window.innerHeight * 0.6)));
+      backdrop.style.setProperty('--backdrop-opacity', String(1 - progress * 0.83));
+    };
+    const requestFade = () => { if (!queued) { queued = true; requestAnimationFrame(fade); } };
+    window.addEventListener('scroll', requestFade, { passive: true });
+    window.addEventListener('resize', requestFade);
+    fade();
+    new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        if (!video.getAttribute('src')) load();
+        video.play().catch(() => {});
+      } else video.pause();
+    }, { rootMargin: '600px 0px' }).observe(backdrop);
+  });
+})();

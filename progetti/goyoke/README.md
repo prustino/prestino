@@ -4,7 +4,7 @@ La pagina racconta GoYoke, il simulatore di guida pieghevole e trasportabile svi
 
 ## Dove sono gestiti i contenuti
 
-- `index.html`: introduzione, racconto del progetto, link al video, testi alternativi e didascalie (`figcaption`).
+- `index.html`: introduzione, racconto del progetto, link al video e testi alternativi. Niente didascalie sotto le immagini, salvo richiesta espressa.
 - `progetto.json`: titolo, descrizione breve della scheda, parole chiave, categorie, tag e stato.
 - Aggiornare tramite l’anteprima o `node scripts/prepare-site.mjs` dalla cartella principale del sito.
 
