@@ -10,11 +10,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&amp;family=Manrope:wght@400;500;600;650;700;750;800&amp;display=swap">
-    <link rel="stylesheet" href="../../style.css?v=20261122h">
+    <link rel="stylesheet" href="../../style.css?v=20261122j">
     <link rel="stylesheet" href="../../progetti/progetti-dettaglio.css?v=20261015">
-    <link rel="stylesheet" href="../../project-gallery.css?v=20261122g">
-    <script src="../../script.js?v=20261122h" defer></script>
-    <script src="../../project-gallery.js?v=20261122g-case-study" defer></script>
+    <link rel="stylesheet" href="../../project-gallery.css?v=20261122k">
+    <link rel="stylesheet" href="../../image-viewer.css?v=20261122c">
+    <script src="../../script.js?v=20261122j" defer></script>
+    <script src="../../project-gallery.js?v=20261122k" defer></script>
+    <script src="../../image-viewer.js?v=20261122" defer></script>
     <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
     <script type="module" src="../../modello-3d.js?v=20261121b"></script>
   </head>
@@ -80,7 +82,7 @@
           <li><figure class="portfolio-step-media"><a href="immagini/07.webp" data-gallery="processo"><img src="immagini/07-720.webp" srcset="immagini/07-720.webp 720w, immagini/07.webp 1600w" sizes="(max-width: 650px) calc(100vw - 40px), 420px" width="1600" height="1200" alt="Dettaglio di parapetti, figura in scala e bandiera del modello Palumbo ISA Timeless" loading="lazy" decoding="async"></a></figure><span class="portfolio-step-number">03</span><h3>Finitura e assemblaggio</h3><p class="portfolio-placeholder">DA AGGIUNGERE</p></li>
         </ol>
       </section>
-      <section class="container portfolio-gallery has-backdrop" id="galleria" aria-labelledby="gallery-title">
+      <section class="container portfolio-gallery has-backdrop backdrop-vertical" id="galleria" aria-labelledby="gallery-title">
         <div class="project-backdrop" aria-hidden="true" data-backdrop="video/video-01.mp4"><div class="project-backdrop-inner"><video muted playsinline preload="none" tabindex="-1"></video></div></div>
         <div class="portfolio-section-heading"><div><span class="eyebrow">04 / IL RISULTATO</span><h2 id="gallery-title">Il progetto, da vicino.</h2></div><p>Nove immagini tra viste d’insieme, dettagli e una fase di lavorazione.</p></div>
         <div class="portfolio-gallery-grid">
@@ -176,10 +178,5 @@
         </div>
       </div>
     </footer>
-    <dialog class="image-viewer" id="image-viewer" aria-labelledby="viewer-title">
-      <div class="image-viewer-toolbar"><h2 id="viewer-title">ISA Timeless 52 · Galleria</h2><button type="button" data-viewer-close aria-label="Chiudi immagine">Chiudi <span aria-hidden="true">×</span></button></div>
-      <div class="image-viewer-stage"><img data-viewer-image alt=""><p data-viewer-error hidden>Impossibile caricare l’immagine. Puoi aprire il file dal collegamento qui sotto.</p></div>
-      <div class="image-viewer-footer"><p id="viewer-caption"></p><div class="image-viewer-controls"><button type="button" data-viewer-prev aria-label="Immagine precedente">←</button><span data-viewer-count role="status" aria-live="polite"></span><button type="button" data-viewer-next aria-label="Immagine successiva">→</button><a data-viewer-original target="_blank" rel="noopener">Apri originale <span aria-hidden="true">↗</span><span class="visually-hidden"> (nuova scheda)</span></a></div></div>
-    </dialog>
   </body>
 </html>

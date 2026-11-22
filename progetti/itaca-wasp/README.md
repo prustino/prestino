@@ -45,7 +45,6 @@ Selezione dalla sottocartella `WhatsApp Unknown 2026-09-19 at 18.15.34/` della n
 | `video/lavorazione-laser.mp4` | `WhatsApp Video 2026-09-19 at 17.23.40 (2).mp4` | 22,96 s |
 | `video/plastico-copertura.mp4` | `WhatsApp Video 2026-09-19 at 17.23.40.mp4` | 26,10 s |
 | `immagini/foto-01.webp` | `3D_printed_walls_Itaca_Crane_WASP_construction_site.jpg` |
-| `immagini/foto-02.webp` | `6-shamballa_2739903_20260609120017.webp` |
 | `immagini/foto-03.webp` | `dff268fb-b7c1-4de8-bdca-861319ef2c05.jpg` |
 | `immagini/foto-04.webp` | `foto plastico/IMG_8353.JPG` |
 | `immagini/foto-07.webp` | `foto plastico/IMG_8377.jpg` |
@@ -78,3 +77,5 @@ La pagina segue il contributo di Alessio Silvestrino: modellazione e lavorazioni
 `itaca.js` gestisce l’indice e l’ingrandimento delle immagini. Foto, viste digitali e schemi sono raccolti in tre gruppi separati. La galleria usa un dialogo nativo con chiusura tramite pulsante, Escape o sfondo, navigazione con frecce e ripristino del focus. I collegamenti ai file restano utilizzabili senza JavaScript.
 
 Il 22/11/2026 sono state tolte `foto-05.webp` e `foto-06.webp`, quasi identiche a `foto-04.webp` e a `plastico-completo.webp`, e le copie in galleria di `foto-27.webp` e `assemblaggio.webp`, già presenti nel processo.
+
+Il 22/11/2026 è stata tolta anche `foto-02.webp` (visitatori al plastico durante l’evento a Shamballa): era troppo sfocata e non se ne trova una versione migliore.

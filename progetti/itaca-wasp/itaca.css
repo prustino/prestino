@@ -186,25 +186,6 @@
 .itaca-credits p { font-size: .875rem; line-height: 1.9; color: var(--muted); }
 .itaca-credits strong { color: var(--ink); font-weight: 600; }
 
-.image-viewer-open { overflow: hidden; }
-.image-viewer { width: min(1120px, calc(100% - 32px)); max-width: none; height: min(900px, calc(100dvh - 32px)); max-height: none; margin: auto; padding: 0; background: #22261f; color: #f6f4ef; border: 1px solid #ffffff08; border-radius: 14px; box-shadow: 0 20px 80px #0006; }
-.image-viewer[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
-.image-viewer::backdrop { background: #11150fea; }
-.image-viewer-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 20px; }
-.itaca-page .image-viewer-toolbar h2 { margin: 0; font-size: 1rem; letter-spacing: 0; }
-.image-viewer button { min-width: 44px; min-height: 44px; border: 1px solid #ffffff40; border-radius: 6px; color: inherit; background: transparent; }
-.image-viewer button:hover { background: #ffffff20; }
-.image-viewer-toolbar button { display: flex; align-items: center; gap: 14px; padding-inline: 14px; }
-.image-viewer-toolbar button span { font-size: 24px; }
-.image-viewer-stage { min-height: 0; padding: 0 20px; display: grid; place-items: center; }
-.image-viewer-stage img { width: 100%; height: 100%; min-height: 0; object-fit: contain; }
-.image-viewer-stage p { text-align: center; max-width: 45ch; }
-.image-viewer-footer { padding: 16px 20px 20px; }
-.image-viewer-footer > p { font-size: .875rem; line-height: 1.6; max-width: 90ch; }
-.image-viewer-controls { display: flex; align-items: center; gap: 16px; margin-top: 14px; font-size: .875rem; }
-.image-viewer-controls > span { min-width: 5ch; text-align: center; font-variant-numeric: tabular-nums; }
-.image-viewer-controls a { margin-left: auto; min-height: 44px; display: inline-flex; align-items: center; gap: 8px; text-decoration: underline; text-underline-offset: 4px; }
-.image-viewer :focus-visible { outline-color: #e4b695; }
 
 @media (max-width: 900px) {
   .itaca-hero, .itaca-intro { gap: 28px; }
@@ -252,9 +233,4 @@
   .itaca-gallery-details { grid-template-columns: minmax(0, 1fr); gap: 28px; margin-top: 28px; }
   .itaca-gallery-details figure { max-width: 420px; margin-inline: auto; width: 100%; }
   .itaca-material-notes { grid-template-columns: minmax(0, 1fr); }
-  .image-viewer { width: calc(100% - 16px); height: calc(100dvh - 16px); border-radius: 10px; }
-  .image-viewer-toolbar, .image-viewer-footer { padding: 12px; }
-  .image-viewer-stage { padding-inline: 8px; }
-  .image-viewer-controls { gap: 8px; flex-wrap: wrap; }
-  .image-viewer-footer > p { max-height: 7.5rem; overflow-y: auto; }
 }

@@ -570,15 +570,22 @@
   backdrops.forEach((backdrop) => {
     const sources = backdrop.dataset.backdrop.split(/\s+/).filter(Boolean);
     const video = backdrop.querySelector('video');
+    const inner = video.parentElement;
     let current = 0;
     const load = () => { video.src = sources[current]; video.load(); };
+    const next = () => { current = (current + 1) % sources.length; load(); video.play().catch(() => {}); };
     video.muted = true;
-    video.addEventListener('playing', () => video.classList.add('is-playing'));
+    // Nella colonna laterale (video verticali su schermi larghi) un video orizzontale verrebbe tagliato quasi tutto: si salta.
+    const side = window.matchMedia('(min-width: 1024px) and (min-aspect-ratio: 5/4)');
+    const inColumn = () => backdrop.parentElement.classList.contains('backdrop-vertical') && side.matches;
+    video.addEventListener('loadedmetadata', () => {
+      if (inColumn() && video.videoWidth > video.videoHeight && sources.length > 1) next();
+    });
+    video.addEventListener('playing', () => inner.classList.add('is-playing'));
     video.addEventListener('ended', () => {
       if (sources.length < 2) { video.currentTime = 0; video.play().catch(() => {}); return; }
-      video.classList.remove('is-playing');
-      current = (current + 1) % sources.length;
-      setTimeout(() => { load(); video.play().catch(() => {}); }, 600);
+      inner.classList.remove('is-playing');
+      setTimeout(next, 600);
     });
     // Opacità legata allo scorrimento: piena finché la sezione non arriva in cima, poi scende fino al 17%.
     const section = backdrop.parentElement;
