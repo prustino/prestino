@@ -42,7 +42,9 @@ async function mount(box) {
   const camera = new THREE.PerspectiveCamera(28, 1, 0.005, 20);
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
-  controls.enablePan = false;
+  // Tasto destro (o due dita) per spostare il piano di vista; il punto guardato resta vicino al modello.
+  controls.enablePan = true;
+  controls.screenSpacePanning = true;
   controls.maxPolarAngle = Math.PI / 2 - 0.03;
   controls.autoRotateSpeed = 0.6;
 
@@ -82,6 +84,9 @@ async function mount(box) {
     const transparent = node.material.transparent;
     node.castShadow = !transparent;
     node.receiveShadow = !transparent;
+    // I vetri possono chiedere riflessi più intensi dell'ambiente (extras del materiale nel GLB).
+    const envMapIntensity = node.material.userData?.envMapIntensity;
+    if (typeof envMapIntensity === 'number') node.material.envMapIntensity = envMapIntensity;
   });
   scene.add(model);
 
@@ -103,6 +108,14 @@ async function mount(box) {
   controls.target.copy(center);
   controls.minDistance = radius * 0.35;
   controls.maxDistance = radius * 4;
+  const panLimit = bounds.clone().expandByScalar(radius * 0.15);
+  const clamped = new THREE.Vector3();
+  controls.addEventListener('change', () => {
+    clamped.copy(controls.target).clamp(panLimit.min, panLimit.max);
+    if (clamped.equals(controls.target)) return;
+    camera.position.add(clamped.sub(controls.target));
+    controls.target.add(clamped);
+  });
 
   // Viste predefinite: azimut e altezza della camera, distanza rispetto a quella che fa entrare il modello intero.
   const views = { tre: [0.62, 0.2, 0.6], profilo: [Math.PI / 2, 0.04, 0.66], alto: [Math.PI / 2, 1.25, 0.66] };
@@ -118,6 +131,7 @@ async function mount(box) {
     currentView = view;
     const [azimuth, elevation, distance] = view;
     // In un riquadro alto e stretto (telefono in verticale) la camera resta alla distanza piena, per non tagliare prua e poppa.
+    controls.target.copy(center);
     const r = fitDistance() * (camera.aspect < 1 ? Math.max(distance, 0.9) : distance);
     camera.position.set(
       center.x + r * Math.cos(elevation) * Math.cos(azimuth),
