@@ -3547,6 +3547,14 @@ textarea:focus-visible {
   object-fit: cover;
 }
 
+/* Sul desktop tre progetti per fila: copertine più piccole e più nitide. */
+@media (min-width: 1001px) {
+  .project-gallery .project-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 48px 28px;
+  }
+}
+
 @media (max-width: 650px) {
   .project-gallery .project-grid {
     grid-template-columns: minmax(0, 1fr);

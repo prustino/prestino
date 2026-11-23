@@ -121,7 +121,8 @@
 /* Una foto per fase del processo, in riquadri quadrati uguali. */
 .itaca-step-media { display: block; aspect-ratio: 1 / 1; margin: 0 0 18px; overflow: hidden; border: 1px solid var(--line); border-radius: 9px; background: #22231f; }
 .itaca-step-media a { display: block; width: 100%; height: 100%; }
-.itaca-step-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .25s ease; }
+/* Più specifica di ".itaca-page figure img" (altezza automatica): la foto riempie sempre il quadrato. */
+.itaca-steps .itaca-step-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .25s ease; }
 .itaca-step-media a:hover img { transform: scale(1.025); }
 .itaca-step-missing { display: grid; place-items: center; padding: 20px; border-style: dashed; background: transparent; color: var(--purple-dark); font-size: .75rem; font-weight: 650; letter-spacing: .055em; text-align: center; }
 /* Altre immagini del plastico e del progetto: righe giustificate, ogni foto nel suo formato (--ar). */
@@ -233,4 +234,22 @@
   .itaca-gallery-details { grid-template-columns: minmax(0, 1fr); gap: 28px; margin-top: 28px; }
   .itaca-gallery-details figure { max-width: 420px; margin-inline: auto; width: 100%; }
   .itaca-material-notes { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Sul telefono le tre foto del processo stanno in una riga di quadrati, ciascuna col suo numero;
+   sotto, i testi delle fasi uno dopo l'altro (gli elementi di ogni fase entrano nella griglia con display: contents). */
+@media (max-width: 650px) {
+  .itaca-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 10px; }
+  .itaca-steps li { display: contents; }
+  .itaca-steps li > * { grid-column: 1 / -1; }
+  .itaca-steps li > .itaca-step-media { position: relative; grid-row: 1; margin: 0; border-radius: 7px; }
+  .itaca-steps li:nth-child(1) > .itaca-step-media { grid-column: 1; }
+  .itaca-steps li:nth-child(2) > .itaca-step-media { grid-column: 2; }
+  .itaca-steps li:nth-child(3) > .itaca-step-media { grid-column: 3; }
+  .itaca-steps li > .itaca-step-media::after { position: absolute; top: 6px; left: 6px; padding: 1px 6px; border-radius: 4px; background: #000000a6; color: #fff; font: .6875rem/1.5 monospace; pointer-events: none; }
+  .itaca-steps li:nth-child(1) > .itaca-step-media::after { content: '01'; }
+  .itaca-steps li:nth-child(2) > .itaca-step-media::after { content: '02'; }
+  .itaca-steps li:nth-child(3) > .itaca-step-media::after { content: '03'; }
+  .itaca-steps .itaca-step-number { display: block; margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--line); }
+  .itaca-steps h3 { margin-block: 6px 8px; font-size: 1.0625rem; }
 }

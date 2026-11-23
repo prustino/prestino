@@ -4,7 +4,7 @@ La pagina racconta GoYoke, il simulatore di guida pieghevole e trasportabile svi
 
 ## Dove sono gestiti i contenuti
 
-- `index.html`: introduzione, racconto del progetto, link al video e testi alternativi. Niente didascalie sotto le immagini, salvo richiesta espressa.
+- `index.html`: introduzione, racconto del progetto e testi alternativi. Niente didascalie sotto le immagini, salvo richiesta espressa.
 - `progetto.json`: titolo, descrizione breve della scheda, parole chiave, categorie, tag e stato.
 - Aggiornare tramite l’anteprima o `node scripts/prepare-site.mjs` dalla cartella principale del sito.
 
@@ -30,4 +30,4 @@ Originali forniti nella cartella `GoYoke`. La selezione comprende 14 immagini e 
 | `immagini/test-03.webp` | `primo test/IMG-20250211-WA0058.jpg` |
 | `immagini/logo-goyoke.webp` | `logo.png` |
 
-I file `-720.webp` sono le anteprime delle stesse immagini. Il video resta su YouTube ed è collegato dalla pagina: `https://www.youtube.com/watch?v=w624KQBNKnE`. I collegamenti sono relativi; spostare sempre la cartella completa tra progetti attivi e nascosti.
+I file `-720.webp` sono le anteprime delle stesse immagini. Il video `video/video-01.mp4` (dal file "Alessio Silvestrino Goyoke video.mp4", ridotto a 1280×720 senza audio) è lo sfondo in movimento della galleria dei render; il collegamento a YouTube è stato tolto il 22/11/2026. I collegamenti sono relativi; spostare sempre la cartella completa tra progetti attivi e nascosti.

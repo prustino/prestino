@@ -16,13 +16,12 @@ progetti-nascosti/              ← cartelle complete dei lavori nascosti
 
 ## Progetti presenti
 
-La raccolta contiene dieci progetti attivi. ITACA WASP resta invariato; otto delle nove pagine importate hanno descrizioni e dati di progetto confermati. Clove Lamp conserva ancora contenuti provvisori.
+La raccolta contiene nove progetti attivi. Clove Lamp, che aveva ancora contenuti provvisori, è stato nascosto il 22/11/2026 (cartella `progetti-nascosti/clove-lamp`; si riattiva con `node scripts/progetti.mjs attiva clove-lamp`).
 
 | Progetto | Cartella |
 | --- | --- |
 | ITACA WASP | `itaca-wasp/` |
 | Bentley Outdoor Furniture | `bentley-outdoor-furniture/` |
-| Clove Lamp | `clove-lamp/` |
 | Dagusha VII / ADA IV | `dagusha-7-ada-4/` |
 | Dental ZX | `dental-zx/` |
 | Durres Towers | `durres-towers/` |
@@ -122,6 +121,6 @@ I tag visibili devono essere brevi, coerenti e scritti in italiano. Usali per sp
 
 Le informazioni non ancora confermate sono scritte esattamente come `DA AGGIUNGERE` e usano la classe `portfolio-placeholder`. Sostituisci il segnaposto in `index.html` solo quando il testo o il dato è disponibile; se cambia anche il riepilogo mostrato nella raccolta, aggiorna `progetto.json` e rigenera il sito.
 
-I segnaposto principali riguardano Clove Lamp, la scala di Colosseum 339 e alcune descrizioni delle fasi di processo. Anni, clienti, scale, tecniche e ruoli vanno aggiunti solo quando confermati.
+I segnaposto principali riguardano la scala di Colosseum 339 e alcune descrizioni delle fasi di processo. Anni, clienti, scale, tecniche e ruoli vanno aggiunti solo quando confermati.
 
 ITACA WASP documenta il plastico realizzato a Imola nel 2022; le sue fonti e le istruzioni dedicate restano nel suo README.

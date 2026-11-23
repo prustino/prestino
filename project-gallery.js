@@ -55,22 +55,29 @@
   };
   const balance = (grid) => {
     const items = [...grid.children].filter((item) => item.matches('figure'));
-    const width = grid.clientWidth;
-    if (!items.length || !width) return;
+    // Larghezza esatta (clientWidth arrotonda) meno 1 px di margine: per una frazione di pixel la riga andrebbe a capo.
+    const width = grid.getBoundingClientRect().width - 1;
+    if (!items.length || width <= 0) return;
     const gap = parseFloat(getComputedStyle(grid).columnGap) || 0;
     const ratios = items.map((item) => parseFloat(getComputedStyle(item).getPropertyValue('--ar')) || 4 / 3);
     // Divisione in righe consecutive: tra tutte le divisioni possibili si sceglie quella con le righe
-    // più vicine all'altezza ideale; le righe troppo alte o troppo basse costano di più.
+    // più vicine all'altezza ideale. Una riga che per riempire la larghezza dovrebbe essere troppo alta
+    // (poche foto verticali) si ferma a maxHeight e lascia vuoti ai lati: quei vuoti costano molto, e una foto
+    // da sola su una riga non piena non è ammessa. Così si preferisce unire le foto in righe piene, anche
+    // un po' più alte o più basse dell'ideale.
     const target = targetRow();
-    const maxHeight = target * 1.7;
+    const maxHeight = Math.min(target * 2.1, window.innerHeight * 0.85);
     const n = ratios.length;
     const prefix = [0];
     ratios.forEach((ratio, i) => prefix.push(prefix[i] + ratio));
     const rowHeight = (start, end) => (width - gap * (end - start - 1)) / (prefix[end] - prefix[start]);
     const rowCost = (start, end) => {
       const h = rowHeight(start, end);
-      const deviation = (h - target) / target;
-      return deviation ** 2 + (h > maxHeight ? 50 * ((h - maxHeight) / target) ** 2 : 0) + (h < target * 0.55 ? 10 : 0);
+      const shown = Math.min(h, maxHeight);
+      const empty = 1 - shown / h;
+      const deviation = (shown - target) / target;
+      const lonely = end - start === 1 && n > 1 && empty > 0.02;
+      return deviation ** 2 + 40 * empty ** 2 + (lonely ? 1000 : 0) + (h < target * 0.55 ? 10 : 0);
     };
     const best = new Array(n + 1).fill(Infinity);
     const cut = new Array(n + 1).fill(0);
@@ -84,7 +91,7 @@
     const bounds = [];
     for (let end = n; end > 0; end = cut[end]) bounds.unshift([cut[end], end]);
     bounds.forEach(([start, end]) => {
-      // Se resta una riga troppo alta (poche foto verticali) si accorcia ed è centrata.
+      // Se resta comunque una riga troppo alta si accorcia ed è centrata.
       const height = Math.min(rowHeight(start, end), maxHeight);
       for (let i = start; i < end; i += 1) items[i].style.flex = `0 0 ${Math.floor(ratios[i] * height * 100) / 100 - 0.01}px`;
     });
@@ -99,7 +106,10 @@
         if (lastWidths.get(target) !== width) { lastWidths.set(target, width); balance(target); }
       }));
       grids.forEach((grid) => observer.observe(grid));
-    } else window.addEventListener('resize', relayout);
+    }
+    // L'altezza ideale dipende anche dalla finestra (larghezza e altezza, zoom): si ricalcola tutto quando cambia.
+    let resizeTimer;
+    window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(relayout, 120); });
     relayout();
   }
 })();
