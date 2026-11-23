@@ -34,8 +34,9 @@ test('moving complete projects keeps content and public visibility consistent', 
     const initialProjects = await read(root, 'dist/progetti.html');
     assert.equal((await inventory(root)).attivi.length, 4);
     assert.equal(await exists(join(root, 'dist/progetti/itaca-wasp/progetto.json')), false);
-    assert.equal((initialAbout.match(/data-about-slide/g) || []).length, 4);
-    assert.match(initialAbout, /data-about-carousel/);
+    // La pagina Chi sono mostra il ritratto, non più l'anteprima dei progetti.
+    assert.doesNotMatch(initialAbout, /data-about-carousel/);
+    assert.match(initialAbout, /class="about-object about-portrait"/);
     assert.match(initialProjects, /data-filter="architettura"/);
     assert.match(initialProjects, /data-filter="prodotto"/);
     assert.equal((initialProjects.match(/data-category="[^"]*\barchitettura\b/g) || []).length, 1);

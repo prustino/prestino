@@ -3224,6 +3224,34 @@ textarea:focus-visible {
 .about-hero:not(:has(.about-object)) { grid-template-columns: minmax(0, 1fr); }
 .silve-hero:not(:has(.hero-scene)) .hero-copy,
 .about-hero:not(:has(.about-object)) .about-intro { max-width: 780px; }
+/* Ritratto nella pagina Chi sono (al posto dell'anteprima dei progetti): 4:5, sfondo già sfocato nella foto. */
+.about-portrait { justify-self: end; width: 100%; max-width: 460px; }
+.about-portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+/* Nome in corsivo grande (Instrument Serif), poi testo e un elenco semplice di formazione, specializzazione ed esperienza. */
+.about-intro h1.about-name { margin: 12px 0 26px; font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(60px, 6.4vw, 96px); line-height: .95; letter-spacing: -0.01em; color: var(--ink); }
+.about-intro p { max-width: 640px; }
+.about-facts { max-width: 640px; margin: 34px 0 0; border-top: 1px solid var(--line); }
+.about-facts > div { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 24px; padding: 15px 0; border-bottom: 1px solid var(--line); }
+.about-facts dt { padding-top: 3px; color: var(--purple); font-size: .75rem; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
+.about-facts dd { margin: 0; color: var(--muted); font-size: .9375rem; line-height: 1.7; }
+/* Desktop: il testo occupa tutta la sua colonna, fino alla foto; formazione, specializzazione ed esperienza
+   stanno affiancate in tre colonne, così il blocco è largo e alto quanto il ritratto. */
+@media (min-width: 1001px) {
+  .about-hero { grid-template-columns: minmax(0, 1fr) minmax(0, 460px); gap: clamp(48px, 5vw, 96px); align-items: center; }
+  .about-intro h1.about-name { font-size: clamp(84px, 8vw, 128px); margin: 10px 0 30px; }
+  .about-intro .intro-lead { max-width: 760px; font-size: 1.3125rem; line-height: 1.6; }
+  .about-intro p { max-width: 760px; }
+  .about-facts { max-width: none; }
+}
+@media (min-width: 1280px) {
+  .about-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 44px; border-top: 0; }
+  .about-facts > div { display: block; padding: 18px 0 0; border-top: 1px solid var(--line); border-bottom: 0; }
+  .about-facts dt { margin-bottom: 10px; padding-top: 0; }
+}
+@media (max-width: 760px) {
+  .about-intro h1.about-name { font-size: 58px; }
+  .about-facts > div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+}
 
 
 /* Progetti: filtri in un menu a tendina sotto la voce "Progetti" e ricerca accanto a "Parliamone". */
